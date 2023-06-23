@@ -8,7 +8,7 @@ on:
   merge_group:
 
 jobs:
-  build-lint:
+  lint:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,24 +22,35 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
+          cache: "pnpm"
 
-      - name: Get pnpm store directory
-        id: pnpm-cache
-        run: echo "pnpm_cache_dir=$(pnpm store path)" >> $GITHUB_OUTPUT
-
-      - name: Setup pnpm cache
-        uses: actions/cache@v3
-        with:
-          path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
-
-      - name: Install Dependencies (with cache)
+      - name: Install dependencies
         run: pnpm install
 
-      - name: Typecheck
-        run: pnpm run typecheck
+      - name: Run linter
+        run: |
+          pnpm lint
+          pnpm format:check
+        env:
+          SKIP_ENV_VALIDATION: true
 
-      - name: Lint
-        run: pnpm run lint
+  typecheck:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.2.4
+
+      - name: Setup Node 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Run typecheck
+        run: pnpm typecheck

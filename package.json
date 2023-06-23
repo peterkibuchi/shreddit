@@ -6,6 +6,8 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "lint": "next lint",
     "postinstall": "prisma generate",
     "preview": "next build && next start",
