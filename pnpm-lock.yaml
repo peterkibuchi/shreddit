@@ -9,7 +9,7 @@ dependencies:
     specifier: ^2.8.0
     version: 2.8.0
   '@editorjs/editorjs':
-    specifier: ^2.27.0
+    specifier: ^2.27.2
     version: 2.27.2
   '@editorjs/embed':
     specifier: ^2.5.3
