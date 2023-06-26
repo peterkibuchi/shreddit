@@ -6,6 +6,9 @@ await import("./src/env.mjs");
 
 /** @type {import("next").NextConfig} */
 const config = {
+  images: {
+    domains: ["avatars.githubusercontent.com", "uploadthing.com"],
+  },
   reactStrictMode: true,
   swcMinify: true,
 

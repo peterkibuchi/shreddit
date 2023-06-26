@@ -1,7 +1,13 @@
 import { type Metadata } from "next";
 import { Inter } from "next/font/google";
 
-import { Analytics, TailwindIndicator, ThemeProvider } from "~/components";
+import {
+  Analytics,
+  Navbar,
+  TailwindIndicator,
+  ThemeProvider,
+} from "~/components";
+import { Toaster } from "~/components/ui/toaster";
 import { siteConfig } from "~/config/site";
 import { cn } from "~/lib/utils";
 import "~/styles/globals.css";
@@ -51,15 +57,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html
-      lang="en"
-      className={cn(
-        "light bg-white text-slate-900 antialiased",
-        inter.className
-      )}
-    >
+    <html lang="en">
       <head />
-
       <body
         className={cn(
           "min-h-screen bg-background pt-12 antialiased",
@@ -67,12 +66,15 @@ export default function RootLayout({ children }: RootLayoutProps) {
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <Navbar />
+
           <div className="container mx-auto h-full max-w-7xl pt-12">
             {children}
           </div>
 
           <Analytics />
           <TailwindIndicator />
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>
