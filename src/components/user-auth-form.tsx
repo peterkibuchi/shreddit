@@ -38,6 +38,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
         size="sm"
         disabled={isLoading}
         isLoading={isLoading}
+        // eslint-disable-next-line @typescript-eslint/no-misused-promises
         onClick={loginWithGitHub}
       >
         {isLoading ? null : <Icons.gitHub className="mr-2 h-4 w-4" />}
