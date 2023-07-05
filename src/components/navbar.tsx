@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { Icons } from "~/components/icons";
+import { ModeToggle } from "~/components/mode-toggle";
 import { buttonVariants } from "~/components/ui/button";
 import { UserAccountNav } from "~/components/user-account-nav";
 import { getServerAuthSession } from "~/server/auth";
@@ -16,13 +17,17 @@ export async function Navbar() {
           <span className="hidden text-sm font-medium md:block">Shreddit</span>
         </Link>
 
-        {session?.user ? (
-          <UserAccountNav user={session.user} />
-        ) : (
-          <Link href="/login" className={buttonVariants()}>
-            Sign In
-          </Link>
-        )}
+        <div className="flex justify-between gap-2">
+          <ModeToggle />
+
+          {session?.user ? (
+            <UserAccountNav user={session.user} />
+          ) : (
+            <Link href="/login" className={buttonVariants()}>
+              Sign In
+            </Link>
+          )}
+        </div>
       </div>
     </div>
   );

@@ -1,17 +1,14 @@
-import { CloseModal, SignIn } from "~/components";
+import { SignIn } from "~/components";
+import { Dialog, DialogContent } from "~/components/ui/dialog";
 
 export default function Login() {
   return (
-    <div className="fixed inset-0 z-10">
-      <div className="container mx-auto flex h-full max-w-lg items-center">
-        <div className="relative h-fit w-full rounded-lg bg-secondary px-2 py-20">
-          <div className="absolute right-4 top-4">
-            <CloseModal />
-          </div>
-
+    <Dialog defaultOpen>
+      <DialogContent>
+        <div className="relative h-fit w-full rounded-lg px-2 py-20">
           <SignIn />
         </div>
-      </div>
-    </div>
+      </DialogContent>
+    </Dialog>
   );
 }
