@@ -15,6 +15,7 @@ import "~/styles/globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 interface RootLayoutProps {
+  authModal: React.ReactNode;
   children: React.ReactNode;
 }
 
@@ -55,7 +56,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: RootLayoutProps) {
+export default function RootLayout({ authModal, children }: RootLayoutProps) {
   return (
     <html lang="en">
       <head />
@@ -67,6 +68,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
+          {authModal}
 
           <div className="container mx-auto h-full max-w-7xl pt-12">
             {children}
