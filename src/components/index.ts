@@ -1,5 +1,5 @@
 export { Analytics } from "./analytics";
-export { CloseModal } from "./close-modal";
+export { DialogWrapper } from "./dialog-wrapper";
 export { Icons } from "./icons";
 export { Navbar } from "./navbar";
 export { SignIn } from "./sign-in";
