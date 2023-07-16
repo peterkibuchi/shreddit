@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import {
   Analytics,
   Navbar,
+  Providers,
   TailwindIndicator,
   ThemeProvider,
 } from "~/components";
@@ -66,18 +67,20 @@ export default function RootLayout({ authModal, children }: RootLayoutProps) {
           inter.className
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <Navbar />
-          {authModal}
+        <Providers>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <Navbar />
+            {authModal}
 
-          <div className="container mx-auto h-full max-w-7xl pt-12">
-            {children}
-          </div>
+            <div className="container mx-auto h-full max-w-7xl pt-12">
+              {children}
+            </div>
 
-          <Analytics />
-          <TailwindIndicator />
-          <Toaster />
-        </ThemeProvider>
+            <Analytics />
+            <TailwindIndicator />
+            <Toaster />
+          </ThemeProvider>
+        </Providers>
       </body>
     </html>
   );
