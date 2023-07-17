@@ -23,13 +23,14 @@
     "plugins": [{ "name": "next" }]
   },
   "include": [
-    ".eslintrc.cjs",
-    "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "**/*.cjs",
     "**/*.mjs",
-    ".next/types/**/*.ts"
+    ".eslintrc.cjs",
+    ".next/types/**/*.ts",
+    "next-env.d.ts",
+    "prettier.config.mjs"
   ],
   "exclude": ["node_modules"]
 }

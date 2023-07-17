@@ -11,6 +11,7 @@ import {
 import { Toaster } from "~/components/ui/toaster";
 import { siteConfig } from "~/config/site";
 import { cn } from "~/lib/utils";
+
 import "~/styles/globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -64,7 +65,7 @@ export default function RootLayout({ authModal, children }: RootLayoutProps) {
       <body
         className={cn(
           "min-h-screen bg-background pt-12 antialiased",
-          inter.className
+          inter.className,
         )}
       >
         <Providers>

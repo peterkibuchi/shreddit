@@ -1,7 +1,7 @@
 "use client";
 
-import { signIn } from "next-auth/react";
 import { useState } from "react";
+import { signIn } from "next-auth/react";
 
 import { Icons } from "~/components/icons";
 import { Button } from "~/components/ui/button";

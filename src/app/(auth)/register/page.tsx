@@ -12,7 +12,7 @@ export default function Register() {
           href="/"
           className={cn(
             buttonVariants({ variant: "ghost" }),
-            "-mt-20 self-start"
+            "-mt-20 self-start",
           )}
         >
           <Icons.chevronLeft className="mr-2 h-4 w-4" />

@@ -49,7 +49,7 @@ export async function POST(req: NextRequest) {
 
     return new Response(
       "Could not subscribe to subreddit at this time. Please try later",
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

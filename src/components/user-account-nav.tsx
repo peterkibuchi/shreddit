@@ -1,8 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { type User } from "next-auth";
 import { signOut } from "next-auth/react";
-import Link from "next/link";
 
 import { Icons } from "~/components/icons";
 import {
