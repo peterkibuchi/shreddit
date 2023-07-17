@@ -23,13 +23,12 @@
     "plugins": [{ "name": "next" }]
   },
   "include": [
-    ".eslintrc.cjs",
-    "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "**/*.cjs",
     "**/*.mjs",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "next-env.d.ts"
   ],
   "exclude": ["node_modules"]
 }

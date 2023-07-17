@@ -31,7 +31,7 @@ export async function POST(req: NextRequest) {
         "You've not been subscribed to this subreddit, yet.",
         {
           status: 400,
-        }
+        },
       );
     }
 
@@ -54,7 +54,7 @@ export async function POST(req: NextRequest) {
 
     return new Response(
       "Could not unsubscribe from subreddit at this time. Please try later",
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

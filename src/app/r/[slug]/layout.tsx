@@ -1,6 +1,6 @@
-import { format } from "date-fns";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { format } from "date-fns";
 
 import { JoinLeaveToggle } from "~/components";
 import { buttonVariants } from "~/components/ui/button";

@@ -29,7 +29,7 @@ const formatDistanceLocale = {
 function formatDistance(
   token: string,
   count: number,
-  options?: { addSuffix?: unknown; comparison?: number }
+  options?: { addSuffix?: unknown; comparison?: number },
 ): string {
   options = options || {};
 

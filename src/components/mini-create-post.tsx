@@ -1,7 +1,7 @@
 "use client";
 
-import { type Session } from "next-auth";
 import { usePathname, useRouter } from "next/navigation";
+import { type Session } from "next-auth";
 
 import { Icons } from "~/components/icons";
 import { Button } from "~/components/ui/button";
