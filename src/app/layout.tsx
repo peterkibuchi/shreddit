@@ -56,6 +56,7 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     // images: [`${siteConfig.url}/og.jpg`],
   },
+  metadataBase: new URL("https://shreddit.vercel.app"),
 };
 
 export default function RootLayout({ authModal, children }: RootLayoutProps) {

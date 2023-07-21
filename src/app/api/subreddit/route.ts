@@ -49,6 +49,8 @@ export async function POST(req: NextRequest) {
       return new Response(error.message, { status: 422 });
     }
 
-    return new Response("Could not create subreddit", { status: 500 });
+    return new Response("Could not create subreddit. Please try again later.", {
+      status: 500,
+    });
   }
 }

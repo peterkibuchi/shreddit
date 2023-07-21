@@ -102,7 +102,7 @@ export default async function Layout({
                 />
               ) : null}
               <Link
-                href={`r/${slug}/submit`}
+                href={`${slug}/submit`}
                 className={buttonVariants({
                   variant: "outline",
                   className: "mb-8 w-full",
