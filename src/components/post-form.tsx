@@ -1,6 +1,4 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-return */
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -13,8 +11,8 @@ import { useForm } from "react-hook-form";
 import TextareaAutosize from "react-textarea-autosize";
 import { type z } from "zod";
 
+import { editorTools } from "~/components/editor-tools";
 import { toast } from "~/components/ui/use-toast";
-import { uploadFiles } from "~/lib/uploadthing";
 import { PostValidator, type PostCreationRequest } from "~/lib/validators/post";
 
 type FormData = z.infer<typeof PostValidator>;
@@ -53,6 +51,7 @@ export function PostForm({ subredditId }: PostFormProps) {
       const payload: PostCreationRequest = { content, subredditId, title };
       const { data } = await axios.post("/api/subreddit/post/create", payload);
 
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
       return data;
     },
 
@@ -78,65 +77,17 @@ export function PostForm({ subredditId }: PostFormProps) {
 
   const initializeEditor = useCallback(async () => {
     const EditorJS = (await import("@editorjs/editorjs")).default;
-    const Code = (await require("@editorjs/code")).default;
-    const Embed = (await require("@editorjs/embed")).default;
-    const Header = (await require("@editorjs/header")).default;
-    const ImageTool = (await require("@editorjs/image")).default;
-    const InlineCode = (await require("@editorjs/inline-code")).default;
-    const LinkTool = (await require("@editorjs/link")).default;
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const List = await require("@editorjs/list").default;
-    const Quote = (await require("@editorjs/quote")).default;
-    const Table = (await require("@editorjs/table")).default;
 
     if (!ref.current) {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
       const editor = new EditorJS({
         holder: "editor",
         onReady() {
           ref.current = editor;
         },
-        placeholder: "Start typing here to create your post...",
-        inlineToolbar: true,
         data: { blocks: [] },
-        tools: {
-          code: Code,
-          embed: Embed,
-          header: Header,
-          image: {
-            class: ImageTool,
-            config: {
-              uploader: {
-                async uploadByFile(file: File) {
-                  // Upload to uploadthing
-                  const [res] = await uploadFiles({
-                    endpoint: "imageUploader",
-                    files: [file],
-                  });
-
-                  if (res) {
-                    return {
-                      success: 1,
-                      file: {
-                        url: res.fileUrl,
-                      },
-                    };
-                  }
-                },
-              },
-            },
-          },
-          inlineCode: InlineCode,
-          linkTool: {
-            class: LinkTool,
-            config: {
-              endpoint: "/api/link",
-            },
-          },
-          list: List,
-          quote: Quote,
-          table: Table,
-        },
+        inlineToolbar: true,
+        placeholder: "Start typing here to create your post...",
+        tools: editorTools,
       });
     }
   }, []);
@@ -222,7 +173,7 @@ export function PostForm({ subredditId }: PostFormProps) {
 
           <p className="text-sm text-gray-500">
             Use{" "}
-            <kbd className="rounded-md border bg-muted px-1 text-xs uppercase dark:bg-black">
+            <kbd className="rounded-md border bg-muted px-1 text-xs uppercase dark:bg-slate-200">
               Tab
             </kbd>{" "}
             to open the command menu.

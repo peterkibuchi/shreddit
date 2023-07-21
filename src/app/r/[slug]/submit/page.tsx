@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { notFound } from "next/navigation";
 
 import { PostForm } from "~/components";
@@ -31,7 +32,9 @@ export default async function CreatePost({ params }: CreatePostProps) {
         </div>
       </div>
 
-      <PostForm subredditId={subreddit.id} />
+      <Suspense>
+        <PostForm subredditId={subreddit.id} />
+      </Suspense>
 
       <div className="flex w-full justify-end">
         <Button type="submit" className="w-full" form="subreddit-post-form">
