@@ -16,6 +16,8 @@ export function MiniCreatePost({ session }: MiniCreatePostProps) {
   const router = useRouter();
   const pathname = usePathname();
 
+  const navToCreatePostPage = () => router.push(pathname + "/submit");
+
   return (
     <div className="bg overflow-hidden rounded-md bg-secondary shadow">
       <div className="flex h-full justify-between gap-6 px-6 py-4">
@@ -31,20 +33,15 @@ export function MiniCreatePost({ session }: MiniCreatePostProps) {
         </div>
 
         <Input
-          onClick={() => router.push(pathname + "/submit")}
+          onClick={navToCreatePostPage}
           readOnly
           placeholder="Create post..."
         />
-        <Button
-          onClick={() => router.push(pathname + "/submit")}
-          variant="ghost"
-        >
+
+        <Button onClick={navToCreatePostPage} variant="ghost">
           <Icons.media />
         </Button>
-        <Button
-          onClick={() => router.push(pathname + "/submit")}
-          variant="ghost"
-        >
+        <Button onClick={navToCreatePostPage} variant="ghost">
           <Icons.link />
         </Button>
       </div>

@@ -1,6 +1,6 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 "use client";
 
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { useCallback, useEffect, useRef, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import type EditorJS from "@editorjs/editorjs";
@@ -11,8 +11,8 @@ import { useForm } from "react-hook-form";
 import TextareaAutosize from "react-textarea-autosize";
 import { type z } from "zod";
 
-import { editorTools } from "~/components/editor-tools";
 import { toast } from "~/components/ui/use-toast";
+import { editorTools } from "~/lib/editor-tools";
 import { PostValidator, type PostCreationRequest } from "~/lib/validators/post";
 
 type FormData = z.infer<typeof PostValidator>;

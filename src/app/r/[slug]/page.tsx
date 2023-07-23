@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 
-import { MiniCreatePost } from "~/components";
+import { MiniCreatePost, PostFeed } from "~/components";
 import { INFINITE_SCROLL_PAGINATION_RESULTS } from "~/config";
 import { getServerAuthSession } from "~/server/auth";
 import { prisma } from "~/server/db";
@@ -20,9 +20,9 @@ export default async function SubredditPage({ params }: SubredditPageProps) {
       posts: {
         include: {
           author: true,
-          votes: true,
           comments: true,
           subreddit: true,
+          votes: true,
         },
         orderBy: {
           createdAt: "desc",
@@ -40,7 +40,7 @@ export default async function SubredditPage({ params }: SubredditPageProps) {
         r/{subreddit.name}
       </h1>
       <MiniCreatePost session={session} />
-      {/* <PostFeed initialPosts={subreddit.posts} subredditName={subreddit.name} /> */}
+      <PostFeed initialPosts={subreddit.posts} subredditName={subreddit.name} />
     </>
   );
 }

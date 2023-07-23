@@ -63,7 +63,7 @@ export default async function Layout({
         <div className="grid grid-cols-1 gap-y-4 py-6 md:grid-cols-3 md:gap-x-4">
           <ul className="col-span-2 flex flex-col space-y-6">{children}</ul>
 
-          {/* info sidebar */}
+          {/* Info Sidebar */}
           <div className="order-first h-fit overflow-hidden rounded-lg border border-secondary text-gray-500 dark:text-gray-400 md:order-last">
             <div className="bg-secondary px-6 py-4">
               <p className="py-3 font-semibold text-secondary-foreground">
@@ -101,6 +101,7 @@ export default async function Layout({
                   subredditName={subreddit.name}
                 />
               ) : null}
+
               <Link
                 href={`${slug}/submit`}
                 className={buttonVariants({

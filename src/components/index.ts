@@ -3,6 +3,7 @@ export { DialogWrapper } from "./dialog-wrapper";
 export { Icons } from "./icons";
 export { Navbar } from "./navbar";
 export { MiniCreatePost } from "./mini-create-post";
+export { PostFeed } from "./post-feed";
 export { PostForm } from "./post-form";
 export { Providers } from "./providers";
 export { SignIn } from "./sign-in";
