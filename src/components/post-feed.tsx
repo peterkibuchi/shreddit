@@ -47,7 +47,8 @@ export function PostFeed({ initialPosts, subredditName }: PostFeedProps) {
 
   useEffect(() => {
     if (entry?.isIntersecting) {
-      void fetchNextPage(); // Load more posts when the last post comes into view
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
+      fetchNextPage(); // Load more posts when the last post comes into view
     }
   }, [entry, fetchNextPage]);
 

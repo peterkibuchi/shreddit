@@ -109,7 +109,8 @@ export function PostForm({ subredditId }: PostFormProps) {
     };
 
     if (isMounted) {
-      void init();
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
+      init();
 
       return () => {
         ref.current?.destroy();
@@ -154,7 +155,8 @@ export function PostForm({ subredditId }: PostFormProps) {
       <form
         id="subreddit-post-form"
         className="w-fit"
-        onSubmit={void handleSubmit(onSubmit)}
+        // eslint-disable-next-line @typescript-eslint/no-misused-promises
+        onSubmit={handleSubmit(onSubmit)}
       >
         <div className="prose prose-stone dark:prose-invert">
           <TextareaAutosize

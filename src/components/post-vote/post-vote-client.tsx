@@ -90,14 +90,14 @@ export function PostVoteClient({
         aria-label="upvote"
       >
         <Icons.upvote
-          className={cn("h-5 w-5 text-zinc-700", {
+          className={cn("h-5 w-5 text-secondary-foreground", {
             "fill-emerald-500 text-emerald-500": currentVote === "UP",
           })}
         />
       </Button>
 
       {/* score */}
-      <p className="py-2 text-center text-sm font-medium text-zinc-900">
+      <p className="py-2 text-center text-sm font-medium text-secondary-foreground">
         {voteCount}
       </p>
 
@@ -112,7 +112,7 @@ export function PostVoteClient({
         aria-label="downvote"
       >
         <Icons.downvote
-          className={cn("h-5 w-5 text-zinc-700", {
+          className={cn("h-5 w-5 text-secondary-foreground", {
             "fill-red-500 text-red-500": currentVote === "DOWN",
           })}
         />

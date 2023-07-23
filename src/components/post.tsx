@@ -30,7 +30,7 @@ export function Post({
   const postRef = useRef<HTMLParagraphElement>(null);
 
   return (
-    <div className="rounded-md bg-white shadow">
+    <div className="rounded-md bg-card shadow">
       <div className="flex justify-between px-6 py-4">
         <PostVoteClient
           postId={post.id}
@@ -39,11 +39,11 @@ export function Post({
         />
 
         <div className="w-0 flex-1">
-          <div className="mt-1 max-h-40 text-xs text-gray-500">
+          <div className="mt-1 max-h-40 text-xs text-muted-foreground">
             {subredditName ? (
               <>
                 <a
-                  className="text-sm text-zinc-900 underline underline-offset-2"
+                  className="text-sm text-secondary-foreground underline underline-offset-2"
                   href={`/r/${subredditName}`}
                 >
                   r/{subredditName}
@@ -54,8 +54,9 @@ export function Post({
             <span>Posted by u/{post.author.username}</span>{" "}
             {formatTimeToNow(new Date(post.createdAt))}
           </div>
+
           <a href={`/r/${subredditName}/post/${post.id}`}>
-            <h1 className="py-2 text-lg font-semibold leading-6 text-gray-900">
+            <h1 className="py-2 text-lg font-semibold leading-6 text-secondary-foreground">
               {post.title}
             </h1>
           </a>
@@ -68,13 +69,13 @@ export function Post({
 
             {postRef.current?.clientHeight === 160 ? (
               // Blur bottom if content is too long
-              <div className="absolute bottom-0 left-0 h-24 w-full bg-gradient-to-t from-white to-transparent"></div>
+              <div className="absolute bottom-0 left-0 h-24 w-full bg-gradient-to-t from-secondary to-transparent"></div>
             ) : null}
           </div>
         </div>
       </div>
 
-      <div className="z-20 bg-gray-50 px-4 py-4 text-sm sm:px-6">
+      <div className="z-20 bg-secondary px-4 py-4 text-sm sm:px-6">
         <Link
           href={`/r/${subredditName}/post/${post.id}`}
           className="flex w-fit items-center gap-2"
