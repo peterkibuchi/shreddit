@@ -35,11 +35,8 @@ export function PostVoteClient({
   }, [userInitialVote]);
 
   const { mutate: vote } = useMutation({
-    mutationFn: async (type: VoteType) => {
-      const payload: PostVoteRequest = {
-        voteType: type,
-        postId: postId,
-      };
+    mutationFn: async (voteType: VoteType) => {
+      const payload: PostVoteRequest = { postId, voteType };
 
       await axios.patch("/api/subreddit/post/vote", payload);
     },
@@ -64,17 +61,18 @@ export function PostVoteClient({
       });
     },
 
-    onMutate: (type: VoteType) => {
-      if (currentVote === type) {
+    onMutate: (voteType) => {
+      if (currentVote === voteType) {
         // User is voting the same way again, so remove their vote
         setCurrentVote(undefined);
-        if (type === "UP") setVoteCount((prev) => prev - 1);
-        else if (type === "DOWN") setVoteCount((prev) => prev + 1);
+        if (voteType === "UP") setVoteCount((prev) => prev - 1);
+        else if (voteType === "DOWN") setVoteCount((prev) => prev + 1);
       } else {
         // User is voting in the opposite direction, so subtract 2
-        setCurrentVote(type);
-        if (type === "UP") setVoteCount((prev) => prev + (currentVote ? 2 : 1));
-        else if (type === "DOWN")
+        setCurrentVote(voteType);
+        if (voteType === "UP")
+          setVoteCount((prev) => prev + (currentVote ? 2 : 1));
+        else if (voteType === "DOWN")
           setVoteCount((prev) => prev - (currentVote ? 2 : 1));
       }
     },
