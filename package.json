@@ -40,7 +40,7 @@
     "clsx": "^2.0.0",
     "date-fns": "^2.30.0",
     "editorjs-react-renderer": "^3.5.1",
-    "lucide-react": "^0.263.0",
+    "lucide-react": "^0.263.1",
     "nanoid": "^4.0.2",
     "next": "^13.4.12",
     "next-auth": "^4.22.3",
