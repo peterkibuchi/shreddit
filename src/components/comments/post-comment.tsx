@@ -85,17 +85,17 @@ export function PostComment({
         />
 
         <div className="ml-2 flex items-center gap-x-2">
-          <p className="text-sm font-medium text-primary-foreground">
+          <p className="text-sm font-medium text-primary">
             u/{comment.author.username}
           </p>
 
-          <p className="max-h-40 truncate text-xs text-muted-foreground">
+          <p className="max-h-40 truncate text-xs text-zinc-500">
             {formatTimeToNow(new Date(comment.createdAt))}
           </p>
         </div>
       </div>
 
-      <p className="mt-2 text-sm text-secondary-foreground">{comment.text}</p>
+      <p className="mt-2 text-sm text-primary">{comment.text}</p>
 
       <div className="flex  items-center gap-2">
         {/* flex-wrap */}
