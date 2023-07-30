@@ -76,7 +76,7 @@ export function UserAccountNav({ user }: UserAccountNavProps) {
           onSelect={(event) => {
             event.preventDefault();
             void signOut({
-              callbackUrl: `${window.location.origin}/sign-in`,
+              callbackUrl: `${window.location.origin}/login`,
             });
           }}
         >

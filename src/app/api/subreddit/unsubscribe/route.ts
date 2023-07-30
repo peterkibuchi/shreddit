@@ -53,7 +53,7 @@ export async function POST(req: NextRequest) {
     }
 
     return new Response(
-      "Could not unsubscribe from subreddit at this time. Please try later",
+      "Could not unsubscribe from subreddit at this time. Please try again later",
       { status: 500 },
     );
   }

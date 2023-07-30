@@ -35,7 +35,7 @@ export function Post({
         <PostVoteClient
           postId={post.id}
           initialVoteCount={voteCount}
-          userInitialVote={currentVote?.type}
+          initialVote={currentVote?.type}
         />
 
         <div className="w-0 flex-1">

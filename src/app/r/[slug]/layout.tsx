@@ -105,8 +105,9 @@ export default async function Layout({
               <Link
                 href={`${slug}/submit`}
                 className={buttonVariants({
-                  variant: "outline",
-                  className: "mb-8 w-full",
+                  variant: "secondary",
+                  className:
+                    "mb-8 w-full text-secondary-foreground hover:backdrop-brightness-100",
                 })}
               >
                 Create Post

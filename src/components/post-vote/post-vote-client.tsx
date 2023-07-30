@@ -16,23 +16,23 @@ import { type PostVoteRequest } from "~/lib/validators/vote";
 interface PostVoteClientProps {
   postId: string;
   initialVoteCount: number;
-  userInitialVote?: VoteType | null;
+  initialVote?: VoteType | null;
 }
 
 export function PostVoteClient({
   postId,
   initialVoteCount,
-  userInitialVote,
+  initialVote,
 }: PostVoteClientProps) {
   const [voteCount, setVoteCount] = useState<number>(initialVoteCount);
-  const [currentVote, setCurrentVote] = useState(userInitialVote);
+  const [currentVote, setCurrentVote] = useState(initialVote);
   const prevVote = usePrevious(currentVote);
   const { loginToast } = useCustomToasts();
 
-  // Ensure client component is in sync with server after `userInitialVote` is populated
+  // Ensure client component is in sync with server after `initialVote` is populated
   useEffect(() => {
-    setCurrentVote(userInitialVote);
-  }, [userInitialVote]);
+    setCurrentVote(initialVote);
+  }, [initialVote]);
 
   const { mutate: vote } = useMutation({
     mutationFn: async (voteType: VoteType) => {
@@ -80,7 +80,7 @@ export function PostVoteClient({
 
   return (
     <div className="flex flex-col gap-4 pb-4 pr-6 sm:w-20 sm:gap-0 sm:pb-0">
-      {/* upvote */}
+      {/* Upvote */}
       <Button
         onClick={() => vote("UP")}
         size="sm"
@@ -94,12 +94,12 @@ export function PostVoteClient({
         />
       </Button>
 
-      {/* score */}
+      {/* Votes */}
       <p className="py-2 text-center text-sm font-medium text-secondary-foreground">
         {voteCount}
       </p>
 
-      {/* downvote */}
+      {/* Downvote */}
       <Button
         onClick={() => vote("DOWN")}
         size="sm"

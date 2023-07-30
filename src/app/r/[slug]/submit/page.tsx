@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
 
-import { PostForm } from "~/components";
+import { Icons, PostForm } from "~/components";
 import { Button } from "~/components/ui/button";
 import { prisma } from "~/server/db";
 
@@ -32,7 +32,11 @@ export default async function CreatePost({ params }: CreatePostProps) {
         </div>
       </div>
 
-      <Suspense>
+      <Suspense
+        fallback={
+          <Icons.spinner className="h-10 w-10 animate-spin self-center text-zinc-500" />
+        }
+      >
         <PostForm subredditId={subreddit.id} />
       </Suspense>
 

@@ -7,7 +7,7 @@ import axios from "axios";
 import { useSession } from "next-auth/react";
 
 import { Icons } from "~/components/icons";
-import { Post } from "~/components/post";
+import { Post } from "~/components/post/post";
 import { INFINITE_SCROLL_PAGINATION_RESULTS } from "~/config";
 import { type ExtendedPost } from "~/types/db";
 
