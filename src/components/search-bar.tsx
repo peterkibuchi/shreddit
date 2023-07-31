@@ -25,6 +25,10 @@ export function SearchBar() {
   const pathname = usePathname();
   const router = useRouter();
 
+  useEffect(() => {
+    setInput("");
+  }, [pathname]);
+
   useOnClickOutside(commandRef, () => {
     setInput("");
   });
@@ -58,10 +62,6 @@ export function SearchBar() {
     queryKey: ["search-query"],
     enabled: false,
   });
-
-  useEffect(() => {
-    setInput("");
-  }, [pathname]);
 
   return (
     <Command
