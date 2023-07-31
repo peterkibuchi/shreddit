@@ -15,4 +15,5 @@ export { SignIn } from "./sign-in";
 export { SignUp } from "./sign-up";
 export { TailwindIndicator } from "./tailwind-indicator";
 export { ThemeProvider } from "./theme-provider";
+export { ToFeedButton } from "./to-feed-button";
 export { UsernameForm } from "./username-form";

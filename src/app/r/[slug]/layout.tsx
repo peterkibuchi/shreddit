@@ -2,7 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { format } from "date-fns";
 
-import { JoinLeaveToggle } from "~/components";
+import { JoinLeaveToggle, ToFeedButton } from "~/components";
 import { buttonVariants } from "~/components/ui/button";
 import { getServerAuthSession } from "~/server/auth";
 import { prisma } from "~/server/db";
@@ -58,7 +58,7 @@ export default async function Layout({
   return (
     <div className="mx-auto h-full max-w-7xl pt-12 sm:container">
       <div>
-        {/* <ToFeedButton /> */}
+        <ToFeedButton />
 
         <div className="grid grid-cols-1 gap-y-4 py-6 md:grid-cols-3 md:gap-x-4">
           <ul className="col-span-2 flex flex-col space-y-6">{children}</ul>
