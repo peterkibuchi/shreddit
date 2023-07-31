@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { Icons } from "~/components/icons";
 import { ModeToggle } from "~/components/mode-toggle";
+import { SearchBar } from "~/components/search-bar";
 import { buttonVariants } from "~/components/ui/button";
 import { UserAccountNav } from "~/components/user-account-nav";
 import { getServerAuthSession } from "~/server/auth";
@@ -12,11 +13,16 @@ export async function Navbar() {
   return (
     <div className="fixed inset-x-0 top-0 z-[10] h-fit border-b bg-inherit py-2">
       <div className="container mx-auto flex h-full max-w-7xl items-center justify-between gap-2">
+        {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <Icons.logo className="h-8 w-8 sm:h-6 sm:w-6" />
           <span className="hidden text-sm font-medium md:block">Shreddit</span>
         </Link>
 
+        {/* Search Bar */}
+        <SearchBar />
+
+        {/* Actions */}
         <div className="flex justify-between gap-2">
           <ModeToggle />
 
