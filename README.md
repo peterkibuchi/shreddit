@@ -1,28 +1,84 @@
-# Create T3 App
+# Shreddit
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+> Modern Fullstack Reddit Clone built off Next.js 13 & TypeScript.
+> Live demo [_here_](https://shreddit.vercel.app).
 
-## What's next? How do I make an app with this?
+## Table of Contents
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+- [Technologies Used](#technologies-used)
+- [Features](#features)
+- [Quickstart](#quickstart)
+- [Project Status](#project-status)
+- [Acknowledgements](#acknowledgements)
+- [License](#license)
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+## Technologies Used
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+- TypeScript
+- React 18
+- Next.js 13
+- NextAuth.js
+- Prisma
+- Shadcn UI
+- Tailwind CSS
 
-## Learn More
+## Features
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+- Infinite scrolling for loading posts dynamically
+- A beautiful and highly functional post editor
+- Light and Dark modes
+- Authentication using NextAuth & GitHub
+- Custom feed for authenticated users
+- Image uploads & link previews
+- Full comment functionality with nested replies
+- Optimistic updates for a great user experience
+- New `/app` directory with React Server Components
+- Data fetching and mutation with React Query
+- Schema declarations and validations with Zod
+- Advanced caching using Upstash Redis
+- ... and much more
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+## Quickstart
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+To get it running, follow the steps below:
 
-## How do I deploy this?
+1. Clone repository and install dependencies:
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+```bash
+# Clone repository
+git clone git@github.com:peterkibuchi/shreddit.git
+
+# Install dependencies
+pnpm i
+```
+
+2. Copy `.env.example` to `.env` and update the variables.
+
+```bash
+cp .env.example .env
+```
+
+3. Sync the Prisma schema with your database
+
+```bash
+pnpm prisma db push
+```
+
+4. Start the development server:
+
+```bash
+pnpm dev
+```
+
+## Project Status
+
+Project is: _complete_.
+
+## Acknowledgements
+
+- This is a [T3 Stack](https://create.t3.gg) project bootstrapped with `create-t3-app`.
+- Many thanks to [Josh](https://www.youtube.com/@joshtriedcoding) for inspiring this project.
+
+## License
+
+This project is open source and available under the [MIT License](./LICENSE).
