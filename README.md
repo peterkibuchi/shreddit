@@ -54,31 +54,31 @@ To run it locally, follow the steps below:
 
 1. Clone repository and install the dependencies:
 
-```bash
-# Clone repository
-git clone git@github.com:peterkibuchi/shreddit.git
+   ```bash
+   # Clone repository
+   git clone git@github.com:peterkibuchi/shreddit.git
 
-# Install dependencies
-pnpm i
-```
+   # Install dependencies
+   pnpm i
+   ```
 
 2. Copy `.env.example` to `.env` and update the variables.
 
-```bash
-cp .env.example .env
-```
+   ```bash
+   cp .env.example .env
+   ```
 
 3. Sync the Prisma schema with your database
 
-```bash
-pnpm prisma db push
-```
+   ```bash
+   pnpm prisma db push
+   ```
 
 4. Start the development server:
 
-```bash
-pnpm dev
-```
+   ```bash
+   pnpm dev
+   ```
 
 ## Project Status
 
