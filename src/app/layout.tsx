@@ -27,24 +27,28 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  keywords: ["Shreddit"],
-  creator: "Peter Kibuchi",
-  authors: [
-    {
-      name: "Peter Kibuchi",
-      url: "https://github.com/peterkibuchi",
-    },
-  ],
+  creator: siteConfig.creator,
+  authors: siteConfig.authors,
+  keywords: siteConfig.keywords,
   icons: {
     icon: "/favicon.ico",
   },
+  // manifest: `${siteConfig.url}/site.webmanifest`,
   openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: siteConfig.url,
     title: siteConfig.name,
     description: siteConfig.description,
     siteName: siteConfig.name,
+    url: siteConfig.url,
+    type: "website",
+    locale: "en_US",
+    // images: [
+    //   {
+    //     url: siteConfig.ogImage,
+    //     width: 1200,
+    //     height: 630,
+    //     alt: siteConfig.name,
+    //   },
+    // ],
   },
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "white" },
@@ -55,8 +59,9 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     // images: [`${siteConfig.url}/og.jpg`],
+    // creator: "@example",
   },
-  metadataBase: new URL("https://shreddit.vercel.app"),
+  metadataBase: new URL(siteConfig.url),
 };
 
 export default function RootLayout({ authModal, children }: RootLayoutProps) {
