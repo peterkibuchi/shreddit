@@ -36,7 +36,7 @@
     "@uploadthing/react": "^5.6.0",
     "@upstash/redis": "^1.22.0",
     "@vercel/analytics": "^1.0.2",
-    "axios": "^1.4.0",
+    "axios": "^1.5.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "cmdk": "^0.2.0",
