@@ -25,7 +25,7 @@ dependencies:
     version: 2.2.2
   '@hookform/resolvers':
     specifier: ^3.3.1
-    version: 3.3.1(react-hook-form@7.45.4)
+    version: 3.3.1(react-hook-form@7.46.1)
   '@mantine/hooks':
     specifier: ^6.0.20
     version: 6.0.20(react@18.2.0)
@@ -114,8 +114,8 @@ dependencies:
     specifier: ^14.2.3
     version: 14.2.3(react@18.2.0)
   react-hook-form:
-    specifier: ^7.45.4
-    version: 7.45.4(react@18.2.0)
+    specifier: ^7.46.1
+    version: 7.46.1(react@18.2.0)
   react-textarea-autosize:
     specifier: ^8.5.3
     version: 8.5.3(@types/react@18.2.21)(react@18.2.0)
@@ -530,12 +530,12 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /@hookform/resolvers@3.3.1(react-hook-form@7.45.4):
+  /@hookform/resolvers@3.3.1(react-hook-form@7.46.1):
     resolution: {integrity: sha512-K7KCKRKjymxIB90nHDQ7b9nli474ru99ZbqxiqDAWYsYhOsU3/4qLxW91y+1n04ic13ajjZ66L3aXbNef8PELQ==}
     peerDependencies:
       react-hook-form: ^7.0.0
     dependencies:
-      react-hook-form: 7.45.4(react@18.2.0)
+      react-hook-form: 7.46.1(react@18.2.0)
     dev: false
 
   /@humanwhocodes/config-array@0.11.11:
@@ -4104,8 +4104,8 @@ packages:
       react: 18.2.0
     dev: false
 
-  /react-hook-form@7.45.4(react@18.2.0):
-    resolution: {integrity: sha512-HGDV1JOOBPZj10LB3+OZgfDBTn+IeEsNOKiq/cxbQAIbKaiJUe/KV8DBUzsx0Gx/7IG/orWqRRm736JwOfUSWQ==}
+  /react-hook-form@7.46.1(react@18.2.0):
+    resolution: {integrity: sha512-0GfI31LRTBd5tqbXMGXT1Rdsv3rnvy0FjEk8Gn9/4tp6+s77T7DPZuGEpBRXOauL+NhyGT5iaXzdIM2R6F/E+w==}
     engines: {node: '>=12.22.0'}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18
