@@ -60,8 +60,8 @@ dependencies:
     specifier: ^4.35.3
     version: 4.35.3(react-dom@18.2.0)(react@18.2.0)
   '@uploadthing/react':
-    specifier: ^5.6.0
-    version: 5.6.0(next@13.4.19)(react@18.2.0)(uploadthing@5.6.0)(zod@3.22.2)
+    specifier: ^5.6.1
+    version: 5.6.1(next@13.4.19)(react@18.2.0)(uploadthing@5.6.0)(zod@3.22.2)
   '@upstash/redis':
     specifier: ^1.22.0
     version: 1.22.0
@@ -1805,8 +1805,8 @@ packages:
     resolution: {integrity: sha512-UDySsPbdi7wp52WG7mp5CiZwaTvokDubqhm1xhFm73Bqhp0PsGbwSSF5PdCXH4fe8Y4EKGrMyWQ4i1fF9+DVVQ==}
     dev: false
 
-  /@uploadthing/react@5.6.0(next@13.4.19)(react@18.2.0)(uploadthing@5.6.0)(zod@3.22.2):
-    resolution: {integrity: sha512-Yu7uODrgZrobz2vSzlvyWrScmzj35sao34v49HPfOCYBQS4npuvUz0EgMjU320OA8uFcBBnmPvIqtzUPc2wyxg==}
+  /@uploadthing/react@5.6.1(next@13.4.19)(react@18.2.0)(uploadthing@5.6.0)(zod@3.22.2):
+    resolution: {integrity: sha512-uVd4I26OudpUcikobDFBMl9mG0vlhdXmK57oidCIrvfgNfKZOehpW+pqe1nUWE8HoYquJ1iK4OrmrfX8hOK2MA==}
     peerDependencies:
       next: '*'
       react: ^17.0.2 || ^18.0.0
