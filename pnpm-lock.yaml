@@ -61,7 +61,7 @@ dependencies:
     version: 4.35.3(react-dom@18.2.0)(react@18.2.0)
   '@uploadthing/react':
     specifier: ^5.6.1
-    version: 5.6.1(next@13.4.19)(react@18.2.0)(uploadthing@5.6.0)(zod@3.22.2)
+    version: 5.6.1(next@13.4.19)(react@18.2.0)(uploadthing@5.6.1)(zod@3.22.2)
   '@upstash/redis':
     specifier: ^1.22.0
     version: 1.22.0
@@ -123,8 +123,8 @@ dependencies:
     specifier: ^1.14.0
     version: 1.14.0
   uploadthing:
-    specifier: ^5.6.0
-    version: 5.6.0(zod@3.22.2)
+    specifier: ^5.6.1
+    version: 5.6.1(zod@3.22.2)
   zod:
     specifier: ^3.22.2
     version: 3.22.2
@@ -1805,7 +1805,7 @@ packages:
     resolution: {integrity: sha512-UDySsPbdi7wp52WG7mp5CiZwaTvokDubqhm1xhFm73Bqhp0PsGbwSSF5PdCXH4fe8Y4EKGrMyWQ4i1fF9+DVVQ==}
     dev: false
 
-  /@uploadthing/react@5.6.1(next@13.4.19)(react@18.2.0)(uploadthing@5.6.0)(zod@3.22.2):
+  /@uploadthing/react@5.6.1(next@13.4.19)(react@18.2.0)(uploadthing@5.6.1)(zod@3.22.2):
     resolution: {integrity: sha512-uVd4I26OudpUcikobDFBMl9mG0vlhdXmK57oidCIrvfgNfKZOehpW+pqe1nUWE8HoYquJ1iK4OrmrfX8hOK2MA==}
     peerDependencies:
       next: '*'
@@ -1821,7 +1821,7 @@ packages:
       next: 13.4.19(@babel/core@7.22.9)(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
       tailwind-merge: 1.14.0
-      uploadthing: 5.6.0(zod@3.22.2)
+      uploadthing: 5.6.1(zod@3.22.2)
     transitivePeerDependencies:
       - '@uploadthing/mime-types'
       - zod
@@ -4666,8 +4666,8 @@ packages:
       escalade: 3.1.1
       picocolors: 1.0.0
 
-  /uploadthing@5.6.0(zod@3.22.2):
-    resolution: {integrity: sha512-IMJc33MheVlF7tTmAEfBTtqSoN9DVJgdfcKI8Ci+cmbcQHNzMAUi8+UarKtj9/HpdRiA+SeykQAiMK0bKeIqGA==}
+  /uploadthing@5.6.1(zod@3.22.2):
+    resolution: {integrity: sha512-lWVMCoAmZ33mahV6NS7oW+eQl++jnYEuaR3zh9PlrEt6P8lkl3GPDUE5iWywBx+pK9HewIqZvaZXQvzKOjOlMg==}
     dependencies:
       '@uploadthing/mime-types': 0.2.1
       '@uploadthing/shared': 5.2.2(@uploadthing/mime-types@0.2.1)(zod@3.22.2)
