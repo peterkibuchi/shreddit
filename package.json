@@ -68,7 +68,7 @@
     "@types/lodash.debounce": "^4.0.7",
     "@types/node": "^18.18.0",
     "@types/prettier": "^2.7.3",
-    "@types/react": "^18.2.22",
+    "@types/react": "^18.2.23",
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.7.3",
     "@typescript-eslint/parser": "^6.7.3",
