@@ -55,7 +55,7 @@
     "react-textarea-autosize": "^8.5.3",
     "tailwind-merge": "^1.14.0",
     "uploadthing": "^5.7.0",
-    "zod": "^3.22.2"
+    "zod": "^3.22.3"
   },
   "devDependencies": {
     "@editorjs/code": "^2.8.0",
