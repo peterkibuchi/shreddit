@@ -63,8 +63,8 @@ dependencies:
     specifier: ^5.6.2
     version: 5.6.2(next@13.5.4)(react@18.2.0)(uploadthing@5.7.1)(zod@3.22.4)
   '@upstash/redis':
-    specifier: ^1.22.1
-    version: 1.22.1
+    specifier: ^1.23.3
+    version: 1.23.3
   '@vercel/analytics':
     specifier: ^1.1.0
     version: 1.1.0
@@ -1927,8 +1927,8 @@ packages:
       zod: 3.22.4
     dev: false
 
-  /@upstash/redis@1.22.1:
-    resolution: {integrity: sha512-7ec2eCMkVxZzuHNb+hPKonX4b/Pu0BdDeSBsEy+jKIqiweXzCs5Dpu9642vJgf57YnEsfwgXnQMVEataarvyeQ==}
+  /@upstash/redis@1.23.3:
+    resolution: {integrity: sha512-6b66nGdkbWl/BZ4Hs9cG9szNNXF8UDgPTUyC/4fcZvDLTs552SlItMSQnmwAKMz0EHjpbVH51VQ4waHNnDy/Xw==}
     dependencies:
       isomorphic-fetch: 3.0.0
     transitivePeerDependencies:
