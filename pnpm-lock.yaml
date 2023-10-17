@@ -18,8 +18,8 @@ dependencies:
     specifier: ^1.8.0
     version: 1.8.0
   '@editorjs/paragraph':
-    specifier: ^2.11.1
-    version: 2.11.1
+    specifier: ^2.11.2
+    version: 2.11.2
   '@editorjs/table':
     specifier: ^2.2.2
     version: 2.2.2
@@ -454,8 +454,8 @@ packages:
       '@codexteam/icons': 0.0.4
     dev: false
 
-  /@editorjs/paragraph@2.11.1:
-    resolution: {integrity: sha512-OekbO6/47yTV7n6+uF/Qw2/blsI+QpveqdFUK5dh0Hq6hfKMjBYkENiShmEUKP69EbI9BQrlMNVnrmz8W4V2jw==}
+  /@editorjs/paragraph@2.11.2:
+    resolution: {integrity: sha512-DWHGEV2aBCDyTv1fVAAEnwSeY6U6yY0MtIl/tNuYInZ/RDOrs5y5rD3wuAdlIcLKCvf39XDehQ2zWhFDoq1RDQ==}
     dependencies:
       '@codexteam/icons': 0.0.4
     dev: false
