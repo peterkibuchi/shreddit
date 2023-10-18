@@ -134,8 +134,8 @@ devDependencies:
     specifier: ^2.8.0
     version: 2.8.0
   '@editorjs/image':
-    specifier: ^2.8.1
-    version: 2.8.1
+    specifier: ^2.8.2
+    version: 2.8.2
   '@editorjs/inline-code':
     specifier: ^1.4.0
     version: 1.4.0
@@ -484,8 +484,8 @@ packages:
       '@codexteam/icons': 0.0.5
     dev: false
 
-  /@editorjs/image@2.8.1:
-    resolution: {integrity: sha512-4WscDAoi6OO0F6L7N1mkQymADwj8hHgH/ICk5wGRPdkesUZW1TgldX8XvSmy+f5VylsEi3F/gUggaZsrYxu2sA==}
+  /@editorjs/image@2.8.2:
+    resolution: {integrity: sha512-zWDBEzCuTbdXClgq4ilHDbaKNTl+6hxuuU0KpB4AxizqaTkaDOLsJha+vt7kSTKfpTtVDw1OQMnxI7j4LtAOJw==}
     dependencies:
       '@codexteam/icons': 0.0.6
     dev: true
