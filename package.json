@@ -65,7 +65,7 @@
     "@editorjs/quote": "^2.5.0",
     "@ianvs/prettier-plugin-sort-imports": "^4.1.1",
     "@types/eslint": "^8.44.5",
-    "@types/lodash.debounce": "^4.0.7",
+    "@types/lodash.debounce": "^4.0.8",
     "@types/node": "^18.18.5",
     "@types/prettier": "^2.7.3",
     "@types/react": "^18.2.28",
