@@ -27,8 +27,8 @@ dependencies:
     specifier: ^3.3.2
     version: 3.3.2(react-hook-form@7.47.0)
   '@mantine/hooks':
-    specifier: ^7.1.5
-    version: 7.1.5(react@18.2.0)
+    specifier: ^7.1.6
+    version: 7.1.6(react@18.2.0)
   '@next-auth/prisma-adapter':
     specifier: ^1.0.7
     version: 1.0.7(@prisma/client@5.5.2)(next-auth@4.24.3)
@@ -661,8 +661,8 @@ packages:
       '@jridgewell/resolve-uri': 3.1.0
       '@jridgewell/sourcemap-codec': 1.4.14
 
-  /@mantine/hooks@7.1.5(react@18.2.0):
-    resolution: {integrity: sha512-LuKlJ5VDLYBMcleyKcL6nvcJZQaeJF4mIU5ryEiucy7IleZoD+lqWwNC1VAAN1fsjBRQfhFtFoRihUdIy/vDCA==}
+  /@mantine/hooks@7.1.6(react@18.2.0):
+    resolution: {integrity: sha512-Yctcv21ttLYpcN/5gt2xCHB88U1rPNqHBkLVd7DMAB72LUkr4wp6xAVtELl576n7wHf36nshSkFCyNXh9Gm3eA==}
     peerDependencies:
       react: ^18.2.0
     dependencies:
