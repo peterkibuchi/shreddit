@@ -63,8 +63,8 @@ dependencies:
     specifier: ^5.7.0
     version: 5.7.0(next@14.0.0)(react@18.2.0)(uploadthing@5.7.2)(zod@3.22.4)
   '@upstash/redis':
-    specifier: ^1.24.1
-    version: 1.24.1
+    specifier: ^1.24.2
+    version: 1.24.2
   '@vercel/analytics':
     specifier: ^1.1.1
     version: 1.1.1
@@ -1982,8 +1982,8 @@ packages:
       zod: 3.22.4
     dev: false
 
-  /@upstash/redis@1.24.1:
-    resolution: {integrity: sha512-AgVNwWZyUNW7GJX9oXPOdYyHCZn2K05p+BQ22Iiiyefk9QY1zIir0K0CLQWoY9bx3Ljj3SA8RQgusv65fNMdeQ==}
+  /@upstash/redis@1.24.2:
+    resolution: {integrity: sha512-R2kqb6akTTO8F1fVXoqc3+7ueyKOgen2Q0ObHxNvRQwc1cN4xggxuuQGYYvGiMOVfmMrkGvVRKLmVtmkGjC/2g==}
     dependencies:
       '@biomejs/biome': 1.3.1
       crypto-js: 4.2.0
