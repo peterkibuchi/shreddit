@@ -34,7 +34,7 @@
     "@t3-oss/env-nextjs": "^0.7.1",
     "@tanstack/react-query": "^4.36.1",
     "@uploadthing/react": "^5.7.0",
-    "@upstash/redis": "^1.24.1",
+    "@upstash/redis": "^1.24.2",
     "@vercel/analytics": "^1.1.1",
     "axios": "^1.6.0",
     "class-variance-authority": "^0.7.0",
