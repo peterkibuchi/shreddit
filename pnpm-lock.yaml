@@ -12,8 +12,8 @@ dependencies:
     specifier: ^2.6.0
     version: 2.6.0
   '@editorjs/header':
-    specifier: ^2.7.0
-    version: 2.7.0
+    specifier: ^2.8.0
+    version: 2.8.0
   '@editorjs/list':
     specifier: ^1.8.0
     version: 1.8.0
@@ -485,8 +485,8 @@ packages:
     resolution: {integrity: sha512-h1Fk26WdRJJGA+eou4ZemcQ4tInmdcsOaoEwvv8+YoM3WWtxJDycb8emqCjfvxGFivT/ZcZFAdGR2VU6MCjzzw==}
     dev: false
 
-  /@editorjs/header@2.7.0:
-    resolution: {integrity: sha512-4fGKGe2ZYblVqR/P/iw5ieG00uXInFgNMftBMqJRYcB2hUPD30kuu7Sn6eJDcLXoKUMOeqi8Z2AlUxYAmvw7zQ==}
+  /@editorjs/header@2.8.0:
+    resolution: {integrity: sha512-Dns5J5U22SH5KnDGh7VPP5xWd6TDHc8UHw61m7UY9SFIjjEigWLeTVfvD/ObvHuHdDE4I2VeJY+C4sTp5l1t3g==}
     dependencies:
       '@codexteam/icons': 0.0.5
     dev: false
