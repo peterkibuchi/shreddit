@@ -61,7 +61,7 @@
     "@editorjs/code": "^2.8.0",
     "@editorjs/image": "^2.8.2",
     "@editorjs/inline-code": "^1.4.0",
-    "@editorjs/link": "^2.5.0",
+    "@editorjs/link": "^2.6.0",
     "@editorjs/quote": "^2.5.0",
     "@ianvs/prettier-plugin-sort-imports": "^4.1.1",
     "@types/eslint": "^8.44.7",
