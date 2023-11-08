@@ -140,8 +140,8 @@ devDependencies:
     specifier: ^1.4.0
     version: 1.4.0
   '@editorjs/link':
-    specifier: ^2.6.0
-    version: 2.6.0
+    specifier: ^2.6.1
+    version: 2.6.1
   '@editorjs/quote':
     specifier: ^2.5.0
     version: 2.5.0
@@ -503,8 +503,8 @@ packages:
       '@codexteam/icons': 0.0.5
     dev: true
 
-  /@editorjs/link@2.6.0:
-    resolution: {integrity: sha512-M1fyLJxfNnUotRhKt7DZwMr5GsdS1t7aOItn5EG070/14OuLz8nbSxv7IDF0ZiR3JALxwMDvgRDNPmoEJJlZng==}
+  /@editorjs/link@2.6.1:
+    resolution: {integrity: sha512-CFQmFv87v+O7EmHn9H/ialz959/pIs2nqaWJ0LeLAschU0BSqPAoaqE2szoWvvvAcobFox6WUmjoW/4CpoD5wQ==}
     dependencies:
       '@babel/runtime': 7.23.2
       '@codexteam/icons': 0.0.4
