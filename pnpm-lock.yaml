@@ -137,8 +137,8 @@ devDependencies:
     specifier: ^2.9.0
     version: 2.9.0
   '@editorjs/inline-code':
-    specifier: ^1.4.0
-    version: 1.4.0
+    specifier: ^1.5.0
+    version: 1.5.0
   '@editorjs/link':
     specifier: ^2.6.2
     version: 2.6.2
@@ -497,8 +497,8 @@ packages:
       '@codexteam/icons': 0.0.6
     dev: true
 
-  /@editorjs/inline-code@1.4.0:
-    resolution: {integrity: sha512-nJJx2eBgQyml7U8MdMdJNFY2RgZCOuvvXHEW73xsdu36ZXCd44eAo7vq1S5Jz9l8bC676SvNbRfeH/nojXK37A==}
+  /@editorjs/inline-code@1.5.0:
+    resolution: {integrity: sha512-5i6BCOG8eOg4/6qGoLJuL6XSZZg834zIByDW8K80doM1L7ss/VqtLY0nrB2Q5bfs1KA0tOlVHOfjE4JD4438FQ==}
     dependencies:
       '@codexteam/icons': 0.0.5
     dev: true
