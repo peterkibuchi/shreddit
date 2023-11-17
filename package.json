@@ -58,7 +58,7 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@editorjs/code": "^2.8.0",
+    "@editorjs/code": "^2.9.0",
     "@editorjs/image": "^2.9.0",
     "@editorjs/inline-code": "^1.5.0",
     "@editorjs/link": "^2.6.2",
