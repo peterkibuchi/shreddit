@@ -43,7 +43,7 @@
     "date-fns": "^3.0.6",
     "editorjs-react-renderer": "^3.5.1",
     "lodash.debounce": "^4.0.8",
-    "lucide-react": "^0.299.0",
+    "lucide-react": "^0.300.0",
     "nanoid": "^5.0.4",
     "next": "^14.0.4",
     "next-auth": "^4.24.5",
