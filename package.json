@@ -38,7 +38,7 @@
     "@vercel/analytics": "^1.1.1",
     "axios": "^1.6.3",
     "class-variance-authority": "^0.7.0",
-    "clsx": "^2.0.0",
+    "clsx": "^2.1.0",
     "cmdk": "^0.2.0",
     "date-fns": "^3.0.6",
     "editorjs-react-renderer": "^3.5.1",
