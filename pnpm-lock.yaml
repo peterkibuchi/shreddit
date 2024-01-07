@@ -61,7 +61,7 @@ dependencies:
     version: 4.36.1(react-dom@18.2.0)(react@18.2.0)
   '@uploadthing/react':
     specifier: ^5.7.0
-    version: 5.7.0(next@14.0.4)(react@18.2.0)(uploadthing@5.7.4)(zod@3.22.4)
+    version: 5.7.0(next@14.0.4)(react@18.2.0)(uploadthing@6.1.1)(zod@3.22.4)
   '@upstash/redis':
     specifier: ^1.28.0
     version: 1.28.0
@@ -123,8 +123,8 @@ dependencies:
     specifier: ^2.2.0
     version: 2.2.0
   uploadthing:
-    specifier: ^5.7.4
-    version: 5.7.4
+    specifier: ^6.1.1
+    version: 6.1.1
   zod:
     specifier: ^3.22.4
     version: 3.22.4
@@ -1904,7 +1904,7 @@ packages:
     resolution: {integrity: sha512-ZUo1JHOPPMZDsUw1mOhhVDIvJGlsjj6T0xJ/YJtulyJwL43S9B5pxg1cHcRuTEgjaxj7B55jiqQ6r9mDrrjH9A==}
     dev: false
 
-  /@uploadthing/react@5.7.0(next@14.0.4)(react@18.2.0)(uploadthing@5.7.4)(zod@3.22.4):
+  /@uploadthing/react@5.7.0(next@14.0.4)(react@18.2.0)(uploadthing@6.1.1)(zod@3.22.4):
     resolution: {integrity: sha512-rSBzoC2eMRM2d6Mpis6RXfo1Y5JsV7oJanTmaVdltFLRxbO/4lwK1kvHM4qwDUvn01UpxBtcVayimMBXNJ0V8Q==}
     peerDependencies:
       next: '*'
@@ -1920,7 +1920,7 @@ packages:
       next: 14.0.4(@babel/core@7.22.9)(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
       tailwind-merge: 1.14.0
-      uploadthing: 5.7.4
+      uploadthing: 6.1.1
     transitivePeerDependencies:
       - '@uploadthing/mime-types'
       - zod
@@ -1938,8 +1938,8 @@ packages:
       zod: 3.22.4
     dev: false
 
-  /@uploadthing/shared@5.2.7(@uploadthing/mime-types@0.2.2):
-    resolution: {integrity: sha512-gc+i66m0vPQpy5PC783iq1koE8Fm9lFTd3uPrJAr7kXwpNRteJs4dnu6etDkY8EilTjMFA6w4js/AhW8AUDuQg==}
+  /@uploadthing/shared@6.0.3(@uploadthing/mime-types@0.2.2):
+    resolution: {integrity: sha512-gATWAg7cClqatJMDDaP0s9krijrsY5193ymRZDNkNbi0H8uH70/pP2W/7blV5dRNn6lwHJqL2LaHNcUounBd5Q==}
     peerDependencies:
       '@uploadthing/mime-types': ^0.2.2
     peerDependenciesMeta:
@@ -4933,12 +4933,12 @@ packages:
       escalade: 3.1.1
       picocolors: 1.0.0
 
-  /uploadthing@5.7.4:
-    resolution: {integrity: sha512-8pTPznWTUlvWRxwWME2Eo6A1VcpvjskRcxzx7aQ45yPjh1yVFZ9RUKG1sjBTNSJCArMdbeg5wlhJT5S2XGr/8Q==}
+  /uploadthing@6.1.1:
+    resolution: {integrity: sha512-DJJMNU0T5v+oidfyy5sw6KADvaDCYzF13BEgvy6ETfy6dnr9yoCkVnE9gzcH1cPpTSpFmoneG7oZGtIAfI1Ehg==}
     engines: {node: '>=18.13.0'}
     dependencies:
       '@uploadthing/mime-types': 0.2.2
-      '@uploadthing/shared': 5.2.7(@uploadthing/mime-types@0.2.2)
+      '@uploadthing/shared': 6.0.3(@uploadthing/mime-types@0.2.2)
     dev: false
 
   /uri-js@4.4.1:
