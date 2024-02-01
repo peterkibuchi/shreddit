@@ -63,8 +63,8 @@ dependencies:
     specifier: ^5.7.0
     version: 5.7.0(next@14.1.0)(react@18.2.0)(uploadthing@5.7.4)(zod@3.22.4)
   '@upstash/redis':
-    specifier: ^1.28.2
-    version: 1.28.2
+    specifier: ^1.28.3
+    version: 1.28.3
   '@vercel/analytics':
     specifier: ^1.1.2
     version: 1.1.2
@@ -1976,8 +1976,8 @@ packages:
       '@uploadthing/mime-types': 0.2.2
     dev: false
 
-  /@upstash/redis@1.28.2:
-    resolution: {integrity: sha512-e4HmmCji6kE6UnriU92sAVGLQcRYAB4fXSPXls08cjW7zdE/wFaDfhAGi1/T4/wUN50bAy/lpHwW4bMkI2EAcw==}
+  /@upstash/redis@1.28.3:
+    resolution: {integrity: sha512-IduU0zrxVKO0z4D+usJUP/VZRYkbbbSoAdj4WYwgijjhc1nxhRZEtktZ8ueTyXT4dAatJ+gDKIIbVSVIiB1xBw==}
     dependencies:
       crypto-js: 4.2.0
     dev: false
