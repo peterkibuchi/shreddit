@@ -23,19 +23,14 @@ export const editorTools = {
       uploader: {
         async uploadByFile(file: File) {
           // Upload to uploadthing
-          const [res] = await uploadFiles({
-            endpoint: "imageUploader",
-            files: [file],
-          });
+          const [res] = await uploadFiles("imageUploader", { files: [file] });
 
-          if (res) {
-            return {
-              success: 1,
-              file: {
-                url: res.fileUrl,
-              },
-            };
-          }
+          return {
+            success: 1,
+            file: {
+              url: res?.url,
+            },
+          };
         },
       },
     },

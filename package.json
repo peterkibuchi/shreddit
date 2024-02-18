@@ -33,7 +33,7 @@
     "@radix-ui/react-toast": "^1.1.5",
     "@t3-oss/env-nextjs": "^0.8.0",
     "@tanstack/react-query": "^4.36.1",
-    "@uploadthing/react": "^5.7.0",
+    "@uploadthing/react": "^6.2.3",
     "@upstash/redis": "^1.28.4",
     "@vercel/analytics": "^1.2.0",
     "axios": "^1.6.7",
@@ -54,7 +54,7 @@
     "react-hook-form": "^7.50.1",
     "react-textarea-autosize": "^8.5.3",
     "tailwind-merge": "^2.2.1",
-    "uploadthing": "^5.7.4",
+    "uploadthing": "^6.4.0",
     "zod": "^3.22.4"
   },
   "devDependencies": {
