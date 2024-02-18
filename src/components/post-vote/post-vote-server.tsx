@@ -33,8 +33,9 @@ export async function PostVoteServer({
       return acc;
     }, 0);
 
-    currentVote = post.votes.find((vote) => vote.userId === session?.user?.id)
-      ?.type;
+    currentVote = post.votes.find(
+      (vote) => vote.userId === session?.user?.id,
+    )?.type;
   } else {
     // Passed as props if we already have the data, otherwise
     // the `getData` function is passed and invoked above
