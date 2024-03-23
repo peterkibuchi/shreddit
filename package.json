@@ -15,7 +15,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@editorjs/editorjs": "^2.29.0",
+    "@editorjs/editorjs": "^2.29.1",
     "@editorjs/embed": "^2.7.0",
     "@editorjs/header": "^2.8.1",
     "@editorjs/list": "^1.9.0",

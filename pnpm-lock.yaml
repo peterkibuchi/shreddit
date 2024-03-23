@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@editorjs/editorjs':
-    specifier: ^2.29.0
-    version: 2.29.0
+    specifier: ^2.29.1
+    version: 2.29.1
   '@editorjs/embed':
     specifier: ^2.7.0
     version: 2.7.0
@@ -433,8 +433,8 @@ packages:
       '@codexteam/icons': 0.0.5
     dev: true
 
-  /@editorjs/editorjs@2.29.0:
-    resolution: {integrity: sha512-w2BVboSHokMBd/cAOZn0UU328o3gSZ8XUvFPA2e9+ciIGKILiRSPB70kkNdmhHkuNS3q2px+vdaIFaywBl7wGA==}
+  /@editorjs/editorjs@2.29.1:
+    resolution: {integrity: sha512-WRT2pCfikMsvySQJqpCU21LfTZaPuxUWsDO8aFGrPx4MKzOR9D+Ur4mNb3jq0FXx2EMqvIWfTyFixJxtjGHTyQ==}
     dev: false
 
   /@editorjs/embed@2.7.0:
