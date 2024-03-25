@@ -61,7 +61,7 @@ dependencies:
     version: 4.36.1(react-dom@18.2.0)(react@18.2.0)
   '@uploadthing/react':
     specifier: ^6.4.1
-    version: 6.4.1(next@14.1.4)(react@18.2.0)(uploadthing@6.6.0)
+    version: 6.4.1(next@14.1.4)(react@18.2.0)(uploadthing@6.7.0)
   '@upstash/redis':
     specifier: ^1.29.0
     version: 1.29.0
@@ -123,8 +123,8 @@ dependencies:
     specifier: ^2.2.2
     version: 2.2.2
   uploadthing:
-    specifier: ^6.6.0
-    version: 6.6.0(next@14.1.4)(tailwindcss@3.4.1)
+    specifier: ^6.7.0
+    version: 6.7.0(next@14.1.4)(tailwindcss@3.4.1)
   zod:
     specifier: ^3.22.4
     version: 3.22.4
@@ -1767,7 +1767,7 @@ packages:
     resolution: {integrity: sha512-mB7XAKy5ARltUWZxb2oE0OwUW5Wplxi7Z3cqCvf/ZFvQ1E6lcGVNNKbmJI8c4GaONyEYnalo0Yl228zzHzyZnQ==}
     dev: false
 
-  /@uploadthing/react@6.4.1(next@14.1.4)(react@18.2.0)(uploadthing@6.6.0):
+  /@uploadthing/react@6.4.1(next@14.1.4)(react@18.2.0)(uploadthing@6.7.0):
     resolution: {integrity: sha512-e6/2U97B+rAiCjEfAEf5RfFy6sxXrhsOHHkT4ssMbbpGihbAVn5fFvEYT4q3GulQNAEfZE7JudEapbHKyADWrw==}
     peerDependencies:
       next: '*'
@@ -1778,30 +1778,18 @@ packages:
         optional: true
     dependencies:
       '@uploadthing/dropzone': 0.2.1(react@18.2.0)
-      '@uploadthing/shared': 6.4.0
+      '@uploadthing/shared': 6.4.0(@uploadthing/mime-types@0.2.6)
       file-selector: 0.6.0
       next: 14.1.4(@babel/core@7.24.0)(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
       tailwind-merge: 2.2.2
-      uploadthing: 6.6.0(next@14.1.4)(tailwindcss@3.4.1)
+      uploadthing: 6.7.0(next@14.1.4)(tailwindcss@3.4.1)
     transitivePeerDependencies:
       - '@uploadthing/mime-types'
       - solid-js
     dev: false
 
-  /@uploadthing/shared@6.3.4(@uploadthing/mime-types@0.2.6):
-    resolution: {integrity: sha512-qMf7BiwQth14Gxt2Zerkrbpy/gIHUIkxBz7aN+OEh1T+z2gv8qLRhMXoWFaU56Q+3/NegdR6J+9jwPWc9WwMug==}
-    peerDependencies:
-      '@uploadthing/mime-types': 0.2.6
-    peerDependenciesMeta:
-      '@uploadthing/mime-types':
-        optional: true
-    dependencies:
-      '@uploadthing/mime-types': 0.2.6
-      std-env: 3.7.0
-    dev: false
-
-  /@uploadthing/shared@6.4.0:
+  /@uploadthing/shared@6.4.0(@uploadthing/mime-types@0.2.6):
     resolution: {integrity: sha512-N2fYHl5pfOjrRyEXFNyKf8gLqYiSSsPE71Vky7Efbze/tgCcX9J4H4UXPSHS4Ty2w6A2xeZgGtJRjCXv9lXjaQ==}
     peerDependencies:
       '@uploadthing/mime-types': 0.2.6
@@ -1809,6 +1797,7 @@ packages:
       '@uploadthing/mime-types':
         optional: true
     dependencies:
+      '@uploadthing/mime-types': 0.2.6
       std-env: 3.7.0
     dev: false
 
@@ -4841,8 +4830,8 @@ packages:
       escalade: 3.1.1
       picocolors: 1.0.0
 
-  /uploadthing@6.6.0(next@14.1.4)(tailwindcss@3.4.1):
-    resolution: {integrity: sha512-PccLhKjxK1dBKcY9a5vUG+P+bu35cyB7dtDEm7xUVq/C+nc6hC/rh+vC+9jhoJhga+h+O7Rd7M8ZyBaf6W72sA==}
+  /uploadthing@6.7.0(next@14.1.4)(tailwindcss@3.4.1):
+    resolution: {integrity: sha512-meWUtFcESRTnmn0vvis6GH07tuQ73sZVYwlQBzspPy2XJq+4fJQ6S9j3sXbp/ocrpc6UyeiMLfM+QURzAtv5lA==}
     engines: {node: '>=18.13.0'}
     peerDependencies:
       express: '*'
@@ -4863,7 +4852,7 @@ packages:
         optional: true
     dependencies:
       '@uploadthing/mime-types': 0.2.6
-      '@uploadthing/shared': 6.3.4(@uploadthing/mime-types@0.2.6)
+      '@uploadthing/shared': 6.4.0(@uploadthing/mime-types@0.2.6)
       consola: 3.2.3
       next: 14.1.4(@babel/core@7.24.0)(react-dom@18.2.0)(react@18.2.0)
       std-env: 3.7.0
