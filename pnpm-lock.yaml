@@ -60,8 +60,8 @@ dependencies:
     specifier: ^4.36.1
     version: 4.36.1(react-dom@18.2.0)(react@18.2.0)
   '@uploadthing/react':
-    specifier: ^6.4.2
-    version: 6.4.2(next@14.1.4)(react@18.2.0)(uploadthing@6.7.0)
+    specifier: ^6.4.4
+    version: 6.4.4(next@14.1.4)(react@18.2.0)(uploadthing@6.7.0)
   '@upstash/redis':
     specifier: ^1.29.0
     version: 1.29.0
@@ -1753,15 +1753,18 @@ packages:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
     dev: true
 
-  /@uploadthing/dropzone@0.2.1(react@18.2.0):
-    resolution: {integrity: sha512-OK4rSFnQ2woJ07t78hTfxjMxXedLoj+Jp34kIEtYPYBTPOnNwoKhDXfRojSu8cBilkQROzIe67i0p6F4B6LQhQ==}
+  /@uploadthing/dropzone@0.3.1(react@18.2.0):
+    resolution: {integrity: sha512-SbDoRz8t/m8VtB+vRelduApWwfNZayMvLOn+Q4A8gSIrRAEPDur+s8uPf9On/+I0bGj2Ez/UDoDx3E3UGujT2g==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       solid-js: ^1.7.11
+      svelte: ^4.2.12
     peerDependenciesMeta:
       react:
         optional: true
       solid-js:
+        optional: true
+      svelte:
         optional: true
     dependencies:
       file-selector: 0.6.0
@@ -1772,18 +1775,18 @@ packages:
     resolution: {integrity: sha512-mB7XAKy5ARltUWZxb2oE0OwUW5Wplxi7Z3cqCvf/ZFvQ1E6lcGVNNKbmJI8c4GaONyEYnalo0Yl228zzHzyZnQ==}
     dev: false
 
-  /@uploadthing/react@6.4.2(next@14.1.4)(react@18.2.0)(uploadthing@6.7.0):
-    resolution: {integrity: sha512-Z/LIku44nhLF9aXEBMEsknL+ADpLKC+MzeD+H8v7jVtghcbYHrW8mF2M91z2H223mVLR0Tnj77yemRoBAh7+3Q==}
+  /@uploadthing/react@6.4.4(next@14.1.4)(react@18.2.0)(uploadthing@6.7.0):
+    resolution: {integrity: sha512-/sE1BbtMNhL9YuIppI2eieMdvjWBCtP+zxjtwGD13kpTJcW7E8GytWTQcdXamURVHUgFH2n1Gsfxf0OWC9rdhA==}
     peerDependencies:
       next: '*'
       react: ^17.0.2 || ^18.0.0
-      uploadthing: 6.8.0
+      uploadthing: 6.9.0
     peerDependenciesMeta:
       next:
         optional: true
     dependencies:
-      '@uploadthing/dropzone': 0.2.1(react@18.2.0)
-      '@uploadthing/shared': 6.5.0
+      '@uploadthing/dropzone': 0.3.1(react@18.2.0)
+      '@uploadthing/shared': 6.6.0
       file-selector: 0.6.0
       next: 14.1.4(@babel/core@7.24.0)(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
@@ -1792,6 +1795,7 @@ packages:
     transitivePeerDependencies:
       - '@uploadthing/mime-types'
       - solid-js
+      - svelte
     dev: false
 
   /@uploadthing/shared@6.4.0(@uploadthing/mime-types@0.2.6):
@@ -1806,8 +1810,8 @@ packages:
       std-env: 3.7.0
     dev: false
 
-  /@uploadthing/shared@6.5.0:
-    resolution: {integrity: sha512-RVzHODev1FRnPSEOih/rTjN89FW9ZXK1uvxSCg+q43cYkUcgJ8mF5LbEmS4dwRqRJkFpspfTPo8IcMe7WwoQ2A==}
+  /@uploadthing/shared@6.6.0:
+    resolution: {integrity: sha512-3mERSbD9/i83dF4rK6M/K3zcPo70mfo33VvrTE4U2Tf2HS8vjUvu8BmJjNZkZOSIoXenEnKmCxDf9vNPsdO65w==}
     peerDependencies:
       '@uploadthing/mime-types': 0.2.7
     peerDependenciesMeta:
