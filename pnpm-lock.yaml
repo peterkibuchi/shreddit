@@ -149,8 +149,8 @@ devDependencies:
     specifier: ^4.2.1
     version: 4.2.1(prettier@3.2.5)
   '@types/eslint':
-    specifier: ^8.56.8
-    version: 8.56.8
+    specifier: ^8.56.9
+    version: 8.56.9
   '@types/lodash.debounce':
     specifier: ^4.0.9
     version: 4.0.9
@@ -1494,8 +1494,8 @@ packages:
       use-sync-external-store: 1.2.0(react@18.2.0)
     dev: false
 
-  /@types/eslint@8.56.8:
-    resolution: {integrity: sha512-LdDdQVDzDXf3ijhhMnE27C5vc0QEknD8GiMR/Hi+fVbdZNfAfCy2j69m0LjUd2MAy0+kIgnOtd5ndTmDk/VWCA==}
+  /@types/eslint@8.56.9:
+    resolution: {integrity: sha512-W4W3KcqzjJ0sHg2vAq9vfml6OhsJ53TcUjUqfzzZf/EChUtwspszj/S0pzMxnfRcO55/iGq47dscXw71Fxc4Zg==}
     dependencies:
       '@types/estree': 1.0.1
       '@types/json-schema': 7.0.15
