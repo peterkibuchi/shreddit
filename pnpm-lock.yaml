@@ -63,8 +63,8 @@ dependencies:
     specifier: ^6.4.4
     version: 6.4.4(next@14.2.2)(react@18.2.0)(uploadthing@6.9.0)
   '@upstash/redis':
-    specifier: ^1.29.0
-    version: 1.29.0
+    specifier: ^1.30.0
+    version: 1.30.0
   '@vercel/analytics':
     specifier: ^1.2.2
     version: 1.2.2(next@14.2.2)(react@18.2.0)
@@ -1811,8 +1811,8 @@ packages:
       std-env: 3.7.0
     dev: false
 
-  /@upstash/redis@1.29.0:
-    resolution: {integrity: sha512-kbO5fgMAeUzErnA/SOtaSbAa0dguYhhBT4MZHJ1O8gVl4iK754aC9+rIYY5hsp4nlxeCGfnIDkWpof991c9jjA==}
+  /@upstash/redis@1.30.0:
+    resolution: {integrity: sha512-bkxl2n7qls27hONXNyItM6ccRT0NBJ8c6zl83wx+TlODpYXehgeiUJTkcTaXLp7hk+zy6Mqpzpeo3GX+wZSvBw==}
     dependencies:
       crypto-js: 4.2.0
     dev: false
