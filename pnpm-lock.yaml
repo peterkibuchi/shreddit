@@ -55,7 +55,7 @@ dependencies:
     version: 1.1.5(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)
   '@t3-oss/env-nextjs':
     specifier: ^0.8.0
-    version: 0.8.0(typescript@5.4.5)(zod@3.22.4)
+    version: 0.8.0(typescript@5.4.5)(zod@3.22.5)
   '@tanstack/react-query':
     specifier: ^4.36.1
     version: 4.36.1(react-dom@18.2.0)(react@18.2.0)
@@ -126,8 +126,8 @@ dependencies:
     specifier: ^6.9.0
     version: 6.9.0(next@14.2.2)(tailwindcss@3.4.3)
   zod:
-    specifier: ^3.22.4
-    version: 3.22.4
+    specifier: ^3.22.5
+    version: 3.22.5
 
 devDependencies:
   '@editorjs/code':
@@ -1445,7 +1445,7 @@ packages:
       tslib: 2.5.3
     dev: false
 
-  /@t3-oss/env-core@0.8.0(typescript@5.4.5)(zod@3.22.4):
+  /@t3-oss/env-core@0.8.0(typescript@5.4.5)(zod@3.22.5):
     resolution: {integrity: sha512-Tc1pg0KH/tJeI0Z1s/Isp1VsGDj1N03ZAYFV8GjWgMxytF/ve0Dv+opjmTapHICRv8qiB1Y/fsTjkWNMpKPRCQ==}
     peerDependencies:
       typescript: '>=5.0.0'
@@ -1455,10 +1455,10 @@ packages:
         optional: true
     dependencies:
       typescript: 5.4.5
-      zod: 3.22.4
+      zod: 3.22.5
     dev: false
 
-  /@t3-oss/env-nextjs@0.8.0(typescript@5.4.5)(zod@3.22.4):
+  /@t3-oss/env-nextjs@0.8.0(typescript@5.4.5)(zod@3.22.5):
     resolution: {integrity: sha512-bJyoE8of4QmqZN7a49iLJAbUq4graScb9ezXzvnuIVr9JP43C093vmy55hT1uZL533CwiPz8zo1INwyAS6qnHw==}
     peerDependencies:
       typescript: '>=5.0.0'
@@ -1467,9 +1467,9 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@t3-oss/env-core': 0.8.0(typescript@5.4.5)(zod@3.22.4)
+      '@t3-oss/env-core': 0.8.0(typescript@5.4.5)(zod@3.22.5)
       typescript: 5.4.5
-      zod: 3.22.4
+      zod: 3.22.5
     dev: false
 
   /@tanstack/query-core@4.36.1:
@@ -5068,6 +5068,6 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /zod@3.22.4:
-    resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
+  /zod@3.22.5:
+    resolution: {integrity: sha512-HqnGsCdVZ2xc0qWPLdO25WnseXThh0kEYKIdV5F/hTHO75hNZFp8thxSeHhiPrHZKrFTo1SOgkAj9po5bexZlw==}
     dev: false
