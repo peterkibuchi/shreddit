@@ -7,7 +7,7 @@ import {
 } from "next-auth";
 import GitHubProvider from "next-auth/providers/github";
 
-import { env } from "~/env.mjs";
+import { env } from "~/env";
 import { prisma } from "~/server/db";
 
 /**
