@@ -54,7 +54,7 @@
     "react-hook-form": "^7.51.4",
     "react-textarea-autosize": "^8.5.3",
     "tailwind-merge": "^2.3.0",
-    "uploadthing": "^6.10.1",
+    "uploadthing": "^6.10.3",
     "zod": "^3.23.7"
   },
   "devDependencies": {

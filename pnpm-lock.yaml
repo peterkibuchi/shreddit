@@ -64,7 +64,7 @@ importers:
         version: 4.36.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@uploadthing/react':
         specifier: ^6.5.3
-        version: 6.5.3(@uploadthing/mime-types@0.2.9)(next@14.2.3(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(uploadthing@6.10.1(next@14.2.3(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.3))
+        version: 6.5.3(@uploadthing/mime-types@0.2.9)(next@14.2.3(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(uploadthing@6.10.3(next@14.2.3(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.3))
       '@upstash/redis':
         specifier: ^1.30.1
         version: 1.30.1
@@ -126,8 +126,8 @@ importers:
         specifier: ^2.3.0
         version: 2.3.0
       uploadthing:
-        specifier: ^6.10.1
-        version: 6.10.1(next@14.2.3(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.3)
+        specifier: ^6.10.3
+        version: 6.10.3(next@14.2.3(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.3)
       zod:
         specifier: ^3.23.7
         version: 3.23.7
@@ -1090,14 +1090,6 @@ packages:
       uploadthing: 6.10.3
     peerDependenciesMeta:
       next:
-        optional: true
-
-  '@uploadthing/shared@6.7.1':
-    resolution: {integrity: sha512-4Imk46n+rwFaobfDuDSclYcH/OcpJA048Ww0il6nqT7EoXQ7Pa9NJfGkoNkS8+K8rT71IVljdaiaLEapgRxj0Q==}
-    peerDependencies:
-      '@uploadthing/mime-types': 0.2.9
-    peerDependenciesMeta:
-      '@uploadthing/mime-types':
         optional: true
 
   '@uploadthing/shared@6.7.3':
@@ -2832,8 +2824,8 @@ packages:
     peerDependencies:
       browserslist: '>= 4.21.0'
 
-  uploadthing@6.10.1:
-    resolution: {integrity: sha512-xqgEauaDYLlQ6NEsQWF+fpsUOuniWazd8ytSK2bCxcKFGakCkXO32GkFolW4iZZgkl7ATnHwN+JXG95FPdo74w==}
+  uploadthing@6.10.3:
+    resolution: {integrity: sha512-0TvK8IvJbdCDYcRmDzZWeOZDLFDxU7Eoh+e0mJPeustsA9bXHZgozdBHGh0uLM//tNXB+iv4TqabT31YlU810g==}
     engines: {node: '>=18.13.0'}
     peerDependencies:
       express: '*'
@@ -3889,14 +3881,14 @@ snapshots:
 
   '@uploadthing/mime-types@0.2.9': {}
 
-  '@uploadthing/react@6.5.3(@uploadthing/mime-types@0.2.9)(next@14.2.3(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(uploadthing@6.10.1(next@14.2.3(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.3))':
+  '@uploadthing/react@6.5.3(@uploadthing/mime-types@0.2.9)(next@14.2.3(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(uploadthing@6.10.3(next@14.2.3(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.3))':
     dependencies:
       '@uploadthing/dropzone': 0.4.0(react@18.3.1)
       '@uploadthing/shared': 6.7.3(@uploadthing/mime-types@0.2.9)
       file-selector: 0.6.0
       react: 18.3.1
       tailwind-merge: 2.3.0
-      uploadthing: 6.10.1(next@14.2.3(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.3)
+      uploadthing: 6.10.3(next@14.2.3(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.3)
     optionalDependencies:
       next: 14.2.3(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
     transitivePeerDependencies:
@@ -3904,15 +3896,6 @@ snapshots:
       - solid-js
       - svelte
       - vue
-
-  '@uploadthing/shared@6.7.1(@uploadthing/mime-types@0.2.9)':
-    dependencies:
-      '@effect/schema': 0.66.12(effect@3.1.0)(fast-check@3.18.0)
-      effect: 3.1.0
-      fast-check: 3.18.0
-      std-env: 3.7.0
-    optionalDependencies:
-      '@uploadthing/mime-types': 0.2.9
 
   '@uploadthing/shared@6.7.3(@uploadthing/mime-types@0.2.9)':
     dependencies:
@@ -5769,11 +5752,11 @@ snapshots:
       escalade: 3.1.1
       picocolors: 1.0.0
 
-  uploadthing@6.10.1(next@14.2.3(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.3):
+  uploadthing@6.10.3(next@14.2.3(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.3):
     dependencies:
       '@effect/schema': 0.66.12(effect@3.1.0)(fast-check@3.18.0)
       '@uploadthing/mime-types': 0.2.9
-      '@uploadthing/shared': 6.7.1(@uploadthing/mime-types@0.2.9)
+      '@uploadthing/shared': 6.7.3(@uploadthing/mime-types@0.2.9)
       consola: 3.2.3
       effect: 3.1.0
       fast-check: 3.18.0
