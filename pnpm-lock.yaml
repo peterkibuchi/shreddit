@@ -63,8 +63,8 @@ importers:
         specifier: ^4.36.1
         version: 4.36.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@uploadthing/react':
-        specifier: ^6.5.3
-        version: 6.5.3(@uploadthing/mime-types@0.2.9)(next@14.2.3(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(uploadthing@6.10.3(next@14.2.3(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.3))
+        specifier: ^6.5.4
+        version: 6.5.4(@uploadthing/mime-types@0.2.9)(next@14.2.3(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(uploadthing@6.10.3(next@14.2.3(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.3))
       '@upstash/redis':
         specifier: ^1.30.1
         version: 1.30.1
@@ -1062,8 +1062,8 @@ packages:
   '@ungap/structured-clone@1.2.0':
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
 
-  '@uploadthing/dropzone@0.4.0':
-    resolution: {integrity: sha512-IZmmUu3vSSmUoToSf6CTprSlMJuQ2n75u7XcXrNjPG4TgyQpSiYPKqkdHV2/JPzsXfzITM+i3SPW5Ez3fdGQnA==}
+  '@uploadthing/dropzone@0.4.1':
+    resolution: {integrity: sha512-RHSpo/2kg/mrRSYQA4EKlyvkOCYWOeE2+QQYW9YiUvWCuawnTfD7DQvk8RN/nYXi1Sw7/v0NegmQpiVELVGtnA==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       solid-js: ^1.7.11
@@ -1082,12 +1082,12 @@ packages:
   '@uploadthing/mime-types@0.2.9':
     resolution: {integrity: sha512-7Ap2evP+niXNSXoOck4DUZUAKYrMRRpJ85n+ZxCuRsnr3iziOgv/Rt6es5SnMVgE/aOObxddOxbrxyOhISQWHQ==}
 
-  '@uploadthing/react@6.5.3':
-    resolution: {integrity: sha512-MdHoxS/G34pxmTl24HLEegd+Xu1WWjC1AOAI1a+joSGfnnAJTjanqhB7sTasUvT0PYdEZrshmEC7wYYDCun03g==}
+  '@uploadthing/react@6.5.4':
+    resolution: {integrity: sha512-c1RFZggXqlc4wQ0hnxjgOM+9066NUMOJmUAPG2N7EKYO64/uRrZMpq5CvYdxsKwI0YiCnhIeInct21QvSSEa6Q==}
     peerDependencies:
       next: '*'
       react: ^17.0.2 || ^18.0.0
-      uploadthing: 6.10.3
+      uploadthing: 6.10.4
     peerDependenciesMeta:
       next:
         optional: true
@@ -1096,6 +1096,14 @@ packages:
     resolution: {integrity: sha512-gyVnUDDxJMbTd8ojPvZ2eaBeGhjcVtQAbBTGOv7mOdnIFAIK2ggacK7lsG9SU5CnVSUgfUTvae/n5+HOp4uLew==}
     peerDependencies:
       '@uploadthing/mime-types': 0.2.9
+    peerDependenciesMeta:
+      '@uploadthing/mime-types':
+        optional: true
+
+  '@uploadthing/shared@6.7.4':
+    resolution: {integrity: sha512-7e35U7/84qQQx+bhldSdze9ODiAo4NCCZiYEV3NomD44O9fE5bfQXcCPtBeXh3y3udf7S28PMZbT6ybJeuKfgw==}
+    peerDependencies:
+      '@uploadthing/mime-types': 0.2.10
     peerDependenciesMeta:
       '@uploadthing/mime-types':
         optional: true
@@ -3873,7 +3881,7 @@ snapshots:
 
   '@ungap/structured-clone@1.2.0': {}
 
-  '@uploadthing/dropzone@0.4.0(react@18.3.1)':
+  '@uploadthing/dropzone@0.4.1(react@18.3.1)':
     dependencies:
       file-selector: 0.6.0
     optionalDependencies:
@@ -3881,10 +3889,10 @@ snapshots:
 
   '@uploadthing/mime-types@0.2.9': {}
 
-  '@uploadthing/react@6.5.3(@uploadthing/mime-types@0.2.9)(next@14.2.3(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(uploadthing@6.10.3(next@14.2.3(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.3))':
+  '@uploadthing/react@6.5.4(@uploadthing/mime-types@0.2.9)(next@14.2.3(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(uploadthing@6.10.3(next@14.2.3(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.3))':
     dependencies:
-      '@uploadthing/dropzone': 0.4.0(react@18.3.1)
-      '@uploadthing/shared': 6.7.3(@uploadthing/mime-types@0.2.9)
+      '@uploadthing/dropzone': 0.4.1(react@18.3.1)
+      '@uploadthing/shared': 6.7.4(@uploadthing/mime-types@0.2.9)
       file-selector: 0.6.0
       react: 18.3.1
       tailwind-merge: 2.3.0
@@ -3902,6 +3910,13 @@ snapshots:
       '@effect/schema': 0.66.12(effect@3.1.0)(fast-check@3.18.0)
       effect: 3.1.0
       fast-check: 3.18.0
+      std-env: 3.7.0
+    optionalDependencies:
+      '@uploadthing/mime-types': 0.2.9
+
+  '@uploadthing/shared@6.7.4(@uploadthing/mime-types@0.2.9)':
+    dependencies:
+      effect: 3.1.0
       std-env: 3.7.0
     optionalDependencies:
       '@uploadthing/mime-types': 0.2.9
