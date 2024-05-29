@@ -1,6 +1,6 @@
 # Shreddit
 
-> Modern Fullstack Reddit Clone, built with Next.js & Tailwind and deployed on Vercel.
+> Modern fullstack Reddit clone, built with Next.js & Tailwind and deployed on Vercel.
 
 ## Table of Contents
 
