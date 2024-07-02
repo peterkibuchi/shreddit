@@ -76,7 +76,7 @@
     "eslint-config-next": "^14.2.4",
     "postcss": "^8.4.39",
     "prettier": "^3.3.2",
-    "prettier-plugin-tailwindcss": "^0.5.14",
+    "prettier-plugin-tailwindcss": "^0.6.5",
     "prisma": "^5.16.1",
     "tailwindcss": "^3.4.4",
     "tailwindcss-animate": "^1.0.7",
