@@ -64,7 +64,7 @@ importers:
         version: 4.36.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@uploadthing/react':
         specifier: ^6.7.2
-        version: 6.7.2(next@14.2.5(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(uploadthing@6.13.2(next@14.2.5(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.5))
+        version: 6.7.2(next@14.2.5(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(uploadthing@6.13.2(next@14.2.5(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.6))
       '@upstash/redis':
         specifier: ^1.33.0
         version: 1.33.0
@@ -127,7 +127,7 @@ importers:
         version: 2.4.0
       uploadthing:
         specifier: ^6.13.2
-        version: 6.13.2(next@14.2.5(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.5)
+        version: 6.13.2(next@14.2.5(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.6)
       zod:
         specifier: ^3.23.8
         version: 3.23.8
@@ -193,11 +193,11 @@ importers:
         specifier: ^5.17.0
         version: 5.17.0
       tailwindcss:
-        specifier: ^3.4.5
-        version: 3.4.5
+        specifier: ^3.4.6
+        version: 3.4.6
       tailwindcss-animate:
         specifier: ^1.0.7
-        version: 1.0.7(tailwindcss@3.4.5)
+        version: 1.0.7(tailwindcss@3.4.6)
       typescript:
         specifier: ^5.5.3
         version: 5.5.3
@@ -2904,8 +2904,8 @@ packages:
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
 
-  tailwindcss@3.4.5:
-    resolution: {integrity: sha512-DlTxttYcogpDfx3tf/8jfnma1nfAYi2cBUYV2YNoPPecwmO3YGiFlOX9D8tGAu+EDF38ryBzvrDKU/BLMsUwbw==}
+  tailwindcss@3.4.6:
+    resolution: {integrity: sha512-1uRHzPB+Vzu57ocybfZ4jh5Q3SdlH7XW23J5sQoM9LhE9eIOlzxer/3XPSsycvih3rboRsvt0QCmzSrqyOYUIA==}
     engines: {node: '>=14.0.0'}
     hasBin: true
 
@@ -4172,14 +4172,14 @@ snapshots:
 
   '@uploadthing/mime-types@0.2.10': {}
 
-  '@uploadthing/react@6.7.2(next@14.2.5(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(uploadthing@6.13.2(next@14.2.5(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.5))':
+  '@uploadthing/react@6.7.2(next@14.2.5(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(uploadthing@6.13.2(next@14.2.5(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.6))':
     dependencies:
       '@uploadthing/dropzone': 0.4.1(react@18.3.1)
       '@uploadthing/shared': 6.7.8
       file-selector: 0.6.0
       react: 18.3.1
       tailwind-merge: 2.4.0
-      uploadthing: 6.13.2(next@14.2.5(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.5)
+      uploadthing: 6.13.2(next@14.2.5(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.6)
     optionalDependencies:
       next: 14.2.5(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
     transitivePeerDependencies:
@@ -5928,11 +5928,11 @@ snapshots:
 
   tailwind-merge@2.4.0: {}
 
-  tailwindcss-animate@1.0.7(tailwindcss@3.4.5):
+  tailwindcss-animate@1.0.7(tailwindcss@3.4.6):
     dependencies:
-      tailwindcss: 3.4.5
+      tailwindcss: 3.4.6
 
-  tailwindcss@3.4.5:
+  tailwindcss@3.4.6:
     dependencies:
       '@alloc/quick-lru': 5.2.0
       arg: 5.0.2
@@ -6046,7 +6046,7 @@ snapshots:
       escalade: 3.1.1
       picocolors: 1.0.1
 
-  uploadthing@6.13.2(next@14.2.5(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.5):
+  uploadthing@6.13.2(next@14.2.5(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.6):
     dependencies:
       '@effect/schema': 0.68.12(effect@3.4.5)
       '@uploadthing/mime-types': 0.2.10
@@ -6056,7 +6056,7 @@ snapshots:
       std-env: 3.7.0
     optionalDependencies:
       next: 14.2.5(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      tailwindcss: 3.4.5
+      tailwindcss: 3.4.6
 
   uri-js@4.4.1:
     dependencies:
