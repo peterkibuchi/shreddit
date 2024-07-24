@@ -18,8 +18,8 @@ importers:
         specifier: ^2.8.7
         version: 2.8.7
       '@editorjs/list':
-        specifier: ^1.9.0
-        version: 1.9.0
+        specifier: ^1.10.0
+        version: 1.10.0
       '@editorjs/paragraph':
         specifier: ^2.11.6
         version: 2.11.6
@@ -359,8 +359,8 @@ packages:
   '@editorjs/link@2.6.2':
     resolution: {integrity: sha512-3cPx6M4ZvwDDvsi0E0fvMR3rvveAV/C0GRo1JLeZJ9cG9QgyoNolj4eu5Eqx3/r1XTC/he54qYEIZ/Dc4Lr4Ow==}
 
-  '@editorjs/list@1.9.0':
-    resolution: {integrity: sha512-BQEvZW4vi0O0dBvGNljiKxiE89vMSHoM2Tu2OzKUndoj7pY9AxqpgCh1qvwIVsJAlG4Lbt/vBFQilnoStMmI6A==}
+  '@editorjs/list@1.10.0':
+    resolution: {integrity: sha512-zXCHaNcIscpefnteBOS3x+98f/qBgEVsv+OvtKoTDZipMNqck2uVG+X2qMQr8xcwtJrj9ySX54lUac9FDlAHnA==}
 
   '@editorjs/paragraph@2.11.6':
     resolution: {integrity: sha512-i9B50Ylvh+0ZzUGWIba09PfUXsA00Y//zFZMwqsyaXXKxMluSIJ6ADFJbbK0zaV9Ijx49Xocrlg+CEPRqATk9w==}
@@ -3320,7 +3320,7 @@ snapshots:
       '@babel/runtime': 7.23.2
       '@codexteam/icons': 0.0.4
 
-  '@editorjs/list@1.9.0':
+  '@editorjs/list@1.10.0':
     dependencies:
       '@codexteam/icons': 0.0.4
 
