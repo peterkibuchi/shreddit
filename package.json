@@ -18,7 +18,7 @@
     "@editorjs/editorjs": "^2.30.2",
     "@editorjs/embed": "^2.7.4",
     "@editorjs/header": "^2.8.7",
-    "@editorjs/list": "^1.9.0",
+    "@editorjs/list": "^1.10.0",
     "@editorjs/paragraph": "^2.11.6",
     "@editorjs/table": "^2.3.0",
     "@hookform/resolvers": "^3.9.0",
