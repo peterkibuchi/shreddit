@@ -136,8 +136,8 @@ importers:
         specifier: ^2.9.0
         version: 2.9.0
       '@editorjs/image':
-        specifier: ^2.9.2
-        version: 2.9.2
+        specifier: ^2.9.3
+        version: 2.9.3
       '@editorjs/inline-code':
         specifier: ^1.5.1
         version: 1.5.1
@@ -332,9 +332,6 @@ packages:
   '@codexteam/icons@0.0.6':
     resolution: {integrity: sha512-L7Q5PET8PjKcBT5wp7VR+FCjwCi5PUp7rd/XjsgQ0CI5FJz0DphyHGRILMuDUdCW2MQT9NHbVr4QP31vwAkS/A==}
 
-  '@codexteam/icons@0.3.1':
-    resolution: {integrity: sha512-xojjd40csucwaKz/Nnh/iy18BtTdQjq3YQNL6MCqqFRyUNN+8nRfm/Mp+Y4xo6TseDkReS2tM1FbuULyrFjn0w==}
-
   '@codexteam/icons@0.3.2':
     resolution: {integrity: sha512-P1ep2fHoy0tv4wx85eic+uee5plDnZQ1Qa6gDfv7eHPkCXorMtVqJhzMb75o1izogh6G7380PqmFDXV3bW3Pig==}
 
@@ -350,8 +347,8 @@ packages:
   '@editorjs/header@2.8.7':
     resolution: {integrity: sha512-rfxzYFR/Jhaocj3Xxx8XjEjyzfPbBIVkcPZ9Uy3rEz1n3ewhV0V4zwuxCjVfFhLUVgQQExq43BxJnTNlLOzqDQ==}
 
-  '@editorjs/image@2.9.2':
-    resolution: {integrity: sha512-n09sMieGW8cksoeflpplzvbmFH2bdVzVTWbnidPWAHaeU467HRteoXU9yfGBB7+eeHZLnmCulQ2dr6ae+G2niw==}
+  '@editorjs/image@2.9.3':
+    resolution: {integrity: sha512-hBOHuqvL/ovjrns+xLuBh/b3kqABDlLxlByWnSuKnE31O351NDrg9AXrB1yYo0yZerw5V591rP0US3PEzp7CzQ==}
 
   '@editorjs/inline-code@1.5.1':
     resolution: {integrity: sha512-XvKpqw9y1bOYgyuVUHGDuu7KlNWCYIXD5uU1Lpc4s4LJ8VN4TjWFGKJ3sS+LR7zzasWe8hu2ffR1JC6MHIS0EQ==}
@@ -3288,8 +3285,6 @@ snapshots:
 
   '@codexteam/icons@0.0.6': {}
 
-  '@codexteam/icons@0.3.1': {}
-
   '@codexteam/icons@0.3.2': {}
 
   '@editorjs/code@2.9.0':
@@ -3307,9 +3302,9 @@ snapshots:
       '@codexteam/icons': 0.0.5
       '@editorjs/editorjs': 2.30.2
 
-  '@editorjs/image@2.9.2':
+  '@editorjs/image@2.9.3':
     dependencies:
-      '@codexteam/icons': 0.3.1
+      '@codexteam/icons': 0.3.2
 
   '@editorjs/inline-code@1.5.1':
     dependencies:
