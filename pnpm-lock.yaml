@@ -24,8 +24,8 @@ importers:
         specifier: ^2.11.6
         version: 2.11.6
       '@editorjs/table':
-        specifier: ^2.3.0
-        version: 2.3.0
+        specifier: ^2.4.1
+        version: 2.4.1
       '@hookform/resolvers':
         specifier: ^3.9.0
         version: 3.9.0(react-hook-form@7.52.2(react@18.3.1))
@@ -371,8 +371,8 @@ packages:
   '@editorjs/quote@2.7.1':
     resolution: {integrity: sha512-OvsJMxTQ5d24bd4NavfkA4lSSh6/Q2uhAxOepsS48+vt2Iax2Mkhbs2/+AOjWj54frhLEYvjTIa6C4S6pd+WlA==}
 
-  '@editorjs/table@2.3.0':
-    resolution: {integrity: sha512-/dKE6A5FkukX/FpvIyQGsewwXglZk8YbXpEp9vkB6Ec4ETLeGJMxObCcYqbXqVod+IU/a1tFH+j3lsD8ASD41g==}
+  '@editorjs/table@2.4.1':
+    resolution: {integrity: sha512-2OtwS4+i9xYE0UCZV4NuQ4KM3dCnv6iqKEjDU5bu4Bolf7AkYTIfQ7+axJLCrb7glz3ulWXILweBpCnqYqr+AA==}
 
   '@effect/schema@0.68.12':
     resolution: {integrity: sha512-UWJsFXzeYTBQYnftwI1KR2uaxIZ8fk+kffDS7BnJwnGjPPgODq3/AzeoBDSu1MAlnwBKOz+QRdMuSMxrT/pHig==}
@@ -3358,7 +3358,7 @@ snapshots:
       '@codexteam/icons': 0.3.2
       '@editorjs/dom': 0.0.5
 
-  '@editorjs/table@2.3.0':
+  '@editorjs/table@2.4.1':
     dependencies:
       '@codexteam/icons': 0.0.6
 
