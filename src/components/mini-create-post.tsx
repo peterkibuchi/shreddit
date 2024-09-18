@@ -24,8 +24,8 @@ export function MiniCreatePost({ session }: MiniCreatePostProps) {
         <div className="relative">
           <UserAvatar
             user={{
-              name: session?.user.name || null,
-              image: session?.user.image || null,
+              name: session?.user.name ?? null,
+              image: session?.user.image ?? null,
             }}
           />
 

@@ -1,6 +1,6 @@
 import { clsx, type ClassValue } from "clsx";
 import { formatDistanceToNowStrict } from "date-fns";
-import locale from "date-fns/locale/en-US";
+import { enUS as locale } from "date-fns/locale";
 import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
@@ -31,7 +31,7 @@ function formatDistance(
   count: number,
   options?: { addSuffix?: unknown; comparison?: number },
 ): string {
-  options = options || {};
+  options = options ?? {};
 
   const result = formatDistanceLocale[
     token as keyof typeof formatDistanceLocale

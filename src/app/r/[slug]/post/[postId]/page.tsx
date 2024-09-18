@@ -43,6 +43,7 @@ function PostVoteShell() {
 export default async function PostDetailPage({
   params: { postId },
 }: PostDetailPageProps) {
+  // eslint-disable-next-line @typescript-eslint/non-nullable-type-assertion-style
   const cachedPost = (await redis.hgetall(`post:${postId}`)) as CachedPost;
 
   let post: (Post & { votes: Vote[]; author: User }) | null = null;

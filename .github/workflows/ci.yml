@@ -30,9 +30,7 @@ jobs:
       - name: Run linter
         run: |
           pnpm lint
-          pnpm format:check
-        env:
-          SKIP_ENV_VALIDATION: true
+          pnpm format
 
   typecheck:
     runs-on: ubuntu-latest

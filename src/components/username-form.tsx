@@ -38,7 +38,7 @@ export function UsernameForm({ user, className, ...props }: UsernameFormProps) {
   } = useForm<FormData>({
     resolver: zodResolver(UsernameValidator),
     defaultValues: {
-      name: user?.username || "",
+      name: user?.username ?? "",
     },
   });
 

@@ -122,7 +122,6 @@ export function PostForm({ subredditId }: PostFormProps) {
   useEffect(() => {
     if (Object.keys(errors).length) {
       for (const value of Object.values(errors)) {
-        value;
         toast({
           title: "Something went wrong.",
           description: (value as { message: string }).message,

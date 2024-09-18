@@ -79,8 +79,8 @@ export function PostComment({
         <UserAvatar
           className="h-6 w-6"
           user={{
-            name: comment.author.name || null,
-            image: comment.author.image || null,
+            name: comment.author.name ?? null,
+            image: comment.author.image ?? null,
           }}
         />
 
@@ -97,7 +97,7 @@ export function PostComment({
 
       <p className="mt-2 text-sm text-primary">{comment.text}</p>
 
-      <div className="flex  items-center gap-2">
+      <div className="flex items-center gap-2">
         {/* flex-wrap */}
         <CommentVotes
           commentId={comment.id}

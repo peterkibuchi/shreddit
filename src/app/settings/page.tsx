@@ -11,7 +11,7 @@ export default async function SettingsPage() {
   const session = await getServerAuthSession();
 
   if (!session?.user) {
-    redirect(authOptions?.pages?.signIn || "/login");
+    redirect(authOptions?.pages?.signIn ?? "/login");
   }
 
   return (
@@ -23,7 +23,7 @@ export default async function SettingsPage() {
           <UsernameForm
             user={{
               id: session.user.id,
-              username: session.user.username || "",
+              username: session.user.username ?? "",
             }}
           />
         </div>

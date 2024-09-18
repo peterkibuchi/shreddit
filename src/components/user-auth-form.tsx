@@ -20,6 +20,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
     try {
       await signIn("github");
     } catch (error) {
+      console.error(error);
       toast({
         title: "Error",
         description: "There was an error logging in with GitHub",

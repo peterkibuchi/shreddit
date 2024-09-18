@@ -19,7 +19,7 @@ export async function PostVoteServer({
 }: PostVoteServerProps) {
   const session = await getServerAuthSession();
 
-  let voteCount: number = 0;
+  let voteCount = 0;
   let currentVote: Vote["type"] | null | undefined = undefined;
 
   if (getData) {
