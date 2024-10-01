@@ -66,8 +66,8 @@ importers:
         specifier: ^7.0.2
         version: 7.0.2(next@14.2.13(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(uploadthing@7.0.2(next@14.2.13(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.13))
       '@upstash/redis':
-        specifier: ^1.34.0
-        version: 1.34.0
+        specifier: ^1.34.1
+        version: 1.34.1
       '@vercel/analytics':
         specifier: ^1.3.1
         version: 1.3.1(next@14.2.13(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
@@ -1230,8 +1230,8 @@ packages:
   '@uploadthing/shared@7.0.2':
     resolution: {integrity: sha512-yhE7lA42m6g7Qw245Ey/8uK5J4d8FJhOg90VVt0PG1iJYvBZHbboSq1ndsGZ1X8jFaskBVORzWc66gEw43FEsQ==}
 
-  '@upstash/redis@1.34.0':
-    resolution: {integrity: sha512-TrXNoJLkysIl8SBc4u9bNnyoFYoILpCcFJcLyWCccb/QSUmaVKdvY0m5diZqc3btExsapcMbaw/s/wh9Sf1pJw==}
+  '@upstash/redis@1.34.1':
+    resolution: {integrity: sha512-mammyRf9BTVTFJmyWyTHb0UL0J74vuQGL5yQIIbqFHVa2NPMB+adOZw5ZqpRQb/0AzzVBCrbok/vzBynQ1abiw==}
 
   '@vercel/analytics@1.3.1':
     resolution: {integrity: sha512-xhSlYgAuJ6Q4WQGkzYTLmXwhYl39sWjoMA3nHxfkvG+WdBT25c563a7QhwwKivEOZtPJXifYHR1m2ihoisbWyA==}
@@ -4142,7 +4142,7 @@ snapshots:
       effect: 3.7.2
       sqids: 0.3.0
 
-  '@upstash/redis@1.34.0':
+  '@upstash/redis@1.34.1':
     dependencies:
       crypto-js: 4.2.0
 
