@@ -64,7 +64,7 @@ importers:
         version: 4.36.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@uploadthing/react':
         specifier: ^7.0.3
-        version: 7.0.3(next@14.2.15(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(uploadthing@7.0.2(next@14.2.15(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.13))
+        version: 7.0.3(next@14.2.15(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(uploadthing@7.1.0(next@14.2.15(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.13))
       '@upstash/redis':
         specifier: ^1.34.2
         version: 1.34.2
@@ -126,8 +126,8 @@ importers:
         specifier: ^2.5.3
         version: 2.5.3
       uploadthing:
-        specifier: ^7.0.2
-        version: 7.0.2(next@14.2.15(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.13)
+        specifier: ^7.1.0
+        version: 7.1.0(next@14.2.15(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.13)
       zod:
         specifier: ^3.23.8
         version: 3.23.8
@@ -1219,9 +1219,6 @@ packages:
       next:
         optional: true
 
-  '@uploadthing/shared@7.0.2':
-    resolution: {integrity: sha512-yhE7lA42m6g7Qw245Ey/8uK5J4d8FJhOg90VVt0PG1iJYvBZHbboSq1ndsGZ1X8jFaskBVORzWc66gEw43FEsQ==}
-
   '@uploadthing/shared@7.0.3':
     resolution: {integrity: sha512-PAT5Jl6bfuVp37PBvaw7bwQYhLeDfIBuGr37mbPBPhtiqm8zf8ip8zubkdm5rXEhqRWfdI64SQpl+7Q+dLoM2Q==}
 
@@ -1580,11 +1577,6 @@ packages:
 
   editorjs-react-renderer@3.5.1:
     resolution: {integrity: sha512-WeFNeLDxuVyc2s7AZpAB8bfqylLXNmPxvFFgeQ8W8M95+e5QNpvpvd/JCubXYL01JDtYjFab7pTyrZva5QeF2Q==}
-
-  effect-log@0.32.0:
-    resolution: {integrity: sha512-zlh4S+zBkHeDhiV5IAAXwecqxASVJk9tYNJUb12EuJqgtRGGyhrXYNn8zz5Gk/w7PmnNLTl9Vb6bQo2BFn+J/Q==}
-    peerDependencies:
-      effect: ^3.7.0
 
   effect@3.7.2:
     resolution: {integrity: sha512-pV7l1+LSZFvVObj4zuy4nYiBaC7qZOfrKV6s/Ef4p3KueiQwZFgamazklwyZ+x7Nyj2etRDFvHE/xkThTfQD1w==}
@@ -2986,8 +2978,8 @@ packages:
     peerDependencies:
       browserslist: '>= 4.21.0'
 
-  uploadthing@7.0.2:
-    resolution: {integrity: sha512-B5/r0nmOfWjo+cGvZLyDQ8jypJYWoW/VsmoL+VqkiGMg5yIkKzMGJ5InrDOJS+3WQBbW8KdhVrRyA+mGSZEGUw==}
+  uploadthing@7.1.0:
+    resolution: {integrity: sha512-l1bRHs+q/YLx3XwBav98t4Bl1wLWaskhPEwopxtYgiRrxX5nW3uUuSP0RJ9eKwx0+6ZhHWxHDvShf7ZLledqmQ==}
     engines: {node: '>=18.13.0'}
     peerDependencies:
       express: '*'
@@ -4129,20 +4121,14 @@ snapshots:
 
   '@uploadthing/mime-types@0.3.0': {}
 
-  '@uploadthing/react@7.0.3(next@14.2.15(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(uploadthing@7.0.2(next@14.2.15(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.13))':
+  '@uploadthing/react@7.0.3(next@14.2.15(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(uploadthing@7.1.0(next@14.2.15(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.13))':
     dependencies:
       '@uploadthing/shared': 7.0.3
       file-selector: 0.6.0
       react: 18.3.1
-      uploadthing: 7.0.2(next@14.2.15(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.13)
+      uploadthing: 7.1.0(next@14.2.15(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.13)
     optionalDependencies:
       next: 14.2.15(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-
-  '@uploadthing/shared@7.0.2':
-    dependencies:
-      '@uploadthing/mime-types': 0.3.0
-      effect: 3.7.2
-      sqids: 0.3.0
 
   '@uploadthing/shared@7.0.3':
     dependencies:
@@ -4517,10 +4503,6 @@ snapshots:
     dependencies:
       html-react-parser: 3.0.16(react@18.3.1)
       react: 18.3.1
-
-  effect-log@0.32.0(effect@3.7.2):
-    dependencies:
-      effect: 3.7.2
 
   effect@3.7.2: {}
 
@@ -6010,14 +5992,13 @@ snapshots:
       escalade: 3.1.2
       picocolors: 1.1.0
 
-  uploadthing@7.0.2(next@14.2.15(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.13):
+  uploadthing@7.1.0(next@14.2.15(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.13):
     dependencies:
       '@effect/platform': 0.63.2(@effect/schema@0.72.2(effect@3.7.2))(effect@3.7.2)
       '@effect/schema': 0.72.2(effect@3.7.2)
       '@uploadthing/mime-types': 0.3.0
-      '@uploadthing/shared': 7.0.2
+      '@uploadthing/shared': 7.0.3
       effect: 3.7.2
-      effect-log: 0.32.0(effect@3.7.2)
     optionalDependencies:
       next: 14.2.15(@babel/core@7.24.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       tailwindcss: 3.4.13
