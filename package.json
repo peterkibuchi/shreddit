@@ -39,7 +39,7 @@
     "axios": "^1.7.7",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-    "cmdk": "^1.0.3",
+    "cmdk": "^1.0.4",
     "date-fns": "^4.1.0",
     "editorjs-react-renderer": "^3.5.1",
     "lodash.debounce": "^4.0.8",
