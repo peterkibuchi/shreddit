@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@editorjs/editorjs':
-        specifier: ^2.30.6
-        version: 2.30.6
+        specifier: ^2.30.7
+        version: 2.30.7
       '@editorjs/embed':
         specifier: ^2.7.6
         version: 2.7.6
@@ -271,8 +271,8 @@ packages:
   '@editorjs/dom@0.0.5':
     resolution: {integrity: sha512-SZ78Gwpkp3EUhjBIp0lSojeQ35V9acF8SubJsMeOH/vlOUE40GOnvvwWZnF05lO7bIB0dOHhhJy4N7IIAWxP2w==}
 
-  '@editorjs/editorjs@2.30.6':
-    resolution: {integrity: sha512-6eQMc4Di3Hz9p4o+NGRgKaCeAF7eAk106m+bsDLc4eo94VGYO1M163OiGFdmanE+w503qTmXOzycWff5blEOAQ==}
+  '@editorjs/editorjs@2.30.7':
+    resolution: {integrity: sha512-FfdeUqrgcKWC+Cy2GW6Dxup6s2TaRKokR4FL+HKXshu6h9Y//rrx4SQkURgkZOCSbV77t9btbmAXdFXWGB+diw==}
 
   '@editorjs/embed@2.7.6':
     resolution: {integrity: sha512-L3agW/23mOI0L+oksUE9UOR5VSNCqapxLH5lma+5j+idjKCC31nxbx07x53MSJ4rlOTO1L7cFVhkqptEdOliJA==}
@@ -3007,16 +3007,16 @@ snapshots:
     dependencies:
       '@editorjs/helpers': 0.0.4
 
-  '@editorjs/editorjs@2.30.6': {}
+  '@editorjs/editorjs@2.30.7': {}
 
   '@editorjs/embed@2.7.6':
     dependencies:
-      '@editorjs/editorjs': 2.30.6
+      '@editorjs/editorjs': 2.30.7
 
   '@editorjs/header@2.8.8':
     dependencies:
       '@codexteam/icons': 0.0.5
-      '@editorjs/editorjs': 2.30.6
+      '@editorjs/editorjs': 2.30.7
 
   '@editorjs/helpers@0.0.4': {}
 
