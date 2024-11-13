@@ -52,7 +52,7 @@
     "react-dom": "18.3.1",
     "react-dropzone": "^14.3.5",
     "react-hook-form": "^7.53.2",
-    "react-textarea-autosize": "^8.5.4",
+    "react-textarea-autosize": "^8.5.5",
     "tailwind-merge": "^2.5.4",
     "uploadthing": "^7.3.0",
     "zod": "^3.23.8"
