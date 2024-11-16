@@ -30,7 +30,7 @@ jobs:
       - name: Run linter
         run: |
           pnpm lint
-          pnpm format
+          pnpm format:check
 
   typecheck:
     runs-on: ubuntu-latest
