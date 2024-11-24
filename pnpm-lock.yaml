@@ -136,8 +136,8 @@ importers:
         specifier: ^2.9.3
         version: 2.9.3
       '@editorjs/image':
-        specifier: ^2.10.0
-        version: 2.10.0
+        specifier: ^2.10.1
+        version: 2.10.1
       '@editorjs/inline-code':
         specifier: ^1.5.1
         version: 1.5.1
@@ -283,8 +283,8 @@ packages:
   '@editorjs/helpers@0.0.4':
     resolution: {integrity: sha512-ieg3dzo2m1/ELze/RMNADiAiC5amXxIlVXoJ5vvXITOu/p/dPsrF+Oi3h5gBYvtGk9vg5LJUSG5YWU0tBUO1tw==}
 
-  '@editorjs/image@2.10.0':
-    resolution: {integrity: sha512-WkQtXE8gICUagnBfowI/4tiVqsPTkBju7IqDVigMgEMzmw6AFuKDSYpVL12uB9ByDikAZWOK/mdUzeVfVBnKwg==}
+  '@editorjs/image@2.10.1':
+    resolution: {integrity: sha512-ECjYQCEuPRzyruKY4+6XOyukQ2sCw4+9O1Jg8sDHyqbHLq0DMe+tgVsuXR+yfOXdocnywBOg4kLsJiP1uUYFcA==}
 
   '@editorjs/inline-code@1.5.1':
     resolution: {integrity: sha512-XvKpqw9y1bOYgyuVUHGDuu7KlNWCYIXD5uU1Lpc4s4LJ8VN4TjWFGKJ3sS+LR7zzasWe8hu2ffR1JC6MHIS0EQ==}
@@ -3086,7 +3086,7 @@ snapshots:
 
   '@editorjs/helpers@0.0.4': {}
 
-  '@editorjs/image@2.10.0':
+  '@editorjs/image@2.10.1':
     dependencies:
       '@codexteam/icons': 0.3.2
 
