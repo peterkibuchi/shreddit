@@ -44,7 +44,7 @@
     "date-fns": "^4.1.0",
     "editorjs-react-renderer": "^3.5.1",
     "lodash.debounce": "^4.0.8",
-    "lucide-react": "^0.462.0",
+    "lucide-react": "^0.464.0",
     "nanoid": "^5.0.9",
     "next": "^15.0.3",
     "next-auth": "^4.24.10",
