@@ -145,8 +145,8 @@ importers:
         specifier: ^2.6.2
         version: 2.6.2
       '@editorjs/quote':
-        specifier: ^2.7.4
-        version: 2.7.4
+        specifier: ^2.7.6
+        version: 2.7.6
       '@ianvs/prettier-plugin-sort-imports':
         specifier: ^4.4.0
         version: 4.4.0(prettier@3.4.1)
@@ -298,8 +298,8 @@ packages:
   '@editorjs/paragraph@2.11.6':
     resolution: {integrity: sha512-i9B50Ylvh+0ZzUGWIba09PfUXsA00Y//zFZMwqsyaXXKxMluSIJ6ADFJbbK0zaV9Ijx49Xocrlg+CEPRqATk9w==}
 
-  '@editorjs/quote@2.7.4':
-    resolution: {integrity: sha512-767+J04/0ESnHKJtooKuBdFGJQjwC1SReMADjKuXLrKJsrBhAV0I4ocXmqf+SIpl4fVhZQo8yVyN/CmfC0e3Tw==}
+  '@editorjs/quote@2.7.6':
+    resolution: {integrity: sha512-D01KUMSDj2r+6Z+xjDkQqI+y6URpeHCvj0+P4pah+GtkG040lWjFb2H4pgHFXuol2cbfyAoraYSw85fuPheCvw==}
 
   '@editorjs/table@2.4.3':
     resolution: {integrity: sha512-TBLVFA1T6PIZRSWz0gXZUtNrFu4a59FeABM/wS0/Coc/bhOfWBRrf5/Ic5tVHaTazXEo1dYWWrVgg/jRaRnYbw==}
@@ -3103,7 +3103,7 @@ snapshots:
     dependencies:
       '@codexteam/icons': 0.0.4
 
-  '@editorjs/quote@2.7.4':
+  '@editorjs/quote@2.7.6':
     dependencies:
       '@codexteam/icons': 0.3.2
       '@editorjs/dom': 0.0.5
