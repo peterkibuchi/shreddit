@@ -63,8 +63,8 @@ importers:
         specifier: ^4.36.1
         version: 4.36.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@uploadthing/react':
-        specifier: ^7.1.1
-        version: 7.1.1(next@15.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(uploadthing@7.3.0(next@15.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.16))
+        specifier: ^7.1.2
+        version: 7.1.2(next@15.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(uploadthing@7.3.0(next@15.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.16))
       '@upstash/redis':
         specifier: ^1.34.3
         version: 1.34.3
@@ -1082,18 +1082,21 @@ packages:
   '@uploadthing/mime-types@0.3.2':
     resolution: {integrity: sha512-WP/K75S/649lM0GUcd9jq4RjeTIc/0bO2UmLx4+usTSNy/x0K8gV0JdLWeUUbmTQtJoHd4ZTSvAdG7ZQgcmXvA==}
 
-  '@uploadthing/react@7.1.1':
-    resolution: {integrity: sha512-R+n2rhx9AG79FUIw225nE4v2/255lvdaLGaY0XbkCv0tfUfXNHLImu0Sml/ZHgCGb1UyMILZWgalK7LK41eXvg==}
+  '@uploadthing/react@7.1.2':
+    resolution: {integrity: sha512-qH6A/s53DvqGJfSsRMfbum6Zc3CZ135BmL/qmguJdzA8wqWyMoi3dbHcCn3+gUldViVHUqiR324DzK4PlCQKIQ==}
     peerDependencies:
       next: '*'
       react: ^17.0.2 || ^18.0.0
-      uploadthing: 7.3.0
+      uploadthing: 7.4.0
     peerDependenciesMeta:
       next:
         optional: true
 
   '@uploadthing/shared@7.1.1':
     resolution: {integrity: sha512-Nem3jZ6G9AJEBzzDVvwSKV/wLdpADz8LDg+woo9diJTHj1FOjWNzCwb8wMxpEFLM88TWv5Tq8Z1mQepNmC5WIQ==}
+
+  '@uploadthing/shared@7.1.2':
+    resolution: {integrity: sha512-RG26qUpPufDtuR6NQbFXIJAkkOLTgoU2pvF2MoUx3AsdCwM5/RrgwzsXudNBRER7rQQLg9/k8+Oq+jeVv30qhg==}
 
   '@upstash/redis@1.34.3':
     resolution: {integrity: sha512-VT25TyODGy/8ljl7GADnJoMmtmJ1F8d84UXfGonRRF8fWYJz7+2J6GzW+a6ETGtk4OyuRTt7FRSvFG5GvrfSdQ==}
@@ -1464,6 +1467,9 @@ packages:
 
   editorjs-react-renderer@3.5.1:
     resolution: {integrity: sha512-WeFNeLDxuVyc2s7AZpAB8bfqylLXNmPxvFFgeQ8W8M95+e5QNpvpvd/JCubXYL01JDtYjFab7pTyrZva5QeF2Q==}
+
+  effect@3.10.15:
+    resolution: {integrity: sha512-LdczPAFbtij3xGr9i+8PyDtuWdlXjSY5UJ8PKrYrr0DClKfR/OW3j8sxtambWYljzJAYD865KFhv7LdbWdG7VQ==}
 
   effect@3.10.3:
     resolution: {integrity: sha512-+Z5bUhzTeqYlfoPsfXMZG1pYadqLBKARD3xwMIoEAESsOhKFOrUsHHNCy2ZZW3/6oa4wokgT01k1zavA4BAQ4w==}
@@ -3833,9 +3839,9 @@ snapshots:
 
   '@uploadthing/mime-types@0.3.2': {}
 
-  '@uploadthing/react@7.1.1(next@15.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(uploadthing@7.3.0(next@15.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.16))':
+  '@uploadthing/react@7.1.2(next@15.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(uploadthing@7.3.0(next@15.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.16))':
     dependencies:
-      '@uploadthing/shared': 7.1.1
+      '@uploadthing/shared': 7.1.2
       file-selector: 0.6.0
       react: 18.3.1
       uploadthing: 7.3.0(next@15.0.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(tailwindcss@3.4.16)
@@ -3846,6 +3852,12 @@ snapshots:
     dependencies:
       '@uploadthing/mime-types': 0.3.2
       effect: 3.10.3
+      sqids: 0.3.0
+
+  '@uploadthing/shared@7.1.2':
+    dependencies:
+      '@uploadthing/mime-types': 0.3.2
+      effect: 3.10.15
       sqids: 0.3.0
 
   '@upstash/redis@1.34.3':
@@ -4228,6 +4240,10 @@ snapshots:
     dependencies:
       html-react-parser: 3.0.16(react@18.3.1)
       react: 18.3.1
+
+  effect@3.10.15:
+    dependencies:
+      fast-check: 3.22.0
 
   effect@3.10.3:
     dependencies:
