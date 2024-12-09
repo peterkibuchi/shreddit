@@ -120,8 +120,8 @@ importers:
         specifier: ^7.54.0
         version: 7.54.0(react@18.3.1)
       react-textarea-autosize:
-        specifier: ^8.5.5
-        version: 8.5.5(@types/react@18.3.13)(react@18.3.1)
+        specifier: ^8.5.6
+        version: 8.5.6(@types/react@18.3.13)(react@18.3.1)
       tailwind-merge:
         specifier: ^2.5.5
         version: 2.5.5
@@ -2548,11 +2548,11 @@ packages:
       '@types/react':
         optional: true
 
-  react-textarea-autosize@8.5.5:
-    resolution: {integrity: sha512-CVA94zmfp8m4bSHtWwmANaBR8EPsKy2aZ7KwqhoS4Ftib87F9Kvi7XQhOixypPLMc6kVYgOXvKFuuzZDpHGRPg==}
+  react-textarea-autosize@8.5.6:
+    resolution: {integrity: sha512-aT3ioKXMa8f6zHYGebhbdMD2L00tKeRX1zuVuDx9YQK/JLLRSaSxq3ugECEmUB9z2kvk6bFSIoRHLkkUv0RJiw==}
     engines: {node: '>=10'}
     peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
   react@18.3.1:
     resolution: {integrity: sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==}
@@ -5376,7 +5376,7 @@ snapshots:
     optionalDependencies:
       '@types/react': 18.3.13
 
-  react-textarea-autosize@8.5.5(@types/react@18.3.13)(react@18.3.1):
+  react-textarea-autosize@8.5.6(@types/react@18.3.13)(react@18.3.1):
     dependencies:
       '@babel/runtime': 7.24.4
       react: 18.3.1
