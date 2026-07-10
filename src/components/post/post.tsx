@@ -30,7 +30,7 @@ export function Post({
   const postRef = useRef<HTMLParagraphElement>(null);
 
   return (
-    <div className="rounded-md bg-card shadow">
+    <div className="rounded-md bg-card shadow-sm">
       <div className="flex justify-between px-6 py-4">
         <PostVoteClient
           postId={post.id}
@@ -69,7 +69,7 @@ export function Post({
 
             {postRef.current?.clientHeight === 160 ? (
               // Blur bottom if content is too long
-              <div className="absolute bottom-0 left-0 h-24 w-full bg-gradient-to-t from-secondary to-transparent"></div>
+              <div className="absolute bottom-0 left-0 h-24 w-full bg-linear-to-t from-secondary to-transparent"></div>
             ) : null}
           </div>
         </div>

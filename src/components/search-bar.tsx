@@ -69,7 +69,7 @@ export function SearchBar() {
       className="relative z-50 max-w-lg overflow-visible rounded-lg border"
     >
       <CommandInput
-        className="border-none outline-none ring-0 focus:border-none focus:outline-none"
+        className="border-none outline-hidden ring-0 focus:border-none focus:outline-hidden"
         value={input}
         onValueChange={(text) => {
           setInput(text);
@@ -80,7 +80,7 @@ export function SearchBar() {
       />
 
       {input.length > 0 && (
-        <CommandList className="absolute inset-x-0 top-full rounded-b-md bg-white shadow dark:bg-primary-foreground">
+        <CommandList className="absolute inset-x-0 top-full rounded-b-md bg-white shadow-sm dark:bg-primary-foreground">
           {isFetched && <CommandEmpty>No results found.</CommandEmpty>}
           {(queryResults?.length ?? 0) > 0 ? (
             <CommandGroup heading="Communities">

@@ -19,7 +19,7 @@ export function MiniCreatePost({ session }: MiniCreatePostProps) {
   const navToCreatePostPage = () => router.push(pathname + "/submit");
 
   return (
-    <div className="bg overflow-hidden rounded-md bg-secondary shadow">
+    <div className="bg overflow-hidden rounded-md bg-secondary shadow-sm">
       <div className="flex h-full justify-between gap-6 px-6 py-4">
         <div className="relative">
           <UserAvatar
@@ -29,7 +29,7 @@ export function MiniCreatePost({ session }: MiniCreatePostProps) {
             }}
           />
 
-          <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-green-500 outline outline-2 outline-secondary" />
+          <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-green-500 outline-solid outline-2 outline-secondary" />
         </div>
 
         <Input

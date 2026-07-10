@@ -8,7 +8,7 @@ export function CustomImageRenderer({ data }: any) {
   const src = data.file.url;
 
   return (
-    <div className="relative min-h-[15rem] w-full">
+    <div className="relative min-h-60 w-full">
       <Image
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         src={src}

@@ -167,7 +167,7 @@ export function PostForm({ subredditId }: PostFormProps) {
             }}
             {...rest}
             placeholder="Title"
-            className="w-full resize-none appearance-none overflow-hidden bg-transparent text-5xl font-bold focus:outline-none"
+            className="w-full resize-none appearance-none overflow-hidden bg-transparent text-5xl font-bold focus:outline-hidden"
           />
 
           <div id="editor" className="min-h-[500px]" />
