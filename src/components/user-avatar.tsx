@@ -1,9 +1,9 @@
 import Image from "next/image";
-import { type User } from "@prisma/client";
 import { type AvatarProps } from "@radix-ui/react-avatar";
 
 import { Icons } from "~/components/icons";
 import { Avatar, AvatarFallback } from "~/components/ui/avatar";
+import { type User } from "~/server/db/schema";
 
 interface UserAvatarProps extends AvatarProps {
   user: Pick<User, "image" | "name">;

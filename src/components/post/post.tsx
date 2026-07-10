@@ -1,11 +1,11 @@
 import { useRef } from "react";
 import Link from "next/link";
-import type { Post, User, Vote } from "@prisma/client";
 
 import { EditorOutput } from "~/components/editor-output";
 import { Icons } from "~/components/icons";
 import { PostVoteClient } from "~/components/post-vote/post-vote-client";
 import { formatTimeToNow } from "~/lib/utils";
+import type { Post, User, Vote } from "~/server/db/schema";
 
 type PartialVote = Pick<Vote, "type">;
 

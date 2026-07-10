@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation";
-import type { Post, Vote } from "@prisma/client";
 
 import { PostVoteClient } from "~/components/post-vote/post-vote-client";
 import { getServerAuthSession } from "~/server/auth";
+import type { Post, Vote } from "~/server/db/schema";
 
 interface PostVoteServerProps {
   postId: string;

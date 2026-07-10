@@ -1,22 +1,23 @@
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
-import type { Post, User, Vote } from "@prisma/client";
+import { eq } from "drizzle-orm";
 
 import { CommentSection, Icons, PostVoteServer } from "~/components";
 import { EditorOutput } from "~/components/editor-output";
 import { buttonVariants } from "~/components/ui/button";
 import { redis } from "~/lib/redis";
 import { formatTimeToNow } from "~/lib/utils";
-import { prisma } from "~/server/db";
+import { db } from "~/server/db";
+import { posts, type Post, type User, type Vote } from "~/server/db/schema";
 import { type CachedPost } from "~/types/redis";
 
 export const dynamic = "force-dynamic";
 export const fetchCache = "force-no-store";
 
 interface PostDetailPageProps {
-  params: {
+  params: Promise<{
     postId: string;
-  };
+  }>;
 }
 
 function PostVoteShell() {
@@ -40,37 +41,36 @@ function PostVoteShell() {
   );
 }
 
-export default async function PostDetailPage({
-  params: { postId },
-}: PostDetailPageProps) {
+export default async function PostDetailPage({ params }: PostDetailPageProps) {
+  const { postId } = await params;
+
   // eslint-disable-next-line @typescript-eslint/non-nullable-type-assertion-style
   const cachedPost = (await redis.hgetall(`post:${postId}`)) as CachedPost;
 
   let post: (Post & { votes: Vote[]; author: User }) | null = null;
 
   if (!cachedPost) {
-    post = await prisma.post.findFirst({
-      where: {
-        id: postId,
-      },
-      include: {
-        votes: true,
-        author: true,
-      },
-    });
+    post =
+      (await db.query.posts.findFirst({
+        where: eq(posts.id, postId),
+        with: {
+          votes: true,
+          author: true,
+        },
+      })) ?? null;
   }
 
   if (!post && !cachedPost) return notFound();
 
   const getData = async () => {
-    return await prisma.post.findUnique({
-      where: {
-        id: postId,
-      },
-      include: {
-        votes: true,
-      },
-    });
+    return (
+      (await db.query.posts.findFirst({
+        where: eq(posts.id, postId),
+        with: {
+          votes: true,
+        },
+      })) ?? null
+    );
   };
 
   return (

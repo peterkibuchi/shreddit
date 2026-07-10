@@ -1,59 +1,45 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { format } from "date-fns";
+import { and, eq } from "drizzle-orm";
 
 import { JoinLeaveToggle, ToFeedButton } from "~/components";
 import { buttonVariants } from "~/components/ui/button";
 import { getServerAuthSession } from "~/server/auth";
-import { prisma } from "~/server/db";
+import { db } from "~/server/db";
+import { subreddits, subscriptions } from "~/server/db/schema";
 
 interface LayoutProps {
   children: React.ReactNode;
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
-export default async function Layout({
-  children,
-  params: { slug },
-}: LayoutProps) {
+export default async function Layout({ children, params }: LayoutProps) {
+  const { slug } = await params;
+
   const session = await getServerAuthSession();
 
-  const subreddit = await prisma.subreddit.findFirst({
-    where: { name: slug },
-    include: {
-      posts: {
-        include: {
-          author: true,
-          votes: true,
-        },
-      },
-    },
+  const subreddit = await db.query.subreddits.findFirst({
+    where: eq(subreddits.name, slug),
   });
+
+  if (!subreddit) return notFound();
 
   const subscription = !session?.user
     ? undefined
-    : await prisma.subscription.findFirst({
-        where: {
-          subreddit: {
-            name: slug,
-          },
-          user: {
-            id: session.user.id,
-          },
-        },
+    : await db.query.subscriptions.findFirst({
+        where: and(
+          eq(subscriptions.subredditId, subreddit.id),
+          eq(subscriptions.userId, session.user.id),
+        ),
       });
 
   const isSubscribed = !!subscription;
 
-  if (!subreddit) return notFound();
-
-  const memberCount = await prisma.subscription.count({
-    where: {
-      subreddit: {
-        name: slug,
-      },
-    },
-  });
+  const memberCount = await db.$count(
+    subscriptions,
+    eq(subscriptions.subredditId, subreddit.id),
+  );
 
   return (
     <div className="mx-auto h-full max-w-7xl pt-12 sm:container">

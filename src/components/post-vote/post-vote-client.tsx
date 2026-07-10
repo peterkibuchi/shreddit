@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { usePrevious } from "@mantine/hooks";
-import { type VoteType } from "@prisma/client";
 import { useMutation } from "@tanstack/react-query";
 import axios, { AxiosError } from "axios";
 
@@ -12,6 +11,7 @@ import { toast } from "~/components/ui/use-toast";
 import { useCustomToasts } from "~/hooks/use-custom-toasts";
 import { cn } from "~/lib/utils";
 import { type PostVoteRequest } from "~/lib/validators/vote";
+import { type VoteType } from "~/server/db/schema";
 
 interface PostVoteClientProps {
   postId: string;

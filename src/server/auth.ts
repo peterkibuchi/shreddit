@@ -1,4 +1,5 @@
-import { PrismaAdapter } from "@next-auth/prisma-adapter";
+import { DrizzleAdapter } from "@auth/drizzle-adapter";
+import { eq } from "drizzle-orm";
 import { nanoid } from "nanoid";
 import {
   getServerSession,
@@ -8,7 +9,13 @@ import {
 import GitHubProvider from "next-auth/providers/github";
 
 import { env } from "~/env";
-import { prisma } from "~/server/db";
+import { db } from "~/server/db";
+import {
+  accounts,
+  sessions,
+  users,
+  verificationTokens,
+} from "~/server/db/schema";
 
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
@@ -45,7 +52,21 @@ declare module "next-auth/jwt" {
  * @see https://next-auth.js.org/configuration/options
  */
 export const authOptions: NextAuthOptions = {
-  adapter: PrismaAdapter(prisma),
+  /**
+   * The tables passed here keep the physical names created by the previous
+   * Prisma setup. The cast is needed because the adapter's types expect
+   * `sessionToken` to be the primary key of the sessions table, while the
+   * Prisma-era `Session` table keys on `id` with a unique `sessionToken`.
+   * The adapter only ever filters sessions by `sessionToken` (and this app
+   * uses the JWT session strategy, so the sessions table is not touched at
+   * runtime), which makes the structural difference safe.
+   */
+  adapter: DrizzleAdapter(db, {
+    usersTable: users,
+    accountsTable: accounts,
+    sessionsTable: sessions,
+    verificationTokensTable: verificationTokens,
+  } as unknown as Parameters<typeof DrizzleAdapter<typeof db>>[1]),
   callbacks: {
     session: ({ session, token }) => ({
       ...session,
@@ -60,11 +81,11 @@ export const authOptions: NextAuthOptions = {
     }),
 
     async jwt({ token, user }) {
-      const dbUser = await prisma.user.findFirst({
-        where: {
-          email: token.email,
-        },
-      });
+      const dbUser = token.email
+        ? await db.query.users.findFirst({
+            where: eq(users.email, token.email),
+          })
+        : undefined;
 
       if (!dbUser) {
         token.id = user.id;
@@ -72,14 +93,10 @@ export const authOptions: NextAuthOptions = {
       }
 
       if (!dbUser.username) {
-        await prisma.user.update({
-          where: {
-            id: dbUser.id,
-          },
-          data: {
-            username: nanoid(10),
-          },
-        });
+        await db
+          .update(users)
+          .set({ username: nanoid(10) })
+          .where(eq(users.id, dbUser.id));
       }
 
       return {
@@ -113,13 +130,6 @@ export const authOptions: NextAuthOptions = {
  *
  * @see https://next-auth.js.org/configuration/nextjs
  */
-// export const getServerAuthSession = (ctx: {
-//   req: GetServerSidePropsContext["req"];
-//   res: GetServerSidePropsContext["res"];
-// }) => {
-//   return getServerSession(ctx.req, ctx.res, authOptions);
-// };
-
 export const getServerAuthSession = () => {
   return getServerSession(authOptions);
 };

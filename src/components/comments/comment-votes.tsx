@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { usePrevious } from "@mantine/hooks";
-import type { CommentVote, VoteType } from "@prisma/client";
 import { useMutation } from "@tanstack/react-query";
 import axios, { AxiosError } from "axios";
 
@@ -12,6 +11,7 @@ import { toast } from "~/components/ui/use-toast";
 import { useCustomToasts } from "~/hooks/use-custom-toasts";
 import { cn } from "~/lib/utils";
 import { type CommentVoteRequest } from "~/lib/validators/vote";
+import type { CommentVote, VoteType } from "~/server/db/schema";
 
 type PartialVote = Pick<CommentVote, "type">;
 

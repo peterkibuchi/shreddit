@@ -14,10 +14,10 @@
 
 ## Technologies Used
 
-- React 18
-- Next.js 13
+- React 19
+- Next.js 16
 - NextAuth.js
-- Prisma
+- Drizzle ORM
 - Shadcn UI
 - Tailwind CSS
 - TypeScript
@@ -68,11 +68,18 @@ To run it locally, follow the steps below:
    cp .env.example .env
    ```
 
-3. Sync the Prisma schema with your database
+3. Sync the Drizzle schema with your database
 
    ```bash
-   pnpm prisma db push
+   pnpm db:push
    ```
+
+   > **Note:** If you are pointing at a database that was previously managed
+   > by Prisma, baseline it first with `pnpm drizzle-kit pull --init` (or
+   > verify parity by confirming that `pnpm db:push` reports no changes)
+   > before ever running generated migrations against it. The schema maps
+   > onto the existing Prisma-created tables as-is; only the legacy unused
+   > `Example` table is no longer tracked and can be dropped manually.
 
 4. Start the development server:
 

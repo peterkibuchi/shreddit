@@ -1,13 +1,23 @@
 import { type NextRequest } from "next/server";
+import { and, eq } from "drizzle-orm";
 import { z } from "zod";
 
 import { redis } from "~/lib/redis";
 import { PostVoteValidator } from "~/lib/validators/vote";
 import { getServerAuthSession } from "~/server/auth";
-import { prisma } from "~/server/db";
+import { db } from "~/server/db";
+import { posts, votes, type Vote } from "~/server/db/schema";
 import { type CachedPost } from "~/types/redis";
 
 const TRIGGER_CACHE_UPVOTE_THRESHOLD = 1;
+
+function countVotes(postVotes: Vote[]) {
+  return postVotes.reduce((acc, vote) => {
+    if (vote.type === "UP") return acc + 1;
+    if (vote.type === "DOWN") return acc - 1;
+    return acc;
+  }, 0);
+}
 
 export async function PATCH(req: NextRequest) {
   try {
@@ -24,18 +34,13 @@ export async function PATCH(req: NextRequest) {
     }
 
     // Check if user has already voted on this post
-    const existingVote = await prisma.vote.findFirst({
-      where: {
-        userId: session.user.id,
-        postId,
-      },
+    const existingVote = await db.query.votes.findFirst({
+      where: and(eq(votes.userId, session.user.id), eq(votes.postId, postId)),
     });
 
-    const post = await prisma.post.findUnique({
-      where: {
-        id: postId,
-      },
-      include: {
+    const post = await db.query.posts.findFirst({
+      where: eq(posts.id, postId),
+      with: {
         author: true,
         votes: true,
       },
@@ -45,60 +50,9 @@ export async function PATCH(req: NextRequest) {
       return new Response("Post not found", { status: 404 });
     }
 
-    if (existingVote) {
-      // If vote type is the same as existing vote, delete the vote
-      if (existingVote.type === voteType) {
-        await prisma.vote.delete({
-          where: {
-            userId_postId: {
-              postId,
-              userId: session.user.id,
-            },
-          },
-        });
-
-        // Recount the votes
-        const votesAmt = post.votes.reduce((acc, vote) => {
-          if (vote.type === "UP") return acc + 1;
-          if (vote.type === "DOWN") return acc - 1;
-          return acc;
-        }, 0);
-
-        if (votesAmt >= TRIGGER_CACHE_UPVOTE_THRESHOLD) {
-          const cachePayload: CachedPost = {
-            authorUsername: post.author.username ?? "",
-            content: JSON.stringify(post.content),
-            id: post.id,
-            title: post.title,
-            currentVote: null,
-            createdAt: post.createdAt,
-          };
-
-          await redis.hset(`post:${postId}`, cachePayload); // Store the post data as a hash
-        }
-
-        return new Response("OK");
-      }
-
-      // If vote type is different, update the vote
-      await prisma.vote.update({
-        where: {
-          userId_postId: {
-            postId,
-            userId: session.user.id,
-          },
-        },
-        data: {
-          type: voteType,
-        },
-      });
-
+    const cachePost = async (currentVote: CachedPost["currentVote"]) => {
       // Recount the votes
-      const votesAmt = post.votes.reduce((acc, vote) => {
-        if (vote.type === "UP") return acc + 1;
-        if (vote.type === "DOWN") return acc - 1;
-        return acc;
-      }, 0);
+      const votesAmt = countVotes(post.votes);
 
       if (votesAmt >= TRIGGER_CACHE_UPVOTE_THRESHOLD) {
         const cachePayload: CachedPost = {
@@ -106,44 +60,49 @@ export async function PATCH(req: NextRequest) {
           content: JSON.stringify(post.content),
           id: post.id,
           title: post.title,
-          currentVote: voteType,
+          currentVote,
           createdAt: post.createdAt,
         };
 
         await redis.hset(`post:${postId}`, cachePayload); // Store the post data as a hash
       }
+    };
+
+    if (existingVote) {
+      // If vote type is the same as existing vote, delete the vote
+      if (existingVote.type === voteType) {
+        await db
+          .delete(votes)
+          .where(
+            and(eq(votes.userId, session.user.id), eq(votes.postId, postId)),
+          );
+
+        await cachePost(null);
+
+        return new Response("OK");
+      }
+
+      // If vote type is different, update the vote
+      await db
+        .update(votes)
+        .set({ type: voteType })
+        .where(
+          and(eq(votes.userId, session.user.id), eq(votes.postId, postId)),
+        );
+
+      await cachePost(voteType);
 
       return new Response("OK");
     }
 
     // If no existing vote, create a new vote
-    await prisma.vote.create({
-      data: {
-        type: voteType,
-        userId: session.user.id,
-        postId,
-      },
+    await db.insert(votes).values({
+      type: voteType,
+      userId: session.user.id,
+      postId,
     });
 
-    // Recount the votes
-    const votesAmt = post.votes.reduce((acc, vote) => {
-      if (vote.type === "UP") return acc + 1;
-      if (vote.type === "DOWN") return acc - 1;
-      return acc;
-    }, 0);
-
-    if (votesAmt >= TRIGGER_CACHE_UPVOTE_THRESHOLD) {
-      const cachePayload: CachedPost = {
-        authorUsername: post.author.username ?? "",
-        content: JSON.stringify(post.content),
-        id: post.id,
-        title: post.title,
-        currentVote: voteType,
-        createdAt: post.createdAt,
-      };
-
-      await redis.hset(`post:${postId}`, cachePayload); // Store the post data as a hash
-    }
+    await cachePost(voteType);
 
     return new Response("OK");
   } catch (error) {

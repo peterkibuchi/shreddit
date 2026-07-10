@@ -1,20 +1,22 @@
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
+import { eq } from "drizzle-orm";
 
 import { Icons, PostForm } from "~/components";
 import { Button } from "~/components/ui/button";
-import { prisma } from "~/server/db";
+import { db } from "~/server/db";
+import { subreddits } from "~/server/db/schema";
 
 interface CreatePostProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 export default async function CreatePost({ params }: CreatePostProps) {
-  const subreddit = await prisma.subreddit.findFirst({
-    where: {
-      name: params.slug,
-    },
+  const { slug } = await params;
+
+  const subreddit = await db.query.subreddits.findFirst({
+    where: eq(subreddits.name, slug),
   });
 
   if (!subreddit) return notFound();
@@ -27,7 +29,7 @@ export default async function CreatePost({ params }: CreatePostProps) {
             Create Post
           </h3>
           <p className="mt-1 ml-2 truncate text-base text-gray-500 dark:text-primary">
-            in r/{params.slug}
+            in r/{slug}
           </p>
         </div>
       </div>

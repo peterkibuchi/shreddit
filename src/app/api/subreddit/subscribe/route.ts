@@ -1,9 +1,11 @@
 import { type NextRequest } from "next/server";
+import { and, eq } from "drizzle-orm";
 import { z } from "zod";
 
 import { SubredditSubscriptionValidator } from "~/lib/validators/subreddit";
 import { getServerAuthSession } from "~/server/auth";
-import { prisma } from "~/server/db";
+import { db } from "~/server/db";
+import { subscriptions } from "~/server/db/schema";
 
 export async function POST(req: NextRequest) {
   try {
@@ -19,11 +21,11 @@ export async function POST(req: NextRequest) {
     const { subredditId } = SubredditSubscriptionValidator.parse(body);
 
     // Check if user is already subscribed to subreddit
-    const subscriptionExists = await prisma.subscription.findFirst({
-      where: {
-        subredditId,
-        userId: session.user.id,
-      },
+    const subscriptionExists = await db.query.subscriptions.findFirst({
+      where: and(
+        eq(subscriptions.subredditId, subredditId),
+        eq(subscriptions.userId, session.user.id),
+      ),
     });
 
     if (subscriptionExists) {
@@ -33,11 +35,9 @@ export async function POST(req: NextRequest) {
     }
 
     // Else, create subscription and associate it with the user
-    await prisma.subscription.create({
-      data: {
-        subredditId,
-        userId: session.user.id,
-      },
+    await db.insert(subscriptions).values({
+      subredditId,
+      userId: session.user.id,
     });
 
     return new Response(subredditId);

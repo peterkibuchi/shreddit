@@ -2,7 +2,6 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import type { Prisma, Subreddit } from "@prisma/client";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import debounce from "lodash.debounce";
@@ -17,6 +16,7 @@ import {
   CommandList,
 } from "~/components/ui/command";
 import { useOnClickOutside } from "~/hooks/use-on-click-outside";
+import type { Subreddit } from "~/server/db/schema";
 
 export function SearchBar() {
   const [input, setInput] = useState("");
@@ -55,9 +55,7 @@ export function SearchBar() {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       const { data } = await axios.get(`/api/search?q=${input}`);
 
-      return data as (Subreddit & {
-        _count: Prisma.SubredditCountOutputType;
-      })[];
+      return data as Subreddit[];
     },
     queryKey: ["search-query"],
     enabled: false,

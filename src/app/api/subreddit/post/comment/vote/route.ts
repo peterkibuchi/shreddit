@@ -1,8 +1,10 @@
+import { and, eq } from "drizzle-orm";
 import { z } from "zod";
 
 import { CommentVoteValidator } from "~/lib/validators/vote";
 import { getServerAuthSession } from "~/server/auth";
-import { prisma } from "~/server/db";
+import { db } from "~/server/db";
+import { commentVotes } from "~/server/db/schema";
 
 export async function PATCH(req: Request) {
   try {
@@ -18,52 +20,48 @@ export async function PATCH(req: Request) {
       return new Response("Unauthorized", { status: 401 });
     }
 
-    // Check if user has already voted on this post
-    const existingVote = await prisma.commentVote.findFirst({
-      where: {
-        userId: session.user.id,
-        commentId,
-      },
+    // Check if user has already voted on this comment
+    const existingVote = await db.query.commentVotes.findFirst({
+      where: and(
+        eq(commentVotes.userId, session.user.id),
+        eq(commentVotes.commentId, commentId),
+      ),
     });
 
     if (existingVote) {
       // If vote type is the same as existing vote, delete the vote
       if (existingVote.type === voteType) {
-        await prisma.commentVote.delete({
-          where: {
-            userId_commentId: {
-              commentId,
-              userId: session.user.id,
-            },
-          },
-        });
+        await db
+          .delete(commentVotes)
+          .where(
+            and(
+              eq(commentVotes.userId, session.user.id),
+              eq(commentVotes.commentId, commentId),
+            ),
+          );
 
         return new Response("OK");
       } else {
         // If vote type is different, update the vote
-        await prisma.commentVote.update({
-          where: {
-            userId_commentId: {
-              commentId,
-              userId: session.user.id,
-            },
-          },
-          data: {
-            type: voteType,
-          },
-        });
+        await db
+          .update(commentVotes)
+          .set({ type: voteType })
+          .where(
+            and(
+              eq(commentVotes.userId, session.user.id),
+              eq(commentVotes.commentId, commentId),
+            ),
+          );
 
         return new Response("OK");
       }
     }
 
     // If no existing vote, create a new vote
-    await prisma.commentVote.create({
-      data: {
-        type: voteType,
-        userId: session.user.id,
-        commentId,
-      },
+    await db.insert(commentVotes).values({
+      type: voteType,
+      userId: session.user.id,
+      commentId,
     });
 
     return new Response("OK");

@@ -1,6 +1,8 @@
 import { type NextRequest } from "next/server";
+import { like } from "drizzle-orm";
 
-import { prisma } from "~/server/db";
+import { db } from "~/server/db";
+import { subreddits } from "~/server/db/schema";
 
 export async function GET(req: NextRequest) {
   const url = new URL(req.url);
@@ -8,16 +10,9 @@ export async function GET(req: NextRequest) {
 
   if (!q) return new Response("Invalid query", { status: 400 });
 
-  const results = await prisma.subreddit.findMany({
-    where: {
-      name: {
-        startsWith: q,
-      },
-    },
-    include: {
-      _count: true,
-    },
-    take: 5,
+  const results = await db.query.subreddits.findMany({
+    where: like(subreddits.name, `${q}%`),
+    limit: 5,
   });
 
   return new Response(JSON.stringify(results));

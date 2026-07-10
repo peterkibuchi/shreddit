@@ -1,4 +1,4 @@
-import type { Comment, Post, Subreddit, User, Vote } from "@prisma/client";
+import type { Comment, Post, Subreddit, User, Vote } from "~/server/db/schema";
 
 export type ExtendedPost = Post & {
   author: User;

@@ -1,8 +1,10 @@
 import { type NextRequest } from "next/server";
+import { desc, eq, inArray, type SQL } from "drizzle-orm";
 import { z } from "zod";
 
 import { getServerAuthSession } from "~/server/auth";
-import { prisma } from "~/server/db";
+import { db } from "~/server/db";
+import { posts, subreddits, subscriptions } from "~/server/db/schema";
 
 export async function GET(req: NextRequest) {
   const url = new URL(req.url);
@@ -12,16 +14,11 @@ export async function GET(req: NextRequest) {
   let joinedCommunitiesIds: string[] = [];
 
   if (session) {
-    const joinedCommunities = await prisma.subscription.findMany({
-      where: {
-        userId: session.user.id,
-      },
-      include: {
-        subreddit: true,
-      },
+    const joinedCommunities = await db.query.subscriptions.findMany({
+      where: eq(subscriptions.userId, session.user.id),
     });
 
-    joinedCommunitiesIds = joinedCommunities.map((sub) => sub.subreddit.id);
+    joinedCommunitiesIds = joinedCommunities.map((sub) => sub.subredditId);
   }
 
   try {
@@ -37,33 +34,31 @@ export async function GET(req: NextRequest) {
         page: url.searchParams.get("page"),
       });
 
-    let whereClause = {};
+    let whereClause: SQL | undefined = undefined;
 
     // Check if user is browsing a specific subreddit, and if not, whether
     // they're logged in (show custom feed) or not (show generic feed)
     if (subredditName) {
-      whereClause = {
-        subreddit: {
-          name: subredditName,
-        },
-      };
+      const subreddit = await db.query.subreddits.findFirst({
+        where: eq(subreddits.name, subredditName),
+      });
+
+      if (!subreddit) return new Response(JSON.stringify([]));
+
+      whereClause = eq(posts.subredditId, subreddit.id);
     } else if (session) {
-      whereClause = {
-        subreddit: {
-          id: {
-            in: joinedCommunitiesIds,
-          },
-        },
-      };
+      if (joinedCommunitiesIds.length === 0) {
+        return new Response(JSON.stringify([]));
+      }
+
+      whereClause = inArray(posts.subredditId, joinedCommunitiesIds);
     }
 
-    const posts = await prisma.post.findMany({
-      take: parseInt(limit),
-      skip: (parseInt(page) - 1) * parseInt(limit), // Skip should start from 0 for page 1
-      orderBy: {
-        createdAt: "desc",
-      },
-      include: {
+    const results = await db.query.posts.findMany({
+      limit: parseInt(limit),
+      offset: (parseInt(page) - 1) * parseInt(limit), // Skip should start from 0 for page 1
+      orderBy: desc(posts.createdAt),
+      with: {
         subreddit: true,
         votes: true,
         author: true,
@@ -72,7 +67,7 @@ export async function GET(req: NextRequest) {
       where: whereClause,
     });
 
-    return new Response(JSON.stringify(posts));
+    return new Response(JSON.stringify(results));
   } catch (error) {
     if (error instanceof z.ZodError) {
       return new Response(error.message, { status: 400 });

@@ -1,10 +1,12 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { type NextRequest } from "next/server";
+import { and, eq } from "drizzle-orm";
 import { z } from "zod";
 
 import { PostValidator } from "~/lib/validators/post";
 import { getServerAuthSession } from "~/server/auth";
-import { prisma } from "~/server/db";
+import { db } from "~/server/db";
+import { posts, subscriptions } from "~/server/db/schema";
 
 export async function POST(req: NextRequest) {
   try {
@@ -20,11 +22,11 @@ export async function POST(req: NextRequest) {
     }
 
     // Verify that user is subscribed to passed subreddit id
-    const subscription = await prisma.subscription.findFirst({
-      where: {
-        subredditId,
-        userId: session.user.id,
-      },
+    const subscription = await db.query.subscriptions.findFirst({
+      where: and(
+        eq(subscriptions.subredditId, subredditId),
+        eq(subscriptions.userId, session.user.id),
+      ),
     });
 
     if (!subscription) {
@@ -34,13 +36,11 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    await prisma.post.create({
-      data: {
-        authorId: session.user.id,
-        content,
-        subredditId,
-        title,
-      },
+    await db.insert(posts).values({
+      authorId: session.user.id,
+      content,
+      subredditId,
+      title,
     });
 
     return new Response("OK");

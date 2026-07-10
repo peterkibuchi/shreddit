@@ -1,33 +1,33 @@
 import { notFound } from "next/navigation";
+import { desc, eq } from "drizzle-orm";
 
 import { MiniCreatePost, PostFeed } from "~/components";
 import { INFINITE_SCROLL_PAGINATION_RESULTS } from "~/config";
 import { getServerAuthSession } from "~/server/auth";
-import { prisma } from "~/server/db";
+import { db } from "~/server/db";
+import { posts, subreddits } from "~/server/db/schema";
 
 interface SubredditPageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export default async function SubredditPage({ params }: SubredditPageProps) {
-  const { slug } = params;
+  const { slug } = await params;
 
   const session = await getServerAuthSession();
 
-  const subreddit = await prisma.subreddit.findFirst({
-    where: { name: slug },
-    include: {
+  const subreddit = await db.query.subreddits.findFirst({
+    where: eq(subreddits.name, slug),
+    with: {
       posts: {
-        include: {
+        with: {
           author: true,
           comments: true,
           subreddit: true,
           votes: true,
         },
-        orderBy: {
-          createdAt: "desc",
-        },
-        take: INFINITE_SCROLL_PAGINATION_RESULTS,
+        orderBy: desc(posts.createdAt),
+        limit: INFINITE_SCROLL_PAGINATION_RESULTS,
       },
     },
   });

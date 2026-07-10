@@ -1,8 +1,10 @@
+import { eq } from "drizzle-orm";
 import { z } from "zod";
 
 import { UsernameValidator } from "~/lib/validators/username";
 import { getServerAuthSession } from "~/server/auth";
-import { prisma } from "~/server/db";
+import { db } from "~/server/db";
+import { users } from "~/server/db/schema";
 
 export async function PATCH(req: Request) {
   try {
@@ -18,10 +20,8 @@ export async function PATCH(req: Request) {
     const { name } = UsernameValidator.parse(body);
 
     // Check if username is already taken
-    const usernameExists = await prisma.user.findFirst({
-      where: {
-        username: name,
-      },
+    const usernameExists = await db.query.users.findFirst({
+      where: eq(users.username, name),
     });
 
     if (usernameExists) {
@@ -29,14 +29,10 @@ export async function PATCH(req: Request) {
     }
 
     // Update username
-    await prisma.user.update({
-      where: {
-        id: session.user.id,
-      },
-      data: {
-        username: name,
-      },
-    });
+    await db
+      .update(users)
+      .set({ username: name })
+      .where(eq(users.id, session.user.id));
 
     return new Response("OK");
   } catch (error) {

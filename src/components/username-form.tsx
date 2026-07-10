@@ -2,7 +2,6 @@
 
 import { useRouter } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { type User } from "@prisma/client";
 import { useMutation } from "@tanstack/react-query";
 import axios, { AxiosError } from "axios";
 import { useForm } from "react-hook-form";
@@ -22,6 +21,7 @@ import { Label } from "~/components/ui/label";
 import { toast } from "~/components/ui/use-toast";
 import { cn } from "~/lib/utils";
 import { UsernameValidator } from "~/lib/validators/username";
+import { type User } from "~/server/db/schema";
 
 type FormData = z.infer<typeof UsernameValidator>;
 

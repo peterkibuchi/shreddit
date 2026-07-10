@@ -2,7 +2,6 @@
 
 import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import type { Comment, CommentVote, User } from "@prisma/client";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { useSession } from "next-auth/react";
@@ -17,6 +16,7 @@ import { UserAvatar } from "~/components/user-avatar";
 import { useOnClickOutside } from "~/hooks/use-on-click-outside";
 import { formatTimeToNow } from "~/lib/utils";
 import { type CommentRequest } from "~/lib/validators/comment";
+import type { Comment, CommentVote, User } from "~/server/db/schema";
 
 type ExtendedComment = Comment & {
   author: User;

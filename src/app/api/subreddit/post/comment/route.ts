@@ -2,7 +2,8 @@ import { z } from "zod";
 
 import { CommentValidator } from "~/lib/validators/comment";
 import { getServerAuthSession } from "~/server/auth";
-import { prisma } from "~/server/db";
+import { db } from "~/server/db";
+import { comments } from "~/server/db/schema";
 
 export async function PATCH(req: Request) {
   try {
@@ -18,14 +19,12 @@ export async function PATCH(req: Request) {
       return new Response("Unauthorized", { status: 401 });
     }
 
-    // Create a new vote
-    await prisma.comment.create({
-      data: {
-        postId,
-        text,
-        authorId: session.user.id,
-        replyToId,
-      },
+    // Create a new comment
+    await db.insert(comments).values({
+      postId,
+      text,
+      authorId: session.user.id,
+      replyToId,
     });
 
     return new Response("OK");

@@ -1,7 +1,10 @@
+import { and, eq, isNull } from "drizzle-orm";
+
 import { CreateComment } from "~/components/comments/create-comment";
 import { PostComment } from "~/components/comments/post-comment";
 import { getServerAuthSession } from "~/server/auth";
-import { prisma } from "~/server/db";
+import { db } from "~/server/db";
+import { comments as commentsTable } from "~/server/db/schema";
 
 interface CommentsSectionProps {
   postId: string;
@@ -10,17 +13,17 @@ interface CommentsSectionProps {
 export async function CommentSection({ postId }: CommentsSectionProps) {
   const session = await getServerAuthSession();
 
-  const comments = await prisma.comment.findMany({
-    where: {
-      postId: postId,
-      replyToId: null, // Only fetch top-level comments
-    },
-    include: {
+  const comments = await db.query.comments.findMany({
+    where: and(
+      eq(commentsTable.postId, postId),
+      isNull(commentsTable.replyToId), // Only fetch top-level comments
+    ),
+    with: {
       author: true,
       votes: true,
       replies: {
         // First-level replies
-        include: {
+        with: {
           author: true,
           votes: true,
         },

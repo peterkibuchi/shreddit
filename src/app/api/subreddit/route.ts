@@ -1,9 +1,11 @@
 import { type NextRequest } from "next/server";
+import { eq } from "drizzle-orm";
 import { z } from "zod";
 
 import { SubredditValidator } from "~/lib/validators/subreddit";
 import { getServerAuthSession } from "~/server/auth";
-import { prisma } from "~/server/db";
+import { db } from "~/server/db";
+import { subreddits, subscriptions } from "~/server/db/schema";
 
 export async function POST(req: NextRequest) {
   try {
@@ -19,31 +21,33 @@ export async function POST(req: NextRequest) {
     const { name } = SubredditValidator.parse(body);
 
     // Check if subreddit already exists
-    const subredditExists = await prisma.subreddit.findFirst({
-      where: { name },
+    const subredditExists = await db.query.subreddits.findFirst({
+      where: eq(subreddits.name, name),
     });
 
     if (subredditExists) {
       return new Response("Subreddit already exists", { status: 409 });
     }
 
-    // Else, create subreddit and associate it with the user
-    const subreddit = await prisma.subreddit.create({
-      data: {
-        name,
-        creatorId: session.user.id,
-      },
-    });
+    // Else, create subreddit, associate it with the user, and subscribe
+    // the creator to the subreddit they create
+    const subredditName = await db.transaction(async (tx) => {
+      const [subreddit] = await tx
+        .insert(subreddits)
+        .values({ name, creatorId: session.user.id })
+        .returning();
 
-    // Subscribe creator to be the subreddit they create
-    await prisma.subscription.create({
-      data: {
+      if (!subreddit) throw new Error("Failed to create subreddit");
+
+      await tx.insert(subscriptions).values({
         userId: session.user.id,
         subredditId: subreddit.id,
-      },
+      });
+
+      return subreddit.name;
     });
 
-    return new Response(subreddit.name);
+    return new Response(subredditName);
   } catch (error) {
     if (error instanceof z.ZodError) {
       return new Response(error.message, { status: 422 });
