@@ -8,7 +8,7 @@ import {
   TailwindIndicator,
   ThemeProvider,
 } from "~/components";
-import { Toaster } from "~/components/ui/toaster";
+import { Toaster } from "~/components/ui/sonner";
 import { siteConfig } from "~/config/site";
 import { cn } from "~/lib/utils";
 

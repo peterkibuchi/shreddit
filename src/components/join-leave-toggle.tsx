@@ -4,9 +4,9 @@ import { startTransition } from "react";
 import { useRouter } from "next/navigation";
 import { useMutation } from "@tanstack/react-query";
 import axios, { AxiosError } from "axios";
+import { toast } from "sonner";
 
 import { Button } from "~/components/ui/button";
-import { useToast } from "~/components/ui/use-toast";
 import { useCustomToasts } from "~/hooks/use-custom-toasts";
 import { type SubscribeToSubredditPayload } from "~/lib/validators/subreddit";
 
@@ -21,7 +21,6 @@ export function JoinLeaveToggle({
   subredditId,
   subredditName,
 }: JoinLeaveToggleProps) {
-  const { toast } = useToast();
   const { loginToast } = useCustomToasts();
   const router = useRouter();
 
@@ -43,10 +42,8 @@ export function JoinLeaveToggle({
         }
       }
 
-      return toast({
-        title: "There was a problem.",
+      return toast.error("There was a problem.", {
         description: "Something went wrong. Please try again.",
-        variant: "destructive",
       });
     },
 
@@ -56,8 +53,7 @@ export function JoinLeaveToggle({
         // without losing client-side browser or React state.
         router.refresh();
       });
-      toast({
-        title: "Subscribed!",
+      toast.success("Subscribed!", {
         description: `You are now subscribed to r/${subredditName}`,
       });
     },
@@ -74,10 +70,8 @@ export function JoinLeaveToggle({
       return data as string;
     },
     onError: (err: AxiosError) => {
-      toast({
-        title: "Error",
+      toast.error("Error", {
         description: err.response?.data as string,
-        variant: "destructive",
       });
     },
     onSuccess: () => {
@@ -86,8 +80,7 @@ export function JoinLeaveToggle({
         // losing client-side browser or React state.
         router.refresh();
       });
-      toast({
-        title: "Unsubscribed!",
+      toast.success("Unsubscribed!", {
         description: `You are now unsubscribed from/${subredditName}`,
       });
     },

@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "@auth/drizzle-adapter": "^1.11.2",
+    "@base-ui/react": "^1.6.0",
     "@editorjs/editorjs": "^2.31.6",
     "@editorjs/embed": "^2.8.0",
     "@editorjs/header": "^2.8.9",
@@ -29,12 +30,6 @@
     "@hookform/resolvers": "^5.4.0",
     "@mantine/hooks": "^9.4.1",
     "@paralleldrive/cuid2": "^3.3.0",
-    "@radix-ui/react-avatar": "^1.2.2",
-    "@radix-ui/react-dialog": "^1.1.19",
-    "@radix-ui/react-dropdown-menu": "^2.1.20",
-    "@radix-ui/react-label": "^2.1.11",
-    "@radix-ui/react-slot": "^1.3.0",
-    "@radix-ui/react-toast": "^1.2.19",
     "@t3-oss/env-nextjs": "^0.13.11",
     "@tanstack/react-query": "^5.101.2",
     "@uploadthing/react": "^7.3.3",
@@ -59,6 +54,7 @@
     "react-dropzone": "^15.0.0",
     "react-hook-form": "^7.81.0",
     "react-textarea-autosize": "^8.5.9",
+    "sonner": "^2.0.7",
     "tailwind-merge": "^3.6.0",
     "uploadthing": "^7.7.4",
     "zod": "^4.4.3"

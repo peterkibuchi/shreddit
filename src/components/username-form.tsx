@@ -5,6 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
 import axios, { AxiosError } from "axios";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 import { type z } from "zod";
 
 import { Button } from "~/components/ui/button";
@@ -18,7 +19,6 @@ import {
 } from "~/components/ui/card";
 import { Input } from "~/components/ui/input";
 import { Label } from "~/components/ui/label";
-import { toast } from "~/components/ui/use-toast";
 import { cn } from "~/lib/utils";
 import { UsernameValidator } from "~/lib/validators/username";
 import { type User } from "~/server/db/schema";
@@ -55,25 +55,19 @@ export function UsernameForm({ user, className, ...props }: UsernameFormProps) {
     onError: (err) => {
       if (err instanceof AxiosError) {
         if (err.response?.status === 409) {
-          return toast({
-            title: "Username already taken.",
+          return toast.error("Username already taken.", {
             description: "Please choose another username.",
-            variant: "destructive",
           });
         }
       }
 
-      return toast({
-        title: "Something went wrong.",
+      return toast.error("Something went wrong.", {
         description: "Your username was not updated. Please try again.",
-        variant: "destructive",
       });
     },
 
     onSuccess: () => {
-      toast({
-        description: "Your username has been updated.",
-      });
+      toast.success("Your username has been updated.");
       router.refresh();
     },
   });

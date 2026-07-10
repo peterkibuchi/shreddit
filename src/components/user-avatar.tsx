@@ -1,11 +1,10 @@
 import Image from "next/image";
-import { type AvatarProps } from "@radix-ui/react-avatar";
 
 import { Icons } from "~/components/icons";
 import { Avatar, AvatarFallback } from "~/components/ui/avatar";
 import { type User } from "~/server/db/schema";
 
-interface UserAvatarProps extends AvatarProps {
+interface UserAvatarProps extends React.ComponentProps<typeof Avatar> {
   user: Pick<User, "image" | "name">;
 }
 

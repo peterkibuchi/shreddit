@@ -5,13 +5,13 @@ import { useRouter } from "next/navigation";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { useSession } from "next-auth/react";
+import { toast } from "sonner";
 
 import { CommentVotes } from "~/components/comments/comment-votes";
 import { Icons } from "~/components/icons";
 import { Button } from "~/components/ui/button";
 import { Label } from "~/components/ui/label";
 import { Textarea } from "~/components/ui/textarea";
-import { toast } from "~/components/ui/use-toast";
 import { UserAvatar } from "~/components/user-avatar";
 import { useOnClickOutside } from "~/hooks/use-on-click-outside";
 import { formatTimeToNow } from "~/lib/utils";
@@ -60,10 +60,8 @@ export function PostComment({
     },
 
     onError: () => {
-      return toast({
-        title: "Something went wrong.",
+      return toast.error("Something went wrong.", {
         description: "Comment wasn't posted successfully. Please try again.",
-        variant: "destructive",
       });
     },
 

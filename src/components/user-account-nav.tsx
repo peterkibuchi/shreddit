@@ -47,25 +47,19 @@ export function UserAccountNav({ user }: UserAccountNavProps) {
         <DropdownMenuSeparator />
 
         <DropdownMenuGroup>
-          <DropdownMenuItem asChild>
-            <Link href="/">
-              <Icons.home className="mr-2 h-4 w-4" />
-              <span>Feed</span>
-            </Link>
+          <DropdownMenuItem render={<Link href="/" />}>
+            <Icons.home className="mr-2 h-4 w-4" />
+            <span>Feed</span>
           </DropdownMenuItem>
 
-          <DropdownMenuItem asChild>
-            <Link href="/r/create">
-              <Icons.users className="mr-2 h-4 w-4" />
-              <span>Create Community</span>
-            </Link>
+          <DropdownMenuItem render={<Link href="/r/create" />}>
+            <Icons.users className="mr-2 h-4 w-4" />
+            <span>Create Community</span>
           </DropdownMenuItem>
 
-          <DropdownMenuItem asChild>
-            <Link href="/settings">
-              <Icons.settings className="mr-2 h-4 w-4" />
-              <span>Settings</span>
-            </Link>
+          <DropdownMenuItem render={<Link href="/settings" />}>
+            <Icons.settings className="mr-2 h-4 w-4" />
+            <span>Settings</span>
           </DropdownMenuItem>
         </DropdownMenuGroup>
 
@@ -73,8 +67,7 @@ export function UserAccountNav({ user }: UserAccountNavProps) {
 
         <DropdownMenuItem
           className="cursor-pointer"
-          onSelect={(event) => {
-            event.preventDefault();
+          onClick={() => {
             void signOut({
               callbackUrl: `${window.location.origin}/login`,
             });

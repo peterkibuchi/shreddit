@@ -1,23 +1,16 @@
-import Link from "next/link";
-
-import { buttonVariants } from "~/components/ui/button";
-import { toast } from "~/components/ui/use-toast";
+import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 
 export const useCustomToasts = () => {
+  const router = useRouter();
+
   const loginToast = () => {
-    const { dismiss } = toast({
-      title: "Login required.",
+    toast("Login required.", {
       description: "You need to be logged in to perform this action.",
-      variant: "default",
-      action: (
-        <Link
-          onClick={() => dismiss()}
-          href="/login"
-          className={buttonVariants()}
-        >
-          Login
-        </Link>
-      ),
+      action: {
+        label: "Login",
+        onClick: () => router.push("/login"),
+      },
     });
   };
 

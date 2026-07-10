@@ -4,10 +4,10 @@ import { useEffect, useState } from "react";
 import { usePrevious } from "@mantine/hooks";
 import { useMutation } from "@tanstack/react-query";
 import axios, { AxiosError } from "axios";
+import { toast } from "sonner";
 
 import { Icons } from "~/components/icons";
 import { Button } from "~/components/ui/button";
-import { toast } from "~/components/ui/use-toast";
 import { useCustomToasts } from "~/hooks/use-custom-toasts";
 import { cn } from "~/lib/utils";
 import { type PostVoteRequest } from "~/lib/validators/vote";
@@ -54,10 +54,8 @@ export function PostVoteClient({
         }
       }
 
-      return toast({
-        title: "Something went wrong.",
+      return toast.error("Something went wrong.", {
         description: "Your vote was not registered. Please try again.",
-        variant: "destructive",
       });
     },
 

@@ -2,16 +2,15 @@
 
 import { useState } from "react";
 import { signIn } from "next-auth/react";
+import { toast } from "sonner";
 
 import { Icons } from "~/components/icons";
 import { Button } from "~/components/ui/button";
-import { useToast } from "~/components/ui/use-toast";
 import { cn } from "~/lib/utils";
 
 type UserAuthFormProps = React.HTMLAttributes<HTMLDivElement>;
 
 export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
-  const { toast } = useToast();
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const loginWithGitHub = async () => {
@@ -21,10 +20,8 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
       await signIn("github");
     } catch (error) {
       console.error(error);
-      toast({
-        title: "Error",
+      toast.error("Error", {
         description: "There was an error logging in with GitHub",
-        variant: "destructive",
       });
     } finally {
       setIsLoading(false);

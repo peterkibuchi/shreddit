@@ -4,10 +4,10 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useMutation } from "@tanstack/react-query";
 import axios, { AxiosError } from "axios";
+import { toast } from "sonner";
 
 import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
-import { toast } from "~/components/ui/use-toast";
 import { useCustomToasts } from "~/hooks/use-custom-toasts";
 import { type CreateSubredditPayload } from "~/lib/validators/subreddit";
 
@@ -30,26 +30,20 @@ export default function CreateSubreddit() {
     onError: (err) => {
       if (err instanceof AxiosError) {
         if (err.response?.status === 409) {
-          return toast({
-            title: "Subreddit already exists.",
+          return toast.error("Subreddit already exists.", {
             description: "Please choose a different name for your subreddit.",
-            variant: "destructive",
           });
         } else if (err.response?.status === 422) {
-          return toast({
-            title: "Invalid subreddit name.",
+          return toast.error("Invalid subreddit name.", {
             description: "Please choose a name between 3 and 21 letters.",
-            variant: "destructive",
           });
         } else if (err.response?.status === 401) {
           return loginToast();
         }
       }
 
-      toast({
-        title: "Something went wrong.",
+      toast.error("Something went wrong.", {
         description: "Could not create subreddit. Please try again.",
-        variant: "destructive",
       });
     },
 

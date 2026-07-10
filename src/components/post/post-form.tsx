@@ -9,9 +9,9 @@ import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import TextareaAutosize from "react-textarea-autosize";
+import { toast } from "sonner";
 import { type z } from "zod";
 
-import { toast } from "~/components/ui/use-toast";
 import { editorTools } from "~/lib/editor-tools";
 import { PostValidator, type PostCreationRequest } from "~/lib/validators/post";
 
@@ -56,10 +56,8 @@ export function PostForm({ subredditId }: PostFormProps) {
     },
 
     onError: () => {
-      return toast({
-        title: "Something went wrong.",
+      return toast.error("Something went wrong.", {
         description: "Your post was not published. Please try again.",
-        variant: "destructive",
       });
     },
 
@@ -69,9 +67,7 @@ export function PostForm({ subredditId }: PostFormProps) {
       router.push(newPathname);
       router.refresh();
 
-      return toast({
-        description: "Your post has been published.",
-      });
+      return toast.success("Your post has been published.");
     },
   });
 
@@ -122,10 +118,8 @@ export function PostForm({ subredditId }: PostFormProps) {
   useEffect(() => {
     if (Object.keys(errors).length) {
       for (const value of Object.values(errors)) {
-        toast({
-          title: "Something went wrong.",
+        toast.error("Something went wrong.", {
           description: (value as { message: string }).message,
-          variant: "destructive",
         });
       }
     }

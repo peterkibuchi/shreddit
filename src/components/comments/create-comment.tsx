@@ -4,11 +4,11 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useMutation } from "@tanstack/react-query";
 import axios, { AxiosError } from "axios";
+import { toast } from "sonner";
 
 import { Button } from "~/components/ui/button";
 import { Label } from "~/components/ui/label";
 import { Textarea } from "~/components/ui/textarea";
-import { toast } from "~/components/ui/use-toast";
 import { useCustomToasts } from "~/hooks/use-custom-toasts";
 import { type CommentRequest } from "~/lib/validators/comment";
 
@@ -42,10 +42,8 @@ export function CreateComment({ postId, replyToId }: CreateCommentProps) {
         }
       }
 
-      return toast({
-        title: "Something went wrong.",
+      return toast.error("Something went wrong.", {
         description: "Comment wasn't created successfully. Please try again.",
-        variant: "destructive",
       });
     },
 
