@@ -22,11 +22,11 @@ export default async function CreatePost({ params }: CreatePostProps) {
   return (
     <div className="flex flex-col items-start gap-6">
       <div className="border-b border-gray-200 pb-3 dark:border-gray-500">
-        <div className="-ml-2 -mt-2 flex flex-wrap items-baseline">
-          <h3 className="ml-2 mt-2 text-base font-semibold leading-6 text-gray-900 dark:text-gray-500">
+        <div className="-mt-2 -ml-2 flex flex-wrap items-baseline">
+          <h3 className="mt-2 ml-2 text-base leading-6 font-semibold text-gray-900 dark:text-gray-500">
             Create Post
           </h3>
-          <p className="ml-2 mt-1 truncate text-base text-gray-500 dark:text-primary">
+          <p className="mt-1 ml-2 truncate text-base text-gray-500 dark:text-primary">
             in r/{params.slug}
           </p>
         </div>

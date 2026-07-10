@@ -35,7 +35,7 @@ export function PostForm({ subredditId }: PostFormProps) {
     },
   });
 
-  const ref = useRef<EditorJS>();
+  const ref = useRef<EditorJS | undefined>(undefined);
   const _titleRef = useRef<HTMLTextAreaElement>(null);
   const [isMounted, setIsMounted] = useState(false);
 
@@ -154,7 +154,7 @@ export function PostForm({ subredditId }: PostFormProps) {
       <form
         id="subreddit-post-form"
         className="w-fit"
-        // eslint-disable-next-line @typescript-eslint/no-misused-promises
+
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className="prose prose-stone dark:prose-invert">
@@ -162,7 +162,6 @@ export function PostForm({ subredditId }: PostFormProps) {
             ref={(e) => {
               titleRef(e);
 
-              // @ts-expect-error Cannot assign to current because it is a read-only property
               _titleRef.current = e;
             }}
             {...rest}

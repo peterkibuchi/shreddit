@@ -42,7 +42,7 @@ export function UsernameForm({ user, className, ...props }: UsernameFormProps) {
     },
   });
 
-  const { mutate: updateUsername, isLoading } = useMutation({
+  const { mutate: updateUsername, isPending: isLoading } = useMutation({
     mutationFn: async ({ name }: FormData) => {
       const payload: FormData = { name };
 
@@ -81,7 +81,7 @@ export function UsernameForm({ user, className, ...props }: UsernameFormProps) {
   return (
     <form
       className={cn(className)}
-      // eslint-disable-next-line @typescript-eslint/no-misused-promises
+
       onSubmit={handleSubmit((e) => updateUsername(e))}
       {...props}
     >
@@ -95,7 +95,7 @@ export function UsernameForm({ user, className, ...props }: UsernameFormProps) {
 
         <CardContent>
           <div className="relative grid gap-1">
-            <div className="absolute left-0 top-0 grid h-10 w-8 place-items-center">
+            <div className="absolute top-0 left-0 grid h-10 w-8 place-items-center">
               <span className="text-sm text-zinc-500">u/</span>
             </div>
 

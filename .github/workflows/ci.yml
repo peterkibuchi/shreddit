@@ -18,14 +18,14 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v4.0.0
 
-      - name: Setup Node 20
+      - name: Setup Node 24
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
           cache: "pnpm"
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
 
       - name: Run linter
         run: |
@@ -41,14 +41,14 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v4.0.0
 
-      - name: Setup Node 20
+      - name: Setup Node 24
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
           cache: "pnpm"
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
 
       - name: Run typecheck
         run: pnpm typecheck

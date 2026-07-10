@@ -1,8 +1,6 @@
 allowBuilds:
-  - "@prisma/client"
-  - "@prisma/engines"
-  - "@tailwindcss/oxide"
-  - esbuild
-  - prisma
-  - sharp
-  - unrs-resolver
+  '@prisma/client': true
+  '@prisma/engines': true
+  msgpackr-extract: true
+  prisma: true
+  unrs-resolver: true

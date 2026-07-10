@@ -69,7 +69,7 @@ export function SearchBar() {
       className="relative z-50 max-w-lg overflow-visible rounded-lg border"
     >
       <CommandInput
-        className="border-none outline-hidden ring-0 focus:border-none focus:outline-hidden"
+        className="border-none ring-0 outline-hidden focus:border-none focus:outline-hidden"
         value={input}
         onValueChange={(text) => {
           setInput(text);

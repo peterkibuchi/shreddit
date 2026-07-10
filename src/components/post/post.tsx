@@ -56,7 +56,7 @@ export function Post({
           </div>
 
           <a href={`/r/${subredditName}/post/${post.id}`}>
-            <h1 className="py-2 text-lg font-semibold leading-6 text-secondary-foreground">
+            <h1 className="py-2 text-lg leading-6 font-semibold text-secondary-foreground">
               {post.title}
             </h1>
           </a>

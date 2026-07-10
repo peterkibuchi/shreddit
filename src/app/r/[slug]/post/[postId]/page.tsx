@@ -91,7 +91,7 @@ export default async function PostDetailPage({
             {formatTimeToNow(new Date(post?.createdAt ?? cachedPost.createdAt))}
           </p>
 
-          <h1 className="py-2 text-xl font-semibold leading-6 text-primary">
+          <h1 className="py-2 text-xl leading-6 font-semibold text-primary">
             {post?.title ?? cachedPost.title}
           </h1>
 

@@ -25,7 +25,7 @@ export function JoinLeaveToggle({
   const { loginToast } = useCustomToasts();
   const router = useRouter();
 
-  const { mutate: subscribe, isLoading: isSubLoading } = useMutation({
+  const { mutate: subscribe, isPending: isSubLoading } = useMutation({
     mutationFn: async () => {
       const payload: SubscribeToSubredditPayload = {
         subredditId,
@@ -63,7 +63,7 @@ export function JoinLeaveToggle({
     },
   });
 
-  const { mutate: unsubscribe, isLoading: isUnsubLoading } = useMutation({
+  const { mutate: unsubscribe, isPending: isUnsubLoading } = useMutation({
     mutationFn: async () => {
       const payload: SubscribeToSubredditPayload = {
         subredditId,
@@ -95,7 +95,7 @@ export function JoinLeaveToggle({
 
   return isSubscribed ? (
     <Button
-      className="mb-4 mt-1 w-full"
+      className="mt-1 mb-4 w-full"
       isLoading={isUnsubLoading}
       onClick={() => unsubscribe()}
     >
@@ -103,7 +103,7 @@ export function JoinLeaveToggle({
     </Button>
   ) : (
     <Button
-      className="mb-4 mt-1 w-full"
+      className="mt-1 mb-4 w-full"
       isLoading={isSubLoading}
       onClick={() => subscribe()}
     >

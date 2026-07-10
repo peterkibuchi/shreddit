@@ -79,7 +79,7 @@ export function PostVoteClient({
   });
 
   return (
-    <div className="flex flex-col gap-4 pb-4 pr-6 sm:w-20 sm:gap-0 sm:pb-0">
+    <div className="flex flex-col gap-4 pr-6 pb-4 sm:w-20 sm:gap-0 sm:pb-0">
       {/* Upvote */}
       <Button
         onClick={() => vote("UP")}

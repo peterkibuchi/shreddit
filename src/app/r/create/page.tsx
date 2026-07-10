@@ -16,7 +16,7 @@ export default function CreateSubreddit() {
   const router = useRouter();
   const { loginToast } = useCustomToasts();
 
-  const { mutate: createCommunity, isLoading } = useMutation({
+  const { mutate: createCommunity, isPending: isLoading } = useMutation({
     mutationFn: async () => {
       const payload: CreateSubredditPayload = {
         name: input,

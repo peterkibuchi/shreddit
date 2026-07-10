@@ -22,7 +22,7 @@ export function CreateComment({ postId, replyToId }: CreateCommentProps) {
   const router = useRouter();
   const { loginToast } = useCustomToasts();
 
-  const { mutate: submitComment, isLoading } = useMutation({
+  const { mutate: submitComment, isPending: isLoading } = useMutation({
     mutationFn: async ({ postId, text, replyToId }: CommentRequest) => {
       const payload: CommentRequest = { postId, text, replyToId };
 

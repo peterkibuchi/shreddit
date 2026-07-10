@@ -11,7 +11,6 @@ interface EditorOutputProps {
 }
 
 const Output = dynamic(
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-return
   async () => (await import("editorjs-react-renderer")).default,
   { ssr: false },
 );

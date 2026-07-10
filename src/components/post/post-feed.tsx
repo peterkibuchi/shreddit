@@ -24,10 +24,10 @@ export function PostFeed({ initialPosts, subredditName }: PostFeedProps) {
   });
   const { data: session } = useSession();
 
-  const { data, fetchNextPage, isFetchingNextPage } = useInfiniteQuery(
-    ["infinite-query"],
+  const { data, fetchNextPage, isFetchingNextPage } = useInfiniteQuery({
+    queryKey: ["infinite-query"],
 
-    async ({ pageParam = 1 }) => {
+    queryFn: async ({ pageParam }) => {
       const query =
         `/api/posts?limit=${INFINITE_SCROLL_PAGINATION_RESULTS}&page=${pageParam}` +
         (!!subredditName ? `&subredditName=${subredditName}` : "");
@@ -37,13 +37,12 @@ export function PostFeed({ initialPosts, subredditName }: PostFeedProps) {
       return data as ExtendedPost[];
     },
 
-    {
-      getNextPageParam: (_, pages) => {
-        return pages.length + 1;
-      },
-      initialData: { pages: [initialPosts], pageParams: [1] },
+    initialPageParam: 1,
+    getNextPageParam: (_, pages) => {
+      return pages.length + 1;
     },
-  );
+    initialData: { pages: [initialPosts], pageParams: [1] },
+  });
 
   useEffect(() => {
     if (entry?.isIntersecting) {

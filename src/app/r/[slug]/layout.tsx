@@ -64,7 +64,7 @@ export default async function Layout({
           <ul className="col-span-2 flex flex-col space-y-6">{children}</ul>
 
           {/* Info Sidebar */}
-          <div className="order-first h-fit overflow-hidden rounded-lg border border-secondary text-gray-500 dark:text-gray-400 md:order-last">
+          <div className="order-first h-fit overflow-hidden rounded-lg border border-secondary text-gray-500 md:order-last dark:text-gray-400">
             <div className="bg-secondary px-6 py-4">
               <p className="py-3 font-semibold text-secondary-foreground">
                 About r/{subreddit.name}

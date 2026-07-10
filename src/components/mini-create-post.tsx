@@ -29,7 +29,7 @@ export function MiniCreatePost({ session }: MiniCreatePostProps) {
             }}
           />
 
-          <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-green-500 outline-solid outline-2 outline-secondary" />
+          <span className="absolute right-0 bottom-0 h-3 w-3 rounded-full bg-green-500 outline-2 outline-secondary outline-solid" />
         </div>
 
         <Input
