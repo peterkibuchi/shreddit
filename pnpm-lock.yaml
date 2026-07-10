@@ -26,9 +26,6 @@ importers:
       '@editorjs/list':
         specifier: ^2.0.9
         version: 2.0.9
-      '@editorjs/paragraph':
-        specifier: ^2.11.7
-        version: 2.11.7
       '@editorjs/table':
         specifier: ^2.4.5
         version: 2.4.5
@@ -104,9 +101,6 @@ importers:
       react-dom:
         specifier: 19.2.7
         version: 19.2.7(react@19.2.7)
-      react-dropzone:
-        specifier: ^15.0.0
-        version: 15.0.0(react@19.2.7)
       react-hook-form:
         specifier: ^7.81.0
         version: 7.81.0(react@19.2.7)
@@ -365,9 +359,6 @@ packages:
 
   '@editorjs/list@2.0.9':
     resolution: {integrity: sha512-rUTgDSt5wygD3Dp24bNyp6vvye/Xf4UWju0ZuvWeP13Z4cu2z1Jb5JFSTEhCou72XUGuf4xVhtsd8cm/bwUS1g==}
-
-  '@editorjs/paragraph@2.11.7':
-    resolution: {integrity: sha512-qD6bbWvRc4VvP0mXDOm+hOhzzhUYR9ZjcAvgCuKWcCbUMpCvhVF1s8NX40zdjekPi6JEnuHTamCncTrSzVsVhw==}
 
   '@editorjs/quote@2.7.6':
     resolution: {integrity: sha512-D01KUMSDj2r+6Z+xjDkQqI+y6URpeHCvj0+P4pah+GtkG040lWjFb2H4pgHFXuol2cbfyAoraYSw85fuPheCvw==}
@@ -1880,10 +1871,6 @@ packages:
   asynckit@0.4.0:
     resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
 
-  attr-accept@2.2.5:
-    resolution: {integrity: sha512-0bDNnY/u6pPwHDMoF0FieU354oBi0a8rD9FcsLwzcGWbc8KS8KPIi7y+s13OlVY+gMWc/9xEMUgNE6Qm8ZllYQ==}
-    engines: {node: '>=4'}
-
   available-typed-arrays@1.0.7:
     resolution: {integrity: sha512-wvUjBtSGN7+7SjNpq/9M2Tg350UZD3q62IFZLbRAR1bSMlCo1ZaeW+BJ+D090e4hIIZLBcTDWe4Mh4jvUDajzQ==}
     engines: {node: '>= 0.4'}
@@ -2417,10 +2404,6 @@ packages:
 
   file-selector@0.6.0:
     resolution: {integrity: sha512-QlZ5yJC0VxHxQQsQhXvBaC7VRJ2uaxTf+Tfpu4Z/OcVQJVpZO+DGU0rkoVW5ce2SccxugvpBJoMvUs59iILYdw==}
-    engines: {node: '>= 12'}
-
-  file-selector@2.1.2:
-    resolution: {integrity: sha512-QgXo+mXTe8ljeqUFaX3QVHc5osSItJ/Km+xpocx0aSqWGMSCf6qYs/VnzZgS864Pjn5iceMRFigeAV7AfTlaig==}
     engines: {node: '>= 12'}
 
   fill-range@7.1.1:
@@ -3207,12 +3190,6 @@ packages:
     peerDependencies:
       react: ^19.2.7
 
-  react-dropzone@15.0.0:
-    resolution: {integrity: sha512-lGjYV/EoqEjEWPnmiSvH4v5IoIAwQM2W4Z1C0Q/Pw2xD0eVzKPS359BQTUMum+1fa0kH2nrKjuavmTPOGhpLPg==}
-    engines: {node: '>= 10.13'}
-    peerDependencies:
-      react: '>= 16.8 || 18.0.0'
-
   react-hook-form@7.81.0:
     resolution: {integrity: sha512-ocbmr2p5KBMoAfj4WCUvped33lVi1Kd5DuDUvQDnB6VEAacOjPI/jMbtDdbhco4y9ct4xUuCmMY0b/C9L0QHjw==}
     engines: {node: '>=18.0.0'}
@@ -3881,10 +3858,6 @@ snapshots:
   '@editorjs/list@2.0.9':
     dependencies:
       '@codexteam/icons': 0.3.3
-
-  '@editorjs/paragraph@2.11.7':
-    dependencies:
-      '@codexteam/icons': 0.0.4
 
   '@editorjs/quote@2.7.6':
     dependencies:
@@ -5009,8 +4982,6 @@ snapshots:
 
   asynckit@0.4.0: {}
 
-  attr-accept@2.2.5: {}
-
   available-typed-arrays@1.0.7:
     dependencies:
       possible-typed-array-names: 1.1.0
@@ -5681,10 +5652,6 @@ snapshots:
       flat-cache: 4.0.1
 
   file-selector@0.6.0:
-    dependencies:
-      tslib: 2.8.1
-
-  file-selector@2.1.2:
     dependencies:
       tslib: 2.8.1
 
@@ -6390,13 +6357,6 @@ snapshots:
     dependencies:
       react: 19.2.7
       scheduler: 0.27.0
-
-  react-dropzone@15.0.0(react@19.2.7):
-    dependencies:
-      attr-accept: 2.2.5
-      file-selector: 2.1.2
-      prop-types: 15.8.1
-      react: 19.2.7
 
   react-hook-form@7.81.0(react@19.2.7):
     dependencies:
