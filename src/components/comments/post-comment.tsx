@@ -16,10 +16,11 @@ import { UserAvatar } from "~/components/user-avatar";
 import { useOnClickOutside } from "~/hooks/use-on-click-outside";
 import { formatTimeToNow } from "~/lib/utils";
 import { type CommentRequest } from "~/lib/validators/comment";
-import type { Comment, CommentVote, User } from "~/server/db/schema";
+import type { Comment, CommentVote } from "~/server/db/schema";
+import type { PublicAuthor } from "~/types/db";
 
 type ExtendedComment = Comment & {
-  author: User;
+  author: PublicAuthor;
   votes: CommentVote[];
 };
 

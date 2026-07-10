@@ -10,7 +10,10 @@ export async function GeneralFeed() {
     orderBy: desc(posts.createdAt),
     with: {
       votes: true,
-      author: true,
+      author: {
+        // Never expose author email/emailVerified to the client
+        columns: { id: true, name: true, username: true, image: true },
+      },
       comments: true,
       subreddit: true,
     },

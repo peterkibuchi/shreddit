@@ -21,7 +21,10 @@ export default async function SubredditPage({ params }: SubredditPageProps) {
     with: {
       posts: {
         with: {
-          author: true,
+          author: {
+            // Never expose author email/emailVerified to the client
+            columns: { id: true, name: true, username: true, image: true },
+          },
           comments: true,
           subreddit: true,
           votes: true,

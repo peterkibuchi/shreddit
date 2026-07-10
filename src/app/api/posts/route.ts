@@ -61,7 +61,10 @@ export async function GET(req: NextRequest) {
       with: {
         subreddit: true,
         votes: true,
-        author: true,
+        author: {
+          // Never expose author email/emailVerified to the client
+          columns: { id: true, name: true, username: true, image: true },
+        },
         comments: true,
       },
       where: whereClause,

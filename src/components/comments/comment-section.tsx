@@ -19,12 +19,17 @@ export async function CommentSection({ postId }: CommentsSectionProps) {
       isNull(commentsTable.replyToId), // Only fetch top-level comments
     ),
     with: {
-      author: true,
+      // Never expose author email/emailVerified to the client
+      author: {
+        columns: { id: true, name: true, username: true, image: true },
+      },
       votes: true,
       replies: {
         // First-level replies
         with: {
-          author: true,
+          author: {
+            columns: { id: true, name: true, username: true, image: true },
+          },
           votes: true,
         },
       },

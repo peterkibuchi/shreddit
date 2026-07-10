@@ -29,7 +29,10 @@ export async function CustomFeed() {
           orderBy: desc(postsTable.createdAt),
           with: {
             votes: true,
-            author: true,
+            author: {
+              // Never expose author email/emailVerified to the client
+              columns: { id: true, name: true, username: true, image: true },
+            },
             comments: true,
             subreddit: true,
           },
