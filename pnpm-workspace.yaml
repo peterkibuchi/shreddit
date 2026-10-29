@@ -4,3 +4,8 @@ allowBuilds:
   msgpackr-extract: true
   sharp: true
   unrs-resolver: true
+overrides:
+  # uploadthing pins effect 3.17.7, which has a high-severity advisory fixed in 3.20.0.
+  "effect@<3.20.0": ~3.20.0
+  # Optional peer of @t3-oss/env-core and @hookform/resolvers; 1.4.2 fixes an advisory.
+  "valibot@<1.4.2": ~1.4.2

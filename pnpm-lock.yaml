@@ -4,6 +4,10 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  effect@<3.20.0: ~3.20.0
+  valibot@<1.4.2: ~1.4.2
+
 importers:
 
   .:
@@ -31,7 +35,7 @@ importers:
         version: 2.4.6
       '@hookform/resolvers':
         specifier: ^6.0.2
-        version: 6.0.2(@standard-schema/spec@1.1.0)(effect@3.17.7)(react-hook-form@7.91.0(@types/react@19.3.0)(react@19.3.1))(valibot@1.2.0(typescript@6.0.3))(zod@4.6.7)
+        version: 6.0.2(@standard-schema/spec@1.1.0)(effect@3.20.1)(react-hook-form@7.91.0(@types/react@19.3.0)(react@19.3.1))(zod@4.6.7)
       '@mantine/hooks':
         specifier: ^9.7.4
         version: 9.7.4(react@19.3.1)
@@ -40,7 +44,7 @@ importers:
         version: 3.3.0
       '@t3-oss/env-nextjs':
         specifier: ^0.13.11
-        version: 0.13.11(typescript@6.0.3)(valibot@1.2.0(typescript@6.0.3))(zod@4.6.7)
+        version: 0.13.11(typescript@6.0.3)(zod@4.6.7)
       '@tanstack/react-query':
         specifier: ^5.105.0
         version: 5.105.0(@types/react@19.3.0)(react@19.3.1)
@@ -378,7 +382,7 @@ packages:
   '@effect/platform@0.90.3':
     resolution: {integrity: sha512-XvQ37yzWQKih4Du2CYladd1i/MzqtgkTPNCaN6Ku6No4CK83hDtXIV/rP03nEoBg2R3Pqgz6gGWmE2id2G81HA==}
     peerDependencies:
-      effect: ^3.17.7
+      effect: ~3.20.0
 
   '@emnapi/core@1.10.0':
     resolution: {integrity: sha512-yq6OkJ4p82CAfPl0u9mQebQHKPJkY7WrIuk205cTYnYe+k2Z8YBh11FrbRG/H6ihirqcacOgl2BIO8oyMQLeXw==}
@@ -918,7 +922,7 @@ packages:
       react-hook-form: ^7.55.0
       superstruct: '>=0.12.0'
       typanion: ^3.3.2
-      valibot: '>=0.31.0 || ^1.0.0-beta.4 || ^1.0.0-rc'
+      valibot: ~1.4.2
       vest: '>=6.0.0'
       yup: ^1.0.0
       zod: ^3.25.0 || ^4.0.0
@@ -1508,7 +1512,7 @@ packages:
     peerDependencies:
       arktype: ^2.1.0
       typescript: '>=5.0.0'
-      valibot: ^1.0.0-beta.7 || ^1.0.0
+      valibot: ~1.4.2
       zod: ^3.24.0 || ^4.0.0
     peerDependenciesMeta:
       arktype:
@@ -1525,7 +1529,7 @@ packages:
     peerDependencies:
       arktype: ^2.1.0
       typescript: '>=5.0.0'
-      valibot: ^1.0.0-beta.7 || ^1.0.0
+      valibot: ~1.4.2
       zod: ^3.24.0 || ^4.0.0
     peerDependenciesMeta:
       arktype:
@@ -2257,8 +2261,8 @@ packages:
   editorjs-react-renderer@3.5.2:
     resolution: {integrity: sha512-ESLxtEltbAmWqujB3ulqhduUJX6/nyDHtDAcqdXpHCgOPPjTFwC9T3WYgkgbZXQb+IHUFCVf/fYLpkJ95AdXqQ==}
 
-  effect@3.17.7:
-    resolution: {integrity: sha512-dpt0ONUn3zzAuul6k4nC/coTTw27AL5nhkORXgTi6NfMPzqWYa1M05oKmOMTxpVSTKepqXVcW9vIwkuaaqx9zA==}
+  effect@3.20.1:
+    resolution: {integrity: sha512-Jl4IbaJQqerCRA2k1bAuz6k1IkCjeGTUyIq5zgCza+QN1v7/8EIKpR49MRhjI+7Ye96WjclsOQyYYdiLySViMA==}
 
   electron-to-chromium@1.5.467:
     resolution: {integrity: sha512-Nw9X371rtZmYcBSnEijnCDONILjs93biCZO34juC7MBOmK8E+GFnyD4T/WvyrlJkppul7oxg6TwvtKst9SODTw==}
@@ -3670,14 +3674,6 @@ packages:
     resolution: {integrity: sha512-vIYxrBCC/N/K+Js3qSN88go7kIfNPssr/hHCesKCQNAjmgvYS2oqr69kIufEG+O4+PfezOH4EbIeHCfFov8ZgQ==}
     hasBin: true
 
-  valibot@1.2.0:
-    resolution: {integrity: sha512-mm1rxUsmOxzrwnX5arGS+U4T25RdvpPjPN4yR0u9pUBov9+zGVtO84tif1eY4r6zWxVxu3KzIyknJy3rxfRZZg==}
-    peerDependencies:
-      typescript: '>=5'
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-
   which-boxed-primitive@1.1.1:
     resolution: {integrity: sha512-TbX3mj8n0odCBFVlY8AxkqcHASw3L60jIuF8jFP78az3C2YhmGvqbHBpAjTRH2/xqYunrJ9g1jSyjCjpoWzIAA==}
     engines: {node: '>= 0.4'}
@@ -3955,10 +3951,10 @@ snapshots:
     dependencies:
       '@codexteam/icons': 0.0.6
 
-  '@effect/platform@0.90.3(effect@3.17.7)':
+  '@effect/platform@0.90.3(effect@3.20.1)':
     dependencies:
       '@opentelemetry/semantic-conventions': 1.43.0
-      effect: 3.17.7
+      effect: 3.20.1
       find-my-way-ts: 0.1.6
       msgpackr: 1.12.1
       multipasta: 0.2.9
@@ -4268,14 +4264,13 @@ snapshots:
 
   '@floating-ui/utils@0.2.12': {}
 
-  '@hookform/resolvers@6.0.2(@standard-schema/spec@1.1.0)(effect@3.17.7)(react-hook-form@7.91.0(@types/react@19.3.0)(react@19.3.1))(valibot@1.2.0(typescript@6.0.3))(zod@4.6.7)':
+  '@hookform/resolvers@6.0.2(@standard-schema/spec@1.1.0)(effect@3.20.1)(react-hook-form@7.91.0(@types/react@19.3.0)(react@19.3.1))(zod@4.6.7)':
     dependencies:
       '@standard-schema/utils': 0.3.0
       react-hook-form: 7.91.0(@types/react@19.3.0)(react@19.3.1)
     optionalDependencies:
       '@standard-schema/spec': 1.1.0
-      effect: 3.17.7
-      valibot: 1.2.0(typescript@6.0.3)
+      effect: 3.20.1
       zod: 4.6.7
 
   '@humanfs/core@0.19.2':
@@ -4677,18 +4672,16 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  '@t3-oss/env-core@0.13.11(typescript@6.0.3)(valibot@1.2.0(typescript@6.0.3))(zod@4.6.7)':
+  '@t3-oss/env-core@0.13.11(typescript@6.0.3)(zod@4.6.7)':
     optionalDependencies:
       typescript: 6.0.3
-      valibot: 1.2.0(typescript@6.0.3)
       zod: 4.6.7
 
-  '@t3-oss/env-nextjs@0.13.11(typescript@6.0.3)(valibot@1.2.0(typescript@6.0.3))(zod@4.6.7)':
+  '@t3-oss/env-nextjs@0.13.11(typescript@6.0.3)(zod@4.6.7)':
     dependencies:
-      '@t3-oss/env-core': 0.13.11(typescript@6.0.3)(valibot@1.2.0(typescript@6.0.3))(zod@4.6.7)
+      '@t3-oss/env-core': 0.13.11(typescript@6.0.3)(zod@4.6.7)
     optionalDependencies:
       typescript: 6.0.3
-      valibot: 1.2.0(typescript@6.0.3)
       zod: 4.6.7
 
   '@tailwindcss/node@4.3.3':
@@ -4975,7 +4968,7 @@ snapshots:
   '@uploadthing/shared@7.1.10':
     dependencies:
       '@uploadthing/mime-types': 0.3.6
-      effect: 3.17.7
+      effect: 3.20.1
       sqids: 0.3.0
 
   '@upstash/redis@1.40.0':
@@ -5298,7 +5291,7 @@ snapshots:
       html-react-parser: 3.0.16(react@18.3.1)
       react: 18.3.1
 
-  effect@3.17.7:
+  effect@3.20.1:
     dependencies:
       '@standard-schema/spec': 1.1.0
       fast-check: 3.23.2
@@ -6882,11 +6875,11 @@ snapshots:
 
   uploadthing@7.7.4(next@16.4.3(@babel/core@7.29.7)(@types/node@26.6.5)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(tailwindcss@4.3.3):
     dependencies:
-      '@effect/platform': 0.90.3(effect@3.17.7)
+      '@effect/platform': 0.90.3(effect@3.20.1)
       '@standard-schema/spec': 1.0.0-beta.4
       '@uploadthing/mime-types': 0.3.6
       '@uploadthing/shared': 7.1.10
-      effect: 3.17.7
+      effect: 3.20.1
     optionalDependencies:
       next: 16.4.3(@babel/core@7.29.7)(@types/node@26.6.5)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       tailwindcss: 4.3.3
@@ -6934,11 +6927,6 @@ snapshots:
       react: 19.3.1
 
   uuid@11.1.1: {}
-
-  valibot@1.2.0(typescript@6.0.3):
-    optionalDependencies:
-      typescript: 6.0.3
-    optional: true
 
   which-boxed-primitive@1.1.1:
     dependencies:
