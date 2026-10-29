@@ -18,10 +18,10 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v4.0.0
 
-      - name: Setup Node 24
+      - name: Setup Node 26
         uses: actions/setup-node@v4
         with:
-          node-version: 24
+          node-version: 26.13.0
           cache: "pnpm"
 
       - name: Install dependencies
@@ -41,10 +41,10 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v4.0.0
 
-      - name: Setup Node 24
+      - name: Setup Node 26
         uses: actions/setup-node@v4
         with:
-          node-version: 24
+          node-version: 26.13.0
           cache: "pnpm"
 
       - name: Install dependencies
